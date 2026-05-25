@@ -15,12 +15,14 @@
   <header class="topbar">
     <div class="container topbar-inner">
       <button type="button" class="nav-logo scroll-top" aria-label="EuGreen Energy">
-        <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <span class="logo-mark" aria-hidden="true">
+        <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40">
           <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#00e5a8"/><stop offset="100%" stop-color="#0b6e4f"/></linearGradient></defs>
           <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
           <path d="M20 8c-3 5-9 8-9 14a9 9 0 1 0 18 0c0-6-6-9-9-14z" fill="#fff" opacity=".95"/>
           <path d="M17 22h6l-2 8h-4l-2-8 4 8z" fill="#00e5a8"/>
         </svg>
+        </span>
         <span class="logo-wordmark"><span class="logo-eu">Eu</span><span class="logo-green">Green</span> <span class="logo-energy">Energy</span></span>
       </button>
       <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
@@ -51,32 +53,37 @@
 
   <main>
     <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <div>
-          <div class="hero-badge" data-i18n="hero_badge">18+ EU-Märkte · Seit 2010</div>
-          <h1><span data-i18n="hero_title">Zahlen Sie nicht den Einzelpreis.</span><em data-i18n="hero_title_em">Profitieren Sie von unserer Bündelkraft.</em></h1>
-          <p class="hero-desc" data-i18n="hero_desc">Sie allein zahlen 40.000 € – wir sichern oft 35.000 €. Kostenfrei.</p>
+        <div class="hero-copy">
+          <p class="hero-kicker" data-i18n="hero_kicker">Kostenlose Beratung · Unverbindlich</p>
+          <h1><span data-i18n="hero_title">Energie clever vergleichen.</span><em data-i18n="hero_title_em">Bis zu 20&nbsp;% günstiger durch Bündelkraft.</em></h1>
+          <p class="hero-desc" data-i18n="hero_desc">Als Einzelanfragender zahlen Sie oft den vollen Preis. Wir bündeln Anfragen in Ihrer Region – dieselbe Leistung, im Schnitt bis zu 20&nbsp;% Ersparnis. Unser Service ist für Sie komplett kostenfrei.</p>
           <div class="hero-stats">
-            <div><div class="stat-num">−15%</div><div class="stat-label" data-i18n="hero_stat1">Ø Ersparnis</div></div>
+            <div><div class="stat-num">−20%</div><div class="stat-label" data-i18n="hero_stat1">Ersparnis möglich</div></div>
             <div><div class="stat-num">2.400+</div><div class="stat-label" data-i18n="hero_stat2">Vergleiche/Jahr</div></div>
             <div><div class="stat-num">24h</div><div class="stat-label" data-i18n="hero_stat3">Erste Antwort</div></div>
           </div>
           <div class="hero-actions">
-            <button type="button" class="btn btn-primary" data-scroll="#anfrage" data-i18n="hero_cta">Angebot starten</button>
+            <button type="button" class="btn btn-primary btn-lg" data-scroll="#anfrage" data-i18n="hero_cta">Angebot starten</button>
             <button type="button" class="btn btn-ghost" data-scroll="#ueber-uns" data-i18n="hero_cta2">Unsere Geschichte</button>
           </div>
         </div>
-        <div class="price-card">
-          <div class="price-row">
-            <span class="price-tag" style="color:#e85d04">40.000€</span>
-            <div><div class="price-bar-wrap"><div class="price-bar market"></div></div><div class="price-label" data-i18n="price_market">Markt (allein)</div></div>
+        <aside class="savings-card" aria-label="Ersparnis">
+          <span class="savings-chip" data-i18n="save_highlight">Bündelkraft</span>
+          <p class="savings-card-title" data-i18n="savings_card_title">Typische Ersparnis</p>
+          <div class="savings-row">
+            <span class="savings-val savings-val-solo">0%</span>
+            <div class="savings-track"><span class="savings-fill savings-fill-solo"></span></div>
+            <span class="savings-label" data-i18n="save_solo">Einzelanfrage</span>
           </div>
-          <div class="price-row">
-            <span class="price-tag" style="color:var(--green)">35.000€</span>
-            <div><div class="price-bar-wrap"><div class="price-bar eugreen"></div></div><div class="price-label" data-i18n="price_bundle">EuGreen (Bündel)</div></div>
+          <div class="savings-row savings-row-accent">
+            <span class="savings-val savings-val-bundle">−20%</span>
+            <div class="savings-track"><span class="savings-fill savings-fill-bundle"></span></div>
+            <span class="savings-label" data-i18n="save_bundle">Mit EuGreen (Bündel)</span>
           </div>
-          <p class="price-note" data-i18n="price_note">eugreen.energy · Kostenfrei.</p>
-        </div>
+          <p class="savings-note" data-i18n="save_note">eugreen.energy · Bis zu 20&nbsp;% · Service kostenfrei</p>
+        </aside>
       </div>
     </section>
 

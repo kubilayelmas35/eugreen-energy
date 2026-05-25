@@ -86,7 +86,30 @@ body {
   display: flex; align-items: center; gap: 0.5rem;
   text-decoration: none; color: var(--text); margin-right: auto;
 }
-.logo-svg { flex-shrink: 0; border-radius: 10px; box-shadow: 0 4px 14px rgba(0, 200, 150, 0.25); }
+.logo-mark {
+  position: relative; display: flex; flex-shrink: 0;
+}
+.logo-mark::before {
+  content: ""; position: absolute; inset: -4px; border-radius: 14px;
+  background: radial-gradient(circle, rgba(0, 229, 168, 0.35), transparent 70%);
+  animation: logo-glow 2.8s ease-in-out infinite;
+  z-index: 0;
+}
+.logo-svg {
+  position: relative; z-index: 1; flex-shrink: 0; border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 200, 150, 0.25);
+  animation: logo-float 4s ease-in-out infinite;
+  transition: transform 0.35s var(--ease);
+}
+.nav-logo:hover .logo-svg { transform: scale(1.08) rotate(-4deg); }
+@keyframes logo-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes logo-glow {
+  0%, 100% { opacity: 0.45; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
 .logo-wordmark {
   font-family: var(--font-display); font-weight: 800; font-size: 1.05rem;
   letter-spacing: -0.04em; line-height: 1.1;
@@ -156,36 +179,104 @@ body {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0, 200, 150, 0.45); }
-.price-note { margin: 1rem 0 0; font-size: 0.88rem; color: var(--text-muted); }
 .nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text); }
 
 /* Hero */
 .hero {
-  padding: 7rem 0 4rem;
+  position: relative; overflow: hidden;
+  padding: 7.5rem 0 4.5rem;
   background: var(--hero-grad);
-  min-height: 90vh;
+  min-height: 92vh;
   display: flex; align-items: center;
 }
-.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
-.hero-badge {
-  display: inline-flex; padding: 0.35rem 0.85rem; border-radius: 999px;
-  background: rgba(0, 200, 150, 0.12); border: 1px solid rgba(0, 200, 150, 0.25);
-  font-size: 0.78rem; font-weight: 600; color: var(--green); margin-bottom: 1rem;
+.hero-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 45% at 85% 15%, rgba(0, 200, 150, 0.18), transparent),
+    radial-gradient(ellipse 40% 35% at 5% 90%, rgba(232, 93, 4, 0.1), transparent);
+  animation: hero-bg-drift 14s ease-in-out infinite alternate;
 }
-[data-theme="dark"] .hero-badge { color: var(--green-bright); }
+@keyframes hero-bg-drift {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(-2%, 1%) scale(1.04); }
+}
+.hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
+.hero-kicker {
+  display: inline-block; margin: 0 0 1.1rem;
+  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--green);
+}
+[data-theme="dark"] .hero-kicker { color: var(--green-bright); }
+.hero-copy > * { animation: hero-fade-up 0.75s var(--ease) backwards; }
+.hero-copy .hero-kicker { animation-delay: 0.05s; }
+.hero-copy h1 { animation-delay: 0.12s; }
+.hero-copy .hero-desc { animation-delay: 0.2s; }
+.hero-copy .hero-stats { animation-delay: 0.28s; }
+.hero-copy .hero-actions { animation-delay: 0.36s; }
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 800; line-height: 1.1; margin: 0 0 1rem; letter-spacing: -0.03em;
+  font-size: clamp(2.15rem, 5vw, 3.45rem);
+  font-weight: 800; line-height: 1.08; margin: 0 0 1.1rem; letter-spacing: -0.035em;
 }
-.hero h1 em { font-style: normal; color: var(--green); display: block; }
-[data-theme="dark"] .hero h1 em { color: var(--green-bright); }
-.hero-desc { color: var(--text-muted); font-size: 1.08rem; max-width: 50ch; margin-bottom: 1.75rem; }
-.hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
-.stat-num { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; color: var(--green); }
+.hero h1 em {
+  font-style: normal; color: var(--green); display: block; margin-top: 0.15em;
+  background: linear-gradient(120deg, var(--green) 0%, var(--green-bright) 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+[data-theme="dark"] .hero h1 em {
+  background: linear-gradient(120deg, var(--green-bright) 0%, #7dffc8 100%);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-desc { color: var(--text-muted); font-size: 1.12rem; max-width: 52ch; margin-bottom: 1.85rem; line-height: 1.65; }
+.hero-stats { display: flex; gap: 2.25rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.stat-num { font-family: var(--font-display); font-size: 1.9rem; font-weight: 800; color: var(--green); }
 [data-theme="dark"] .stat-num { color: var(--green-bright); }
 .stat-label { font-size: 0.82rem; color: var(--text-muted); }
-.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+.btn-lg { padding: 1rem 1.85rem; font-size: 1rem; box-shadow: 0 8px 28px rgba(0, 200, 150, 0.35); }
+.savings-card {
+  background: var(--bg-elevated); border-radius: var(--radius-lg);
+  padding: 2rem 2rem 1.75rem; box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  animation: hero-fade-up 0.9s 0.15s var(--ease) backwards;
+  position: relative;
+}
+.savings-chip {
+  position: absolute; top: 1.25rem; right: 1.25rem;
+  padding: 0.3rem 0.7rem; border-radius: 999px;
+  background: rgba(0, 200, 150, 0.14); color: var(--green);
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+}
+[data-theme="dark"] .savings-chip { color: var(--green-bright); }
+.savings-card-title {
+  margin: 0 0 1.5rem; font-family: var(--font-display);
+  font-size: 1.05rem; font-weight: 700; color: var(--text);
+}
+.savings-row {
+  display: grid; grid-template-columns: 3.5rem 1fr; grid-template-rows: auto auto;
+  gap: 0.35rem 1rem; align-items: center; margin-bottom: 1.35rem;
+}
+.savings-val {
+  grid-row: 1 / 3; font-family: var(--font-display);
+  font-size: 1.65rem; font-weight: 800; line-height: 1;
+}
+.savings-val-solo { color: #e85d04; }
+.savings-val-bundle { color: var(--green); font-size: 1.85rem; }
+[data-theme="dark"] .savings-val-bundle { color: var(--green-bright); }
+.savings-track {
+  grid-column: 2; height: 12px; background: var(--flow-track);
+  border-radius: 99px; overflow: hidden;
+}
+.savings-fill { display: block; height: 100%; border-radius: 99px; transition: width 1.2s var(--ease); }
+.savings-fill-solo { width: 100%; background: linear-gradient(90deg, #ff8a65, #e85d04); }
+.savings-fill-bundle { width: 80%; background: linear-gradient(90deg, var(--green), var(--green-bright)); }
+.savings-label { grid-column: 2; font-size: 0.82rem; color: var(--text-muted); }
+.savings-row-accent .savings-label { color: var(--text); font-weight: 600; }
+.savings-note { margin: 0.5rem 0 0; font-size: 0.88rem; color: var(--text-muted); }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
   padding: 0.85rem 1.5rem; border-radius: 999px; font-weight: 700;
@@ -195,17 +286,6 @@ body {
 .btn-primary:hover { transform: translateY(-2px); }
 .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
 
-.price-card {
-  background: var(--bg-elevated); border-radius: var(--radius-lg);
-  padding: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border);
-}
-.price-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
-.price-tag { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; min-width: 5ch; }
-.price-bar-wrap { flex: 1; height: 14px; background: var(--flow-track); border-radius: 99px; overflow: hidden; }
-.price-bar { height: 100%; border-radius: 99px; }
-.price-bar.market { background: #ff6b6b; width: 100%; }
-.price-bar.eugreen { background: linear-gradient(90deg, var(--green), var(--green-bright)); width: 87.5%; }
-.price-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem; }
 
 /* How + partners */
 .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
@@ -549,12 +629,14 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--g
   <header class="topbar">
     <div class="container topbar-inner">
       <button type="button" class="nav-logo scroll-top" aria-label="EuGreen Energy">
-        <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+        <span class="logo-mark" aria-hidden="true">
+        <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40">
           <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#00e5a8"/><stop offset="100%" stop-color="#0b6e4f"/></linearGradient></defs>
           <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
           <path d="M20 8c-3 5-9 8-9 14a9 9 0 1 0 18 0c0-6-6-9-9-14z" fill="#fff" opacity=".95"/>
           <path d="M17 22h6l-2 8h-4l-2-8 4 8z" fill="#00e5a8"/>
         </svg>
+        </span>
         <span class="logo-wordmark"><span class="logo-eu">Eu</span><span class="logo-green">Green</span> <span class="logo-energy">Energy</span></span>
       </button>
       <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
@@ -585,32 +667,37 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--g
 
   <main>
     <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <div>
-          <div class="hero-badge" data-i18n="hero_badge">18+ EU-Märkte · Seit 2010</div>
-          <h1><span data-i18n="hero_title">Zahlen Sie nicht den Einzelpreis.</span><em data-i18n="hero_title_em">Profitieren Sie von unserer Bündelkraft.</em></h1>
-          <p class="hero-desc" data-i18n="hero_desc">Sie allein zahlen 40.000 € – wir sichern oft 35.000 €. Kostenfrei.</p>
+        <div class="hero-copy">
+          <p class="hero-kicker" data-i18n="hero_kicker">Kostenlose Beratung · Unverbindlich</p>
+          <h1><span data-i18n="hero_title">Energie clever vergleichen.</span><em data-i18n="hero_title_em">Bis zu 20&nbsp;% günstiger durch Bündelkraft.</em></h1>
+          <p class="hero-desc" data-i18n="hero_desc">Als Einzelanfragender zahlen Sie oft den vollen Preis. Wir bündeln Anfragen in Ihrer Region – dieselbe Leistung, im Schnitt bis zu 20&nbsp;% Ersparnis. Unser Service ist für Sie komplett kostenfrei.</p>
           <div class="hero-stats">
-            <div><div class="stat-num">−15%</div><div class="stat-label" data-i18n="hero_stat1">Ø Ersparnis</div></div>
+            <div><div class="stat-num">−20%</div><div class="stat-label" data-i18n="hero_stat1">Ersparnis möglich</div></div>
             <div><div class="stat-num">2.400+</div><div class="stat-label" data-i18n="hero_stat2">Vergleiche/Jahr</div></div>
             <div><div class="stat-num">24h</div><div class="stat-label" data-i18n="hero_stat3">Erste Antwort</div></div>
           </div>
           <div class="hero-actions">
-            <button type="button" class="btn btn-primary" data-scroll="#anfrage" data-i18n="hero_cta">Angebot starten</button>
+            <button type="button" class="btn btn-primary btn-lg" data-scroll="#anfrage" data-i18n="hero_cta">Angebot starten</button>
             <button type="button" class="btn btn-ghost" data-scroll="#ueber-uns" data-i18n="hero_cta2">Unsere Geschichte</button>
           </div>
         </div>
-        <div class="price-card">
-          <div class="price-row">
-            <span class="price-tag" style="color:#e85d04">40.000€</span>
-            <div><div class="price-bar-wrap"><div class="price-bar market"></div></div><div class="price-label" data-i18n="price_market">Markt (allein)</div></div>
+        <aside class="savings-card" aria-label="Ersparnis">
+          <span class="savings-chip" data-i18n="save_highlight">Bündelkraft</span>
+          <p class="savings-card-title" data-i18n="savings_card_title">Typische Ersparnis</p>
+          <div class="savings-row">
+            <span class="savings-val savings-val-solo">0%</span>
+            <div class="savings-track"><span class="savings-fill savings-fill-solo"></span></div>
+            <span class="savings-label" data-i18n="save_solo">Einzelanfrage</span>
           </div>
-          <div class="price-row">
-            <span class="price-tag" style="color:var(--green)">35.000€</span>
-            <div><div class="price-bar-wrap"><div class="price-bar eugreen"></div></div><div class="price-label" data-i18n="price_bundle">EuGreen (Bündel)</div></div>
+          <div class="savings-row savings-row-accent">
+            <span class="savings-val savings-val-bundle">−20%</span>
+            <div class="savings-track"><span class="savings-fill savings-fill-bundle"></span></div>
+            <span class="savings-label" data-i18n="save_bundle">Mit EuGreen (Bündel)</span>
           </div>
-          <p class="price-note" data-i18n="price_note">eugreen.energy · Kostenfrei.</p>
-        </div>
+          <p class="savings-note" data-i18n="save_note">eugreen.energy · Bis zu 20&nbsp;% · Service kostenfrei</p>
+        </aside>
       </div>
     </section>
 
@@ -904,17 +991,17 @@ window.EUGREEN_LANGS = {
 const T = {
   de: {
     metaTitle: "EuGreen Energy | Energieberatung für ganz Europa",
-    metaDesc: "EuGreen Energy – Bündelkraft für Strom, Solar & Wärmepumpe. Bis zu 15% günstiger. Kostenlose Beratung.",
+    metaDesc: "EuGreen Energy – Bündelkraft für Strom, Solar & Wärmepumpe. Bis zu 20% günstiger. Kostenlose Beratung.",
     nav_services: "Leistungen", nav_europe: "Europa", nav_about: "Über uns", nav_how: "Ablauf", nav_form: "Anfrage", nav_faq: "FAQ",
     nav_cta: "Kostenlos anfragen", theme_light: "Hell", theme_dark: "Dunkel",
-    hero_badge: "18+ EU-Märkte · Seit 2010",
-    hero_title: "Zahlen Sie nicht den Einzelpreis.",
-    hero_title_em: "Profitieren Sie von unserer Bündelkraft.",
-    hero_desc: "Sie allein zahlen 40.000 € – wir gehen mit Hunderten Anfragen zu Partnern und sichern Ihnen dieselbe Lösung oft für 35.000 €. Unser Service ist für Sie komplett kostenfrei.",
-    hero_stat1: "Ø Ersparnis", hero_stat2: "Vergleiche/Jahr", hero_stat3: "Erste Antwort",
+    hero_kicker: "Kostenlose Beratung · Unverbindlich",
+    hero_title: "Energie clever vergleichen.",
+    hero_title_em: "Bis zu 20 % günstiger durch Bündelkraft.",
+    hero_desc: "Als Einzelanfragender zahlen Sie oft den vollen Preis. Wir bündeln Anfragen in Ihrer Region – dieselbe Leistung, im Schnitt bis zu 20 % Ersparnis. Unser Service ist für Sie komplett kostenfrei.",
+    hero_stat1: "Ersparnis möglich", hero_stat2: "Vergleiche/Jahr", hero_stat3: "Erste Antwort",
     hero_cta: "Angebot starten", hero_cta2: "Unsere Geschichte",
-    price_market: "Marktpreis (allein)", price_bundle: "Über EuGreen (Bündel)",
-    price_note: "eugreen.energy · Unser Service ist für Sie kostenfrei.",
+    savings_card_title: "Typische Ersparnis", save_solo: "Einzelanfrage", save_bundle: "Mit EuGreen (Bündel)",
+    save_note: "eugreen.energy · Bis zu 20 % · Service kostenfrei", save_highlight: "Bündelkraft",
     how_title: "So funktioniert EuGreen", how_sub: "Drei einfache Schritte",
     how1_t: "Daten eingeben", how1_d: "Land, Bedarf & Kontakt – in wenigen Minuten.",
     how2_t: "Wir verhandeln", how2_d: "Experten holen Angebote bei zertifizierten Partnern ein.",
@@ -959,7 +1046,7 @@ const T = {
     contact_email: "E-Mail", contact_phone: "Telefon", contact_both: "Beides",
     message_ph: "Optional: Vertrag, Solar, Wärmepumpe…",
     faq_title: "Häufige Fragen", faq1_q: "Kostet EuGreen etwas?", faq1_a: "Nein. Beratung ist kostenfrei – wir werden von Partnern provisioniert, ohne Aufschlag für Sie.",
-    faq2_q: "Warum günstiger?", faq2_a: "Bündelkraft: viele Kunden = bessere Konditionen (z.B. 35.000 € statt 40.000 €).",
+    faq2_q: "Warum günstiger?", faq2_a: "Bündelkraft: viele Kunden in Ihrer Region = bessere Konditionen – oft bis zu 20 % Ersparnis bei gleicher Leistung.",
     faq3_q: "Welche Länder?", faq3_a: "18 EU-Märkte. Deutschland: Berlin, München, Hamburg, Köln, Frankfurt.",
     footer_legal: "Rechtliches", footer_contact: "Kontakt", footer_privacy: "Datenschutz",
     success_title: "Vielen Dank!", success_body: "Ihre Anfrage ist bei uns eingegangen. Wir melden uns innerhalb von 24 Stunden.",
@@ -967,17 +1054,17 @@ const T = {
   },
   en: {
     metaTitle: "EuGreen Energy | Energy consulting across Europe",
-    metaDesc: "EuGreen Energy – bulk buying for electricity, solar & heat pumps. Up to 15% cheaper. Free advice.",
+    metaDesc: "EuGreen Energy – bulk buying for electricity, solar & heat pumps. Up to 20% cheaper. Free advice.",
     nav_services: "Services", nav_europe: "Europe", nav_about: "About us", nav_how: "How it works", nav_form: "Request", nav_faq: "FAQ",
     nav_cta: "Free quote", theme_light: "Light", theme_dark: "Dark",
-    hero_badge: "18+ EU markets · Since 2010",
-    hero_title: "Don't pay the retail price.",
-    hero_title_em: "Use our collective buying power.",
-    hero_desc: "Alone you pay €40,000 – we often secure the same solution for €35,000. Our service is completely free.",
-    hero_stat1: "Avg. savings", hero_stat2: "Quotes/year", hero_stat3: "First response",
+    hero_kicker: "Free advice · No obligation",
+    hero_title: "Compare energy the smart way.",
+    hero_title_em: "Up to 20% cheaper through collective buying.",
+    hero_desc: "On your own you often pay full price. We bundle requests in your area – same service, typically up to 20% savings. Our service is completely free.",
+    hero_stat1: "Possible savings", hero_stat2: "Quotes/year", hero_stat3: "First response",
     hero_cta: "Start quote", hero_cta2: "Our story",
-    price_market: "Market price (alone)", price_bundle: "Via EuGreen (bundle)",
-    price_note: "eugreen.energy · Our service is free for you.",
+    savings_card_title: "Typical savings", save_solo: "Solo enquiry", save_bundle: "Via EuGreen (bundle)",
+    save_note: "eugreen.energy · Up to 20% · Free service", save_highlight: "Bundle power",
     how_title: "How EuGreen works", how_sub: "Three simple steps",
     how1_t: "Enter details", how1_d: "Country, needs & contact in minutes.",
     how2_t: "We negotiate", how2_d: "Experts collect offers from certified partners.",
@@ -1022,7 +1109,7 @@ const T = {
     contact_email: "Email", contact_phone: "Phone", contact_both: "Both",
     message_ph: "Optional: contract, solar, heat pump…",
     faq_title: "FAQ", faq1_q: "Does it cost anything?", faq1_a: "No. Advice is free – we earn commission from partners, with no markup for you.",
-    faq2_q: "Why cheaper?", faq2_a: "Bulk buying: many customers = better rates (e.g. €35k vs €40k).",
+    faq2_q: "Why cheaper?", faq2_a: "Bulk buying: many customers in your region = better rates – often up to 20% savings for the same service.",
     faq3_q: "Which countries?", faq3_a: "18 EU markets. Germany: Berlin, Munich, Hamburg, Cologne, Frankfurt.",
     footer_legal: "Legal", footer_contact: "Contact", footer_privacy: "Privacy",
     success_title: "Thank you!", success_body: "We received your request and will respond within 24 hours.",
@@ -1030,15 +1117,16 @@ const T = {
   },
   es: {
     metaTitle: "EuGreen Energy | Asesoría energética en Europa",
-    metaDesc: "EuGreen Energy – poder de compra colectivo. Hasta 15% más barato. Asesoramiento gratuito.",
+    metaDesc: "EuGreen Energy – poder de compra colectivo. Hasta 20% más barato. Asesoramiento gratuito.",
     nav_services: "Servicios", nav_europe: "Europa", nav_about: "Sobre nosotros", nav_how: "Proceso", nav_form: "Solicitud", nav_faq: "FAQ",
     nav_cta: "Presupuesto gratis", theme_light: "Claro", theme_dark: "Oscuro",
-    hero_badge: "18+ mercados UE · Desde 2010",
-    hero_title: "No pague el precio individual.", hero_title_em: "Aproveche nuestro volumen.",
-    hero_desc: "Solo paga 40.000 € – a menudo la misma solución por 35.000 €. Servicio totalmente gratuito.",
-    hero_stat1: "Ahorro medio", hero_stat2: "Comparaciones/año", hero_stat3: "Primera respuesta",
+    hero_kicker: "Asesoramiento gratuito · Sin compromiso",
+    hero_title: "Compare energía con inteligencia.", hero_title_em: "Hasta un 20% más barato en grupo.",
+    hero_desc: "Por su cuenta suele pagar el precio completo. Agrupamos solicitudes en su zona: mismo servicio, hasta un 20% de ahorro. Servicio totalmente gratuito.",
+    hero_stat1: "Ahorro posible", hero_stat2: "Comparaciones/año", hero_stat3: "Primera respuesta",
     hero_cta: "Empezar", hero_cta2: "Nuestra historia",
-    price_market: "Precio de mercado (solo)", price_bundle: "Vía EuGreen (grupo)", price_note: "eugreen.energy · Servicio gratuito.",
+    savings_card_title: "Ahorro típico", save_solo: "Solicitud individual", save_bundle: "Con EuGreen (grupo)",
+    save_note: "eugreen.energy · Hasta 20% · Servicio gratuito", save_highlight: "Volumen",
     how_title: "Cómo funciona EuGreen", how_sub: "Tres pasos simples",
     how1_t: "Introduzca datos", how1_d: "País, necesidad y contacto.", how2_t: "Negociamos", how2_d: "Ofertas de partners certificados.", how3_t: "Ahorra", how3_d: "Mejor precio por email o llamada.",
     partners_title: "Socios y proveedores",
@@ -1076,15 +1164,16 @@ const T = {
   },
   fr: {
     metaTitle: "EuGreen Energy | Conseil énergie en Europe",
-    metaDesc: "EuGreen Energy – achat groupé. Jusqu'à 15% moins cher. Conseil gratuit.",
+    metaDesc: "EuGreen Energy – achat groupé. Jusqu'à 20% moins cher. Conseil gratuit.",
     nav_services: "Services", nav_europe: "Europe", nav_about: "À propos", nav_how: "Processus", nav_form: "Demande", nav_faq: "FAQ",
     nav_cta: "Devis gratuit", theme_light: "Clair", theme_dark: "Sombre",
-    hero_badge: "18+ marchés UE · Depuis 2010",
-    hero_title: "Ne payez pas seul.", hero_title_em: "Profitez de notre volume.",
-    hero_desc: "40 000 € seul – souvent 35 000 € via nous. Service gratuit.",
-    hero_stat1: "Économie moy.", hero_stat2: "Comparaisons/an", hero_stat3: "Réponse 24h",
+    hero_kicker: "Conseil gratuit · Sans engagement",
+    hero_title: "Comparez l'énergie intelligemment.", hero_title_em: "Jusqu'à 20 % moins cher en groupe.",
+    hero_desc: "Seul, vous payez souvent le plein tarif. Nous regroupons les demandes dans votre région – même prestation, jusqu'à 20 % d'économies. Service entièrement gratuit.",
+    hero_stat1: "Économie possible", hero_stat2: "Comparaisons/an", hero_stat3: "Réponse 24h",
     hero_cta: "Commencer", hero_cta2: "Notre histoire",
-    price_market: "Prix marché (seul)", price_bundle: "Via EuGreen (groupe)", price_note: "eugreen.energy · Service gratuit.",
+    savings_card_title: "Économie typique", save_solo: "Demande individuelle", save_bundle: "Via EuGreen (groupe)",
+    save_note: "eugreen.energy · Jusqu'à 20 % · Service gratuit", save_highlight: "Volume",
     how_title: "Comment fonctionne EuGreen", how_sub: "Trois étapes",
     how1_t: "Vos données", how1_d: "Pays et contact.", how2_t: "Nous négocions", how2_d: "Offres partenaires.", how3_t: "Vous économisez", how3_d: "Meilleur prix.",
     partners_title: "Partenaires",
@@ -1125,12 +1214,13 @@ const T = {
     metaDesc: "EuGreen Energy – toplu alım gücü. %15'e varan tasarruf. Ücretsiz danışmanlık.",
     nav_services: "Hizmetler", nav_europe: "Avrupa", nav_about: "Hakkımızda", nav_how: "Süreç", nav_form: "Talep", nav_faq: "SSS",
     nav_cta: "Ücretsiz teklif", theme_light: "Açık", theme_dark: "Koyu",
-    hero_badge: "18+ AB pazarı · 2010'dan beri",
-    hero_title: "Tek başına fiyat ödemeyin.", hero_title_em: "Toplu alım gücümüzden yararlanın.",
-    hero_desc: "Tek başınıza 40.000 € – çoğu zaman 35.000 €. Hizmetimiz tamamen ücretsiz.",
-    hero_stat1: "Ort. tasarruf", hero_stat2: "Karşılaştırma/yıl", hero_stat3: "İlk yanıt",
+    hero_kicker: "Ücretsiz danışmanlık · Taahhütsüz",
+    hero_title: "Enerjiyi akıllıca karşılaştırın.", hero_title_em: "Toplu alımla %20'ye varan tasarruf.",
+    hero_desc: "Tek başınıza genelde tam fiyat ödersiniz. Bölgenizdeki talepleri topluyoruz – aynı hizmet, ortalama %20'ye varan tasarruf. Hizmetimiz tamamen ücretsiz.",
+    hero_stat1: "Olası tasarruf", hero_stat2: "Karşılaştırma/yıl", hero_stat3: "İlk yanıt",
     hero_cta: "Teklif al", hero_cta2: "Hikayemiz",
-    price_market: "Piyasa fiyatı (tek başına)", price_bundle: "EuGreen ile (toplu)", price_note: "eugreen.energy · Hizmet ücretsiz.",
+    savings_card_title: "Tipik tasarruf", save_solo: "Tek başına talep", save_bundle: "EuGreen ile (toplu)",
+    save_note: "eugreen.energy · %20'ye varan · Ücretsiz hizmet", save_highlight: "Toplu güç",
     how_title: "EuGreen nasıl çalışır", how_sub: "Üç basit adım",
     how1_t: "Bilgileriniz", how1_d: "Ülke ve iletişim.", how2_t: "Biz pazarlık yaparız", how2_d: "Sertifikalı partner teklifleri.", how3_t: "Siz kazanırsınız", how3_d: "En iyi fiyat.",
     partners_title: "Partnerler",
@@ -1193,7 +1283,7 @@ window.eugreenDetectLang = function () {
       about_online:
         "Statt eines teuren zentralen Büros arbeiten wir mit digitalen Online-Büros in ganz Europa. So können wir in allen Regionen passenden Service bieten – ohne dass Sie die Kosten für Filialen in jeder Stadt mitbezahlen. Die Eröffnung physischer Büros in allen Städten haben wir bewusst zurückgestellt, um die Einsparungen direkt als Rabatt an Sie weiterzugeben.",
       about_bundle:
-        "So funktioniert unser System: Wer allein anfragt, erhält oft Einzelpreise – z. B. 40.000 € für eine Wärmepumpe oder Solaranlage. Wir bündeln Anfragen aus Ihrer Region: dieselbe Leistung kostet dann oft nur 35.000 € – je nach Service und Nachfrage sogar deutlich weniger. Sie erhalten dieselbe Qualität, profitieren aber von unserer Sammelkraft.",
+        "So funktioniert unser System: Wer allein anfragt, erhält oft Einzelpreise ohne Mengenrabatt. Wir bündeln Anfragen aus Ihrer Region: dieselbe Leistung – oft bis zu 20 % günstiger, je nach Service und Nachfrage sogar mehr. Sie erhalten dieselbe Qualität, profitieren aber von unserer Sammelkraft.",
       faq_sub: "Antworten auf Ihre wichtigsten Fragen",
       footer_callcenter: "Callcenter-Hotline",
       faqItems: [
@@ -1202,7 +1292,7 @@ window.eugreenDetectLang = function () {
         { q: "Was passiert beim Termin?", a: "Je nach Bedarf findet ein Vor-Ort- oder Online-Termin statt. Unser Saha-Team bzw. Partner prüft das Gebäude, wertet Ihre Rechnungen aus, misst bei Bedarf Dach, Dämmung oder Raumtemperaturen und erstellt eine m²-Bewertung. Staatliche Förderungen werden erklärt. Der gesamte Ablauf bis zum Angebot ist kostenlos. Gefällt Ihnen das Angebot, nehmen Sie es an – sonst lehnen Sie einfach ab." },
         { q: "Wie können Sie so viele Personen zusammenbringen?", a: "Seit Jahren arbeiten wir in europäischen Märkten mit führenden, seriösen Unternehmen. Über verschiedene Kanäle und Reklamations-/Informationspolitiken erreichen wir gezielt Menschen mit konkretem Energiebedarf. Unsere Callcenter-Teams unter der Woche sprechen zielgerichtet mit Interessenten – so entstehen schnell regionale Bündel." },
         { q: "Ist die Nachfrage sehr hoch?", a: "Ja. Durch staatliche Förderungen, steigende Energiepreise und den Wunsch nach Unabhängigkeit (Solar, Speicher, Wärmepumpe) steigt die Nachfrage stark. Wer jetzt handelt, nutzt oft bessere Förderfenster und günstigere Bündelpreise – deshalb lohnt sich eine frühe, kostenlose Anfrage." },
-        { q: "Warum sind die Preise über EuGreen oft niedriger?", a: "Weil wir nicht eine Einzelanfrage, sondern mehrere aus Ihrer Region bündeln. Anbieter geben Mengen- oder Regionalrabatte – z. B. 35.000 € statt 40.000 € für dieselbe Leistung." },
+        { q: "Warum sind die Preise über EuGreen oft niedriger?", a: "Weil wir nicht eine Einzelanfrage, sondern mehrere aus Ihrer Region bündeln. Anbieter geben Mengen- oder Regionalrabatte – oft bis zu 20 % Ersparnis bei gleicher Leistung." },
         { q: "In welchen Ländern sind Sie aktiv?", a: "In 18 EU-Märkten mit Online-Büros und regionalen Teams – u. a. Deutschland (Berlin, München, Hamburg, Köln, Frankfurt), Frankreich, Benelux, Italien, Iberien und weiteren Ländern." }
       ]
     },
@@ -1210,7 +1300,7 @@ window.eugreenDetectLang = function () {
       about_online:
         "Instead of an expensive central HQ, we run digital online offices across Europe. That lets us serve every region properly – without passing the cost of a branch in every city on to you. We paused opening physical offices everywhere so those savings become your discount.",
       about_bundle:
-        "How it works: a solo enquiry often gets a solo price – e.g. €40,000 for a heat pump or solar system. We bundle demand in your area: the same service may cost €35,000 – or less depending on service and volume. Same quality, collective buying power.",
+        "How it works: a solo enquiry often gets no volume discount. We bundle demand in your area: the same service is often up to 20% cheaper – or more depending on service and volume. Same quality, collective buying power.",
       faq_sub: "Answers to your key questions",
       footer_callcenter: "Call centre line",
       faqItems: [
@@ -1219,7 +1309,7 @@ window.eugreenDetectLang = function () {
         { q: "What happens at the appointment?", a: "Depending on your needs, on-site or online. Our field team or partner reviews the property, bills, roof, insulation or room temps and m² sizing. Grants are explained. Everything until the quote is free. Accept the offer if you like it – otherwise decline." },
         { q: "How do you bring so many people together?", a: "For years we have worked with leading firms across Europe. Through targeted outreach we reach people with real energy needs. Weekday call-centre teams connect with them quickly – building regional bundles." },
         { q: "Is demand very high?", a: "Yes. Grants, rising prices and the wish for independence (solar, storage, heat pumps) drive demand. Acting early often means better incentives and bundle prices – a free enquiry is worthwhile." },
-        { q: "Why are prices often lower via EuGreen?", a: "We bundle several requests in your region, not one. Suppliers offer volume or regional discounts – e.g. €35k instead of €40k for the same service." },
+        { q: "Why are prices often lower via EuGreen?", a: "We bundle several requests in your region, not one. Suppliers offer volume or regional discounts – often up to 20% savings for the same service." },
         { q: "Which countries do you cover?", a: "18 EU markets with online offices and regional teams – including Germany, France, Benelux, Italy, Iberia and more." }
       ]
     },
@@ -1227,7 +1317,7 @@ window.eugreenDetectLang = function () {
       about_online:
         "En lugar de una sede central cara, trabajamos con oficinas digitales en línea en toda Europa. Así ofrecemos un servicio adecuado en cada región sin que usted pague el coste de una sucursal en cada ciudad. Hemos pospuesto la apertura de oficinas físicas en todas partes para que el ahorro se traduzca directamente en su descuento.",
       about_bundle:
-        "Así funciona: una solicitud individual suele obtener un precio individual – p. ej. 40.000 € por bomba de calor o solar. Agrupamos la demanda en su zona: el mismo servicio puede costar 35.000 € o menos según volumen. Misma calidad, poder de compra colectivo.",
+        "Así funciona: una solicitud individual suele pagar el precio completo. Agrupamos la demanda en su zona: el mismo servicio, a menudo hasta un 20 % más barato según volumen. Misma calidad, poder de compra colectivo.",
       faq_sub: "Respuestas a sus preguntas más importantes",
       footer_callcenter: "Línea de call center",
       faqItems: [
@@ -1236,7 +1326,7 @@ window.eugreenDetectLang = function () {
         { q: "¿Qué pasa en la cita?", a: "Según su caso, presencial u online. Nuestro equipo o socio revisa la vivienda, facturas, tejado, aislamiento o temperaturas y el dimensionado en m². Se explican las ayudas públicas. Todo hasta el presupuesto es gratis. Acepte la oferta si le convence; si no, rechácela sin compromiso." },
         { q: "¿Cómo reúnen a tantas personas?", a: "Llevamos años trabajando con empresas líderes en Europa. Mediante canales dirigidos llegamos a quien tiene una necesidad energética real. Los equipos de call center entre semana contactan de forma orientada y crean rápidamente agrupaciones regionales." },
         { q: "¿Hay mucha demanda?", a: "Sí. Subvenciones, precios altos y el deseo de independencia (solar, batería, bomba de calor) aumentan la demanda. Actuar pronto suele significar mejores ayudas y precios agrupados; merece la pena una consulta gratuita." },
-        { q: "¿Por qué los precios suelen ser más bajos con EuGreen?", a: "Porque agrupamos varias solicitudes de su región, no una sola. Los proveedores ofrecen descuentos por volumen o zona – p. ej. 35.000 € en lugar de 40.000 € por el mismo servicio." },
+        { q: "¿Por qué los precios suelen ser más bajos con EuGreen?", a: "Porque agrupamos varias solicitudes de su región, no una sola. Los proveedores ofrecen descuentos por volumen o zona – a menudo hasta un 20 % de ahorro por el mismo servicio." },
         { q: "¿En qué países están activos?", a: "En 18 mercados de la UE con oficinas online y equipos regionales – entre ellos Alemania (Berlín, Múnich, Hamburgo, Colonia, Fráncfort), Francia, Benelux, Italia, Iberia y más." }
       ]
     },
@@ -1244,7 +1334,7 @@ window.eugreenDetectLang = function () {
       about_online:
         "Plutôt qu'un siège central coûteux, nous opérons via des bureaux en ligne numériques dans toute l'Europe. Nous servons chaque région correctement sans vous faire payer une agence dans chaque ville. Nous avons reporté l'ouverture de bureaux physiques partout pour que les économies deviennent votre remise.",
       about_bundle:
-        "Le principe : une demande seule obtient souvent un prix seul – p. ex. 40 000 € pour une pompe à chaleur ou du solaire. Nous regroupons la demande dans votre zone : le même service peut coûter 35 000 € ou moins selon le volume. Même qualité, pouvoir d'achat collectif.",
+        "Le principe : une demande seule paie souvent le plein tarif. Nous regroupons la demande dans votre zone : le même service, souvent jusqu'à 20 % moins cher selon le volume. Même qualité, pouvoir d'achat collectif.",
       faq_sub: "Réponses à vos questions essentielles",
       footer_callcenter: "Ligne call center",
       faqItems: [
@@ -1253,7 +1343,7 @@ window.eugreenDetectLang = function () {
         { q: "Que se passe-t-il au rendez-vous ?", a: "Selon vos besoins, sur place ou en ligne. Notre équipe ou partenaire examine le bâtiment, les factures, le toit, l'isolation ou les températures et le dimensionnement en m². Les aides publiques sont expliquées. Tout jusqu'au devis est gratuit. Acceptez l'offre si elle vous convient – sinon refusez sans engagement." },
         { q: "Comment regroupez-vous autant de personnes ?", a: "Depuis des années, nous travaillons avec des entreprises leaders en Europe. Par des canaux ciblés, nous atteignons des personnes ayant un besoin énergétique concret. Nos call centers en semaine les contactent de façon ciblée – des regroupements régionaux se forment rapidement." },
         { q: "La demande est-elle forte ?", a: "Oui. Subventions, prix de l'énergie et envie d'indépendance (solaire, stockage, PAC) font monter la demande. Agir tôt permet souvent de meilleures aides et tarifs groupés – une demande gratuite vaut le coup." },
-        { q: "Pourquoi les prix sont-ils souvent plus bas via EuGreen ?", a: "Parce que nous regroupons plusieurs demandes dans votre région, pas une seule. Les fournisseurs accordent des remises volume ou régionales – p. ex. 35 000 € au lieu de 40 000 € pour la même prestation." },
+        { q: "Pourquoi les prix sont-ils souvent plus bas via EuGreen ?", a: "Parce que nous regroupons plusieurs demandes dans votre région, pas une seule. Les fournisseurs accordent des remises volume ou régionales – souvent jusqu'à 20 % d'économies pour la même prestation." },
         { q: "Dans quels pays êtes-vous actifs ?", a: "18 marchés de l'UE avec bureaux en ligne et équipes régionales – dont l'Allemagne (Berlin, Munich, Hambourg, Cologne, Francfort), la France, le Benelux, l'Italie, l'Ibérie et d'autres." }
       ]
     },
@@ -1261,7 +1351,7 @@ window.eugreenDetectLang = function () {
       about_online:
         "Pahalı merkez ofis yerine Avrupa genelinde dijital online ofislerle çalışıyoruz. Her bölgede uygun hizmet sunuyoruz; her şehirde şube maliyetini size yansıtmıyoruz. Fiziksel ofisleri bilinçli olarak erteledik – tasarruf doğrudan indiriminiz oluyor.",
       about_bundle:
-        "Sistem şöyle işler: Tek başına talep genelde tek fiyat alır – örn. ısı pompası veya solar için 40.000 €. Bölgenizdeki talepleri topluyoruz: aynı hizmet çoğu zaman 35.000 € veya daha az. Aynı kalite, toplu alım gücü.",
+        "Sistem şöyle işler: Tek başına talep genelde tam fiyat öder. Bölgenizdeki talepleri topluyoruz: aynı hizmet çoğu zaman %20'ye varan tasarrufla. Aynı kalite, toplu alım gücü.",
       faq_sub: "En önemli sorularınıza yanıtlar",
       footer_callcenter: "Çağrı merkezi hattı",
       faqItems: [
@@ -1270,7 +1360,7 @@ window.eugreenDetectLang = function () {
         { q: "Randevuda ne oluyor?", a: "İhtiyaca göre yerinde veya online. Saha ekibimiz veya partner bina, faturalar, çatı, yalıtım veya oda sıcaklıklarını ve m² ölçümünü inceler. Devlet destekleri anlatılır. Teklife kadar her şey ücretsiz. Beğenirseniz kabul, beğenmezseniz reddedersiniz." },
         { q: "Bu kadar kişiyi nasıl topluyorsunuz?", a: "Yıllardır Avrupa'da önde gelen firmalarla çalışıyoruz. Hedefli kanallarla gerçek enerji ihtiyacı olanlara ulaşıyoruz. Hafta içi çağrı merkezi ekiplerimiz hedef odaklı görüşmelerle hızlıca bölgesel topluluklar oluşturuyor." },
         { q: "Talep çok mu yüksek?", a: "Evet. Teşvikler, yüksek faturalar ve bağımsızlık isteği (solar, depolama, ısı pompası) talebi artırıyor. Erken hareket genelde daha iyi teşvik ve toplu fiyat demek – ücretsiz talep mantıklı." },
-        { q: "EuGreen üzerinden fiyatlar neden genelde daha düşük?", a: "Tek talep değil, bölgenizdeki birkaç talebi birleştiriyoruz. Tedarikçiler hacim veya bölgesel indirim veriyor – örn. aynı hizmet için 40.000 € yerine 35.000 €." },
+        { q: "EuGreen üzerinden fiyatlar neden genelde daha düşük?", a: "Tek talep değil, bölgenizdeki birkaç talebi birleştiriyoruz. Tedarikçiler hacim veya bölgesel indirim veriyor – aynı hizmette çoğu zaman %20'ye varan tasarruf." },
         { q: "Hangi ülkelerde faaliyetsiniz?", a: "18 AB pazarında online ofisler ve bölgesel ekipler – Almanya (Berlin, Münih, Hamburg, Köln, Frankfurt), Fransa, Benelüks, İtalya, İberya ve diğerleri dahil." }
       ]
     },
@@ -1278,7 +1368,7 @@ window.eugreenDetectLang = function () {
       about_online:
         "Invece di una sede centrale costosa, gestiamo uffici digitali online in tutta Europa. Serviamo ogni regione senza farvi pagare una filiale in ogni città. Abbiamo rinviato l'apertura di uffici fisici ovunque: il risparmio diventa il vostro sconto.",
       about_bundle:
-        "Chi chiede da solo spesso ottiene un prezzo singolo – es. 40.000 € per pompa di calore o fotovoltaico. Raggruppiamo la domanda nella vostra zona: lo stesso servizio può costare 35.000 € o meno. Stessa qualità, potere d'acquisto collettivo.",
+        "Chi chiede da solo spesso paga il prezzo pieno. Raggruppiamo la domanda nella vostra zona: lo stesso servizio, spesso fino al 20% in meno. Stessa qualità, potere d'acquisto collettivo.",
       faq_sub: "Risposte alle domande principali",
       footer_callcenter: "Linea call center",
       faqItems: [
@@ -1287,7 +1377,7 @@ window.eugreenDetectLang = function () {
         { q: "Cosa succede all'appuntamento?", a: "A seconda del caso, in loco o online. Il team o partner esamina l'immobile, bollette, tetto, isolamento o temperature e dimensionamento in m². Spieghiamo gli incentivi. Tutto fino al preventivo è gratuito. Accettate se vi convince – altrimenti rifiutate." },
         { q: "Come riunite così tante persone?", a: "Da anni collaboriamo con aziende leader in Europa. Con canali mirati raggiungiamo chi ha un bisogno energetico reale. I call center feriali contattano in modo mirato – si formano rapidamente raggruppamenti regionali." },
         { q: "La domanda è alta?", a: "Sì. Incentivi, prezzi in aumento e desiderio di indipendenza (solare, accumulo, pompe di calore) spingono la domanda. Agire presto spesso significa incentivi e prezzi raggruppati migliori." },
-        { q: "Perché i prezzi sono spesso più bassi con EuGreen?", a: "Perché raggruppiamo più richieste nella vostra regione. I fornitori offrono sconti volume o regionali – es. 35.000 € invece di 40.000 € per lo stesso servizio." },
+        { q: "Perché i prezzi sono spesso più bassi con EuGreen?", a: "Perché raggruppiamo più richieste nella vostra regione. I fornitori offrono sconti volume o regionali – spesso fino al 20% di risparmio per lo stesso servizio." },
         { q: "In quali paesi siete attivi?", a: "18 mercati UE con uffici online e team regionali – tra cui Germania (Berlino, Monaco, Amburgo, Colonia, Francoforte), Francia, Benelux, Italia, Iberia e altri." }
       ]
     },
@@ -1295,7 +1385,7 @@ window.eugreenDetectLang = function () {
       about_online:
         "In plaats van een duur hoofdkantoor werken we met digitale online kantoren in heel Europa. Zo bedienen we elke regio zonder dat u filialen in elke stad betaalt. Fysieke kantoren hebben we bewust uitgesteld – de besparing is uw korting.",
       about_bundle:
-        "Alleen aanvragen levert vaak een enkelprijs op – bv. €40.000 voor warmtepomp of zonnepanelen. Wij bundelen vraag in uw regio: dezelfde dienst kost vaak €35.000 of minder. Zelfde kwaliteit, collectieve inkoopkracht.",
+        "Alleen aanvragen levert vaak de volle prijs op. Wij bundelen vraag in uw regio: dezelfde dienst, vaak tot 20% goedkoper. Zelfde kwaliteit, collectieve inkoopkracht.",
       faq_sub: "Antwoorden op uw belangrijkste vragen",
       footer_callcenter: "Callcenter-lijn",
       faqItems: [
@@ -1304,7 +1394,7 @@ window.eugreenDetectLang = function () {
         { q: "Wat gebeurt er bij de afspraak?", a: "Op locatie of online. Ons team of partner bekijkt het pand, rekeningen, dak, isolatie of temperaturen en m²-meting. Subsidies worden uitgelegd. Alles tot de offerte is gratis. Accepteer of weiger zonder verplichting." },
         { q: "Hoe brengen jullie zoveel mensen samen?", a: "Jarenlang werken we met toonaangevende bedrijven in Europa. Via gerichte kanalen bereiken we mensen met echte energiebehoefte. Weekdag-callcenters bouwen snel regionale bundels." },
         { q: "Is de vraag hoog?", a: "Ja. Subsidies, stijgende prijzen en onafhankelijkheid (zonnepanelen, opslag, warmtepomp) drijven de vraag. Vroeg handelen loont vaak." },
-        { q: "Waarom zijn prijzen via EuGreen vaak lager?", a: "We bundelen meerdere aanvragen in uw regio. Leveranciers geven volumekorting – bv. €35k i.p.v. €40k voor dezelfde dienst." },
+        { q: "Waarom zijn prijzen via EuGreen vaak lager?", a: "We bundelen meerdere aanvragen in uw regio. Leveranciers geven volumekorting – vaak tot 20% besparing voor dezelfde dienst." },
         { q: "In welke landen bent u actief?", a: "18 EU-markten met online kantoren – o.a. Duitsland (Berlijn, München, Hamburg, Keulen, Frankfurt), Frankrijk, Benelux, Italië, Iberië en meer." }
       ]
     },
@@ -1312,7 +1402,7 @@ window.eugreenDetectLang = function () {
       about_online:
         "Zamiast drogiej centrali działamy przez cyfrowe biura online w całej Europie. Obsługujemy każdy region bez przerzucania kosztów oddziałów w każdym mieście na Państwa. Oszczędności to Państwa rabat.",
       about_bundle:
-        "Samodzielne zapytanie często daje cenę indywidualną – np. 40 000 € za pompę ciepła lub fotowoltaikę. Łączymy popyt w regionie: ta sama usługa często 35 000 € lub mniej. Ta sama jakość, siła zakupu grupowego.",
+        "Samodzielne zapytanie często oznacza pełną cenę. Łączymy popyt w regionie: ta sama usługa, często do 20% taniej. Ta sama jakość, siła zakupu grupowego.",
       faq_sub: "Odpowiedzi na najważniejsze pytania",
       footer_callcenter: "Infolinia call center",
       faqItems: [
@@ -1321,7 +1411,7 @@ window.eugreenDetectLang = function () {
         { q: "Co dzieje się na spotkaniu?", a: "Na miejscu lub online. Zespół sprawdza budynek, rachunki, dach, izolację, temperatury i m². Wyjaśniamy dotacje. Wszystko do oferty jest gratis. Akceptujesz lub odrzucasz bez zobowiązania." },
         { q: "Skąd tyle osób w jednym pakiecie?", a: "Od lat współpracujemy z czołowymi firmami w Europie. Call center w dni robocze szybko buduje regionalne pakiety." },
         { q: "Czy popyt jest duży?", a: "Tak. Dotacje, ceny energii i niezależność (PV, magazyn, pompa) zwiększają popyt. Wczesne działanie się opłaca." },
-        { q: "Dlaczego ceny przez EuGreen są niższe?", a: "Łączymy kilka zapytań w regionie. Dostawcy dają rabaty – np. 35 000 € zamiast 40 000 € za tę samą usługę." },
+        { q: "Dlaczego ceny przez EuGreen są niższe?", a: "Łączymy kilka zapytań w regionie. Dostawcy dają rabaty – często do 20% taniej za tę samą usługę." },
         { q: "W jakich krajach działacie?", a: "18 rynków UE z biurami online – m.in. Niemcy (Berlin, Monachium, Hamburg, Kolonia, Frankfurt), Francja, Beneluks, Włochy, Iberia i inne." }
       ]
     },
@@ -1329,7 +1419,7 @@ window.eugreenDetectLang = function () {
       about_online:
         "Em vez de uma sede central cara, operamos escritórios digitais online em toda a Europa. Servimos cada região sem repassar o custo de uma filial em cada cidade. A poupança torna-se o seu desconto.",
       about_bundle:
-        "Um pedido isolado costuma ter preço individual – ex. 40.000 € por bomba de calor ou solar. Agrupamos procura na sua zona: o mesmo serviço pode custar 35.000 € ou menos. Mesma qualidade, poder de compra coletivo.",
+        "Um pedido isolado costuma pagar o preço cheio. Agrupamos procura na sua zona: o mesmo serviço, muitas vezes até 20% mais barato. Mesma qualidade, poder de compra coletivo.",
       faq_sub: "Respostas às suas perguntas principais",
       footer_callcenter: "Linha de call center",
       faqItems: [
@@ -1338,7 +1428,7 @@ window.eugreenDetectLang = function () {
         { q: "O que acontece na marcação?", a: "No local ou online. A equipa analisa o imóvel, faturas, telhado, isolamento ou temperaturas e m². Explicamos apoios públicos. Tudo até ao orçamento é grátis. Aceite ou recuse sem compromisso." },
         { q: "Como reúnem tantas pessoas?", a: "Há anos que trabalhamos com empresas líderes na Europa. Os call centers em dias úteis criam rapidamente agrupamentos regionais." },
         { q: "A procura é alta?", a: "Sim. Subsídios, preços da energia e independência (solar, armazenamento, bomba) aumentam a procura. Agir cedo compensa." },
-        { q: "Porque os preços são muitas vezes mais baixos?", a: "Agrupamos vários pedidos na região. Fornecedores dão descontos – ex. 35.000 € em vez de 40.000 € pelo mesmo serviço." },
+        { q: "Porque os preços são muitas vezes mais baixos?", a: "Agrupamos vários pedidos na região. Fornecedores dão descontos – muitas vezes até 20% de poupança pelo mesmo serviço." },
         { q: "Em que países estão ativos?", a: "18 mercados da UE com escritórios online – incluindo Alemanha (Berlim, Munique, Hamburgo, Colónia, Frankfurt), França, Benelux, Itália, Ibéria e mais." }
       ]
     }
