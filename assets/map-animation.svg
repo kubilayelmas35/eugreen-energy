@@ -1,0 +1,2000 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="483" height="480" viewBox="0 0 483 480" fill="none">
+    <style>
+        @keyframes a0_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            88.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.7, 0, .4, .9);
+            }
+
+            100% {
+                stroke-dasharray: 64.0875px 1000px;
+            }
+        }
+
+        @keyframes a0_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            95% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .8, .5);
+            }
+
+            100% {
+                stroke-dashoffset: -36.2px;
+            }
+        }
+
+        @keyframes a1_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            85.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            99.167% {
+                stroke-dasharray: 105px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 105px 1000px;
+            }
+        }
+
+        @keyframes a1_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            92.5% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.7, 0, .6, .8);
+            }
+
+            100% {
+                stroke-dashoffset: -102.4px;
+            }
+        }
+
+        @keyframes a2_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            83.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            96.667% {
+                stroke-dasharray: 155px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 155px 1000px;
+            }
+        }
+
+        @keyframes a2_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            90% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -160px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+        }
+
+        @keyframes a3_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            83.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            96.667% {
+                stroke-dasharray: 150px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 150px 1000px;
+            }
+        }
+
+        @keyframes a3_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            90% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -150px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+        }
+
+        @keyframes a4_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            80.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            94.167% {
+                stroke-dasharray: 135px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 135px 1000px;
+            }
+        }
+
+        @keyframes a4_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            87.5% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            97.5% {
+                stroke-dashoffset: -140px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -140px;
+            }
+        }
+
+        @keyframes a5_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            78.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            91.667% {
+                stroke-dasharray: 275px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 275px 1000px;
+            }
+        }
+
+        @keyframes a5_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            85% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            95% {
+                stroke-dashoffset: -280px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -280px;
+            }
+        }
+
+        @keyframes a6_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            92.5% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.7, 0, .8, .6);
+            }
+
+            100% {
+                stroke-dasharray: 91.5517px 1000px;
+            }
+        }
+
+        @keyframes a6_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            99.167% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.4, .2, .7, .5);
+            }
+
+            100% {
+                stroke-dashoffset: -1.7px;
+            }
+        }
+
+        @keyframes a7_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            75.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            89.167% {
+                stroke-dasharray: 260px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 260px 1000px;
+            }
+        }
+
+        @keyframes a7_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            82.5% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            92.5% {
+                stroke-dashoffset: -260px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -260px;
+            }
+        }
+
+        @keyframes a8_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            73.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            86.667% {
+                stroke-dasharray: 395px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 395px 1000px;
+            }
+        }
+
+        @keyframes a8_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            80% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            90% {
+                stroke-dashoffset: -400px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -400px;
+            }
+        }
+
+        @keyframes a9_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            70.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            84.167% {
+                stroke-dasharray: 115px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 115px 1000px;
+            }
+        }
+
+        @keyframes a9_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            77.5% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            87.5% {
+                stroke-dashoffset: -120px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -120px;
+            }
+        }
+
+        @keyframes a10_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            87.5% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.7, 0, .4, .9);
+            }
+
+            100% {
+                stroke-dasharray: 134.565px 1000px;
+            }
+        }
+
+        @keyframes a10_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            94.167% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.7, 0, .8, .6);
+            }
+
+            100% {
+                stroke-dashoffset: -101.3px;
+            }
+        }
+
+        @keyframes a11_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            68.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            81.667% {
+                stroke-dasharray: 255px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 255px 1000px;
+            }
+        }
+
+        @keyframes a11_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            75% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            85% {
+                stroke-dashoffset: -260px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -260px;
+            }
+        }
+
+        @keyframes a12_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            76.667% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            90% {
+                stroke-dasharray: 125px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 125px 1000px;
+            }
+        }
+
+        @keyframes a12_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            83.333% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            84.983% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            85% {
+                stroke-dashoffset: -130px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -130px;
+            }
+        }
+
+        @keyframes a13_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            65.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            79.167% {
+                stroke-dasharray: 280px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 280px 1000px;
+            }
+        }
+
+        @keyframes a13_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            72.5% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            82.5% {
+                stroke-dashoffset: -280px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -280px;
+            }
+        }
+
+        @keyframes a14_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            63.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            76.667% {
+                stroke-dasharray: 80px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            100% {
+                stroke-dasharray: 80px 1000px;
+            }
+        }
+
+        @keyframes a14_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            70% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            80% {
+                stroke-dashoffset: -90px;
+                animation-timing-function: steps(1);
+            }
+
+            100% {
+                stroke-dashoffset: -90px;
+            }
+        }
+
+        @keyframes a15_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            60.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            74.167% {
+                stroke-dasharray: 250px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            99.167% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.4, .2, .7, .5);
+            }
+
+            100% {
+                stroke-dasharray: 1.91272px 1000px;
+            }
+        }
+
+        @keyframes a15_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            67.5% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            77.5% {
+                stroke-dashoffset: -260px;
+                animation-timing-function: steps(1);
+            }
+
+            100% {
+                stroke-dashoffset: -260px;
+            }
+        }
+
+        @keyframes a16_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            58.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            71.667% {
+                stroke-dasharray: 150px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            96.667% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.4, .1, .7, .4);
+            }
+
+            100% {
+                stroke-dasharray: 13.0845px 1000px;
+            }
+        }
+
+        @keyframes a16_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            65% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            75% {
+                stroke-dashoffset: -160px;
+                animation-timing-function: steps(1);
+            }
+
+            96.667% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.4, .1, .7, .5);
+            }
+
+            100% {
+                stroke-dashoffset: -5px;
+            }
+        }
+
+        @keyframes a17_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            55.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            69.167% {
+                stroke-dasharray: 290px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            94.167% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .8, .5);
+            }
+
+            100% {
+                stroke-dasharray: 102.626px 1000px;
+            }
+        }
+
+        @keyframes a17_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            62.5% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            72.5% {
+                stroke-dashoffset: -300px;
+                animation-timing-function: steps(1);
+            }
+
+            94.167% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.4, .1, .7, .4);
+            }
+
+            100% {
+                stroke-dashoffset: -28.3px;
+            }
+        }
+
+        @keyframes a18_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            53.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            66.667% {
+                stroke-dasharray: 320px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            91.667% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.7, 0, .7, .6);
+            }
+
+            100% {
+                stroke-dasharray: 255.4px 1000px;
+            }
+        }
+
+        @keyframes a18_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            60% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            70% {
+                stroke-dashoffset: -320px;
+                animation-timing-function: steps(1);
+            }
+
+            91.667% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.5, .1, .8, .5);
+            }
+
+            100% {
+                stroke-dashoffset: -71.2px;
+            }
+        }
+
+        @keyframes a19_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            50.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            64.167% {
+                stroke-dasharray: 143px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            89.167% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.7, 0, .5, .8);
+            }
+
+            100% {
+                stroke-dasharray: 138.035px 1000px;
+            }
+        }
+
+        @keyframes a19_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            57.5% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            67.5% {
+                stroke-dashoffset: -150px;
+                animation-timing-function: steps(1);
+            }
+
+            89.167% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .8, .5);
+            }
+
+            100% {
+                stroke-dashoffset: -69.9px;
+            }
+        }
+
+        @keyframes a20_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            56.667% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            70% {
+                stroke-dasharray: 160px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            95% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.5, .1, .8, .5);
+            }
+
+            100% {
+                stroke-dasharray: 36.7955px 1000px;
+            }
+        }
+
+        @keyframes a20_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            63.333% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            73.333% {
+                stroke-dashoffset: -170px;
+                animation-timing-function: steps(1);
+            }
+
+            95% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.4, .1, .7, .5);
+            }
+
+            100% {
+                stroke-dashoffset: -8.8px;
+            }
+        }
+
+        @keyframes a21_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            79.167% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            92.5% {
+                stroke-dasharray: 200px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dasharray: 200px 1000px;
+            }
+        }
+
+        @keyframes a21_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            85.833% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            95.833% {
+                stroke-dashoffset: -200px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -200px;
+            }
+        }
+
+        @keyframes a22_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            43.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            56.667% {
+                stroke-dasharray: 198px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            75.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            89.167% {
+                stroke-dasharray: 198px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 198px 1000px;
+            }
+        }
+
+        @keyframes a22_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            50% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            60% {
+                stroke-dashoffset: -200px;
+                animation-timing-function: steps(1);
+            }
+
+            75.833% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            96.667% {
+                stroke-dashoffset: -200px;
+            }
+
+            100% {
+                stroke-dashoffset: -200px;
+            }
+        }
+
+        @keyframes a23_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            55.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            69.167% {
+                stroke-dasharray: 260px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            88.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.7, 0, .4, .9);
+            }
+
+            100% {
+                stroke-dasharray: 256.35px 1000px;
+            }
+        }
+
+        @keyframes a23_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            62.5% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            72.5% {
+                stroke-dashoffset: -270px;
+                animation-timing-function: steps(1);
+            }
+
+            88.333% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.7, 0, .8, .6);
+            }
+
+            100% {
+                stroke-dashoffset: -181.5px;
+            }
+        }
+
+        @keyframes a24_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            82.5% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            95.833% {
+                stroke-dasharray: 225px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 225px 1000px;
+            }
+        }
+
+        @keyframes a24_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            89.167% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            99.167% {
+                stroke-dashoffset: -230px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dashoffset: -230px;
+            }
+        }
+
+        @keyframes a25_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            38.325% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            51.658% {
+                stroke-dasharray: 263px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            90.833% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.7, 0, .6, .7);
+            }
+
+            100% {
+                stroke-dasharray: 231.038px 1000px;
+            }
+        }
+
+        @keyframes a25_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            44.992% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            55% {
+                stroke-dashoffset: -270px;
+                animation-timing-function: steps(1);
+            }
+
+            90.833% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .8, .5);
+            }
+
+            100% {
+                stroke-dashoffset: -97px;
+            }
+        }
+
+        @keyframes a26_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            53.325% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            66.65% {
+                stroke-dasharray: 136px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            88.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.7, 0, .4, .9);
+            }
+
+            100% {
+                stroke-dasharray: 134.109px 1000px;
+            }
+        }
+
+        @keyframes a26_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            59.983% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            69.983% {
+                stroke-dashoffset: -140px;
+                animation-timing-function: steps(1);
+            }
+
+            88.325% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.7, 0, .8, .6);
+            }
+
+            100% {
+                stroke-dashoffset: -94.3px;
+            }
+        }
+
+        @keyframes a27_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            49.992% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            63.317% {
+                stroke-dasharray: 98px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 98px 1000px;
+            }
+        }
+
+        @keyframes a27_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            56.65% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            66.65% {
+                stroke-dashoffset: -110px;
+            }
+
+            100% {
+                stroke-dashoffset: -110px;
+            }
+        }
+
+        @keyframes a28_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            31.658% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            44.992% {
+                stroke-dasharray: 184px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 184px 1000px;
+            }
+        }
+
+        @keyframes a28_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            38.325% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            48.325% {
+                stroke-dashoffset: -190px;
+            }
+
+            100% {
+                stroke-dashoffset: -190px;
+            }
+        }
+
+        @keyframes a29_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            29.992% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            43.317% {
+                stroke-dasharray: 181px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            75% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            88.325% {
+                stroke-dasharray: 181px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 181px 1000px;
+            }
+        }
+
+        @keyframes a29_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            36.658% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            46.65% {
+                stroke-dashoffset: -190px;
+                animation-timing-function: steps(1);
+            }
+
+            81.667% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            91.658% {
+                stroke-dashoffset: -190px;
+            }
+
+            100% {
+                stroke-dashoffset: -190px;
+            }
+        }
+
+        @keyframes a30_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            58.317% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            71.658% {
+                stroke-dasharray: 118px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 118px 1000px;
+            }
+        }
+
+        @keyframes a30_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            64.992% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            74.992% {
+                stroke-dashoffset: -128px;
+            }
+
+            100% {
+                stroke-dashoffset: -128px;
+            }
+        }
+
+        @keyframes a31_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            29.983% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            43.325% {
+                stroke-dasharray: 169px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            84.167% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            97.508% {
+                stroke-dasharray: 169px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 169px 1000px;
+            }
+        }
+
+        @keyframes a31_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            36.658% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            46.658% {
+                stroke-dashoffset: -179px;
+                animation-timing-function: steps(1);
+            }
+
+            90.842% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.7, 0, .4, .9);
+            }
+
+            100% {
+                stroke-dashoffset: -177.9px;
+            }
+        }
+
+        @keyframes a32_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            86.65% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dasharray: 57px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 57px 1000px;
+            }
+        }
+
+        @keyframes a32_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            93.317% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.7, 0, .7, .7);
+            }
+
+            100% {
+                stroke-dashoffset: -53.1px;
+            }
+        }
+
+        @keyframes a33_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            18.325% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            31.658% {
+                stroke-dasharray: 178px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            90% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.7, 0, .6, .8);
+            }
+
+            100% {
+                stroke-dasharray: 165.766px 1000px;
+            }
+        }
+
+        @keyframes a33_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            24.983% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            34.992% {
+                stroke-dashoffset: -188px;
+                animation-timing-function: steps(1);
+            }
+
+            96.658% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.5, .1, .8, .5);
+            }
+
+            100% {
+                stroke-dashoffset: -32px;
+            }
+        }
+
+        @keyframes a34_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            46.65% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            59.983% {
+                stroke-dasharray: 334px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 334px 1000px;
+            }
+        }
+
+        @keyframes a34_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            53.317% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            63.325% {
+                stroke-dashoffset: -344px;
+            }
+
+            100% {
+                stroke-dashoffset: -344px;
+            }
+        }
+
+        @keyframes a35_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            63.317% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            76.65% {
+                stroke-dasharray: 124px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 124px 1000px;
+            }
+        }
+
+        @keyframes a35_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            69.983% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            79.992% {
+                stroke-dashoffset: -134px;
+            }
+
+            100% {
+                stroke-dashoffset: -134px;
+            }
+        }
+
+        @keyframes a36_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            53.325% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            66.65% {
+                stroke-dasharray: 163px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 163px 1000px;
+            }
+        }
+
+        @keyframes a36_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            59.992% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            69.992% {
+                stroke-dashoffset: -173px;
+            }
+
+            100% {
+                stroke-dashoffset: -173px;
+            }
+        }
+
+        @keyframes a37_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            8.325% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            21.65% {
+                stroke-dasharray: 100px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            62.5% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            75.825% {
+                stroke-dasharray: 100px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 100px 1000px;
+            }
+        }
+
+        @keyframes a37_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            14.992% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            24.983% {
+                stroke-dashoffset: -110px;
+                animation-timing-function: steps(1);
+            }
+
+            69.167% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            79.158% {
+                stroke-dashoffset: -110px;
+            }
+
+            100% {
+                stroke-dashoffset: -110px;
+            }
+        }
+
+        @keyframes a38_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            73.317% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            86.65% {
+                stroke-dasharray: 90px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 90px 1000px;
+            }
+        }
+
+        @keyframes a38_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            79.983% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            89.983% {
+                stroke-dashoffset: -100px;
+            }
+
+            100% {
+                stroke-dashoffset: -100px;
+            }
+        }
+
+        @keyframes a39_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            3.317% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            16.65% {
+                stroke-dasharray: 56px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            86.667% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            100% {
+                stroke-dasharray: 56px 1000px;
+            }
+        }
+
+        @keyframes a39_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            9.983% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            19.983% {
+                stroke-dashoffset: -66px;
+                animation-timing-function: steps(1);
+            }
+
+            93.333% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.7, 0, .7, .7);
+            }
+
+            100% {
+                stroke-dashoffset: -56.4px;
+            }
+        }
+
+        @keyframes a40_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+            }
+
+            75% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            88.317% {
+                stroke-dasharray: 206px 1000px;
+            }
+
+            100% {
+                stroke-dasharray: 206px 1000px;
+            }
+        }
+
+        @keyframes a40_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            81.65% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            91.65% {
+                stroke-dashoffset: -216px;
+            }
+
+            100% {
+                stroke-dashoffset: -216px;
+            }
+        }
+
+        @keyframes a41_da {
+            0% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            13.317% {
+                stroke-dasharray: 97px 1000px;
+                animation-timing-function: steps(1);
+            }
+
+            93.333% {
+                stroke-dasharray: 0px 1000px;
+                animation-timing-function: cubic-bezier(.6, 0, .8, .5);
+            }
+
+            100% {
+                stroke-dasharray: 50.304px 1000px;
+            }
+        }
+
+        @keyframes a41_do {
+            0% {
+                stroke-dashoffset: 0px;
+            }
+
+            6.65% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+            }
+
+            16.65% {
+                stroke-dashoffset: -97px;
+                animation-timing-function: steps(1);
+            }
+
+            99.983% {
+                stroke-dashoffset: 0px;
+                animation-timing-function: cubic-bezier(.3, .3, .7, .7);
+            }
+
+            100% {
+                stroke-dashoffset: -0px;
+            }
+        }
+    </style>
+    <g>
+        <g>
+            <path
+                d="M136.6 252.8c-1.1-0.4-2.2-0.8-3.3-1.2c-2.6-1.2-4.8-2.9-6.4-5.3c-0.8-1.3-1.3-3.3-2.6-4.2c-0.8-0.5-1.3-1.4-1.3-2.3c0-0.9 .3-1.9 1.1-2.4c.4-0.3 .7-0.4 1.1-0.5c.1 0 .1 0 .2 0c0-0.1 0-0.1 .1-0.2c.8-1.8 .2-2.9-0.8-4.8c-0.9-1.8-2-3.5-3-5.2c-2.1-3.5-4-7.1-5.7-10.8c-0.8-1.6-1.4-3.4-1.4-5.3c-0.1-1.4 .2-3.2-0.6-4.5c-1.6-2.5-4.9-2.1-6.6-4.3c-3.6-4.5 1.7-7.4 5.4-8.7c2.7-0.9 4.3-3.1 5.6-5.5c1-1.8 3.5-6 2.1-8.2c-3.4-5.4-10.6 .8-15.1 1.4c-0.7 .1-1.3-0.6-1.5-1.1c-1.1-3.2-0.5-6.3 2.5-8.1c2.3-1.4 5.7-2 7.9-3.8c-1.8-0.5-3.7-0.3-5.6-0.5c-1.6-0.2-3.1-0.9-4.5-1.6c-1.5-0.7-2.7-1.3-3.8 .6c-0.5 .9-0.9 1.7-1.1 2.6c-0.4 1.5-1 2.7-1.9 4c-0.3 .4-0.7 .6-1.2 .6c0 0-0.2 .1-0.5 .2c-0.2 .2-0.5 .4-0.8 .5c-0.1 .1-0.2 .2-0.3 .4c-0.2 .4-0.5 .9-1.1 1c-2.3 .7-3.7 .9-5-0.7c-0.9 .6-1.7 1.2-2.1 2c-0.1 .1-0.2 .2-0.3 .2c.3 0 .5 0 .7 .1c1.9 .3 4.8 2.1 5.7 3.8c1 1.8-0.6 4.6-2.1 5.5c-1.1 .8-2.2 .2-2.2 1.9c-0.1 2.1 .4 5.4 3.6 2.6c1.3-1.1 3.1 .3 2.3 1.9c-1.7 3.3-6.2 5.5-6.2 9.6c.1-0.1 .3-0.2 .4-0.3c.5-0.5 .9-0.9 1.4-1.4c.7-0.7 1.3-1.5 2.1-2.2c1.3-1 4-2 5.4-0.6c1.4 1.5 .5 3.7-0.3 5.2c-1.3 2.4-2.9 4.5-4.4 6.8c-1.2 1.8-1.8 3.8 1.5 3.7c1.6-0.1 3.1-0.4 4.7-0.3c2.3 0 5.2 2.3 4.3 5c-0.5 1.4-1.4 2.2-2.4 3.3c-0.7 .8 1.4 .8 1.6 .9c.6 .2 1 .4 1.5 .7c0 0 0 0 0 0c.1 .1 .2 .1 .2 .2c.1 0 .1 0 .1 0c.5 .4 .6 .8 .5 1.3c.2 .4 .4 .8 .7 1.2c.2 .4 .4 .8 .7 1.2c.4 .7 .5 .6 .2 .5c.6 .2 1 .7 1.1 1.4c.1 2.6-1.4 4.3-2.8 6.4c-1.3 1.8-2.7 4-4.7 5.1c-2 1-3.9 1.3-6 .5c-1.4-0.5-2.9-2.1-4.5-2.8c1 3.3 1.2 6.8 .6 10.3c-0.4 2.5-1.2 4.9-3.7 6c-1.4 .6-3.1 .9-4.4 1.7c-0.8 .5-3 1.2-1.3 1.8c1.1 .3 2.2 .5 3.3 .7c3.5 .8 5.9 2.2 8.4 4.7c.2 .1 .2 .3 .3 .4c3.3 .1 6.9 2.1 4.8 5.8c-2.2 3.6-8.9 2.7-12.3 3.1c-5.5 .6-7.6 5.2-12 7.7c-0.4 .2-2.1 .7-1 .7c.6 0 1.1-0.1 1.6-0.2c1.2-0.2 2.3-0.4 3.4-0.7c2.2-0.7 4.2-1.1 6.4-0.3c1.2 .4 2.7 1.4 3.9 .7c1.1-0.6 2.1-1.3 3.2-1.9c2.3-1.2 5.3-0.3 7.8-0.2c7 .4 13.9 1.7 21 1.8c3.2 0 6.5-0.2 9.4-1.5c1.3-0.6 6.4-2.4 3.6-4c-0.8-0.4-1.9-1.6-2.8-1.8c-0.5-0.1-1-0.1-1.4-0.5c-0.9-0.9-0.4-2.2-0.2-3.4c.3-1.6 2.5-3.4 3.3-4.9c1.6-2.7 4.8-4.2 6.3-7c1-1.9 1.5-3.6-0.8-4.5Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M18.2 376.6c.8 2.2 1.1 4.5 .3 6.7c2.9 3.4 5.9 7.1 10.5 8.1c4 .8 6.4 1.3 9 4.5c1.9 2.4 5.4 6.1 3.1 9.4c-2.8 4-8.1 3.8-11.2 7.3c-3.3 3.6 .2 9.2-2.5 13.2c-1.1 1.5-3.4 1.9-2.5 3.8c.7 1.7 1.1 3.3 1.2 5.1c.3 4.3-0.7 7.9-2.5 11.8c-0.8 1.6-1.7 3.1-3 4.4c-0.5 .5-1.3 .7-1.7 1.3c-0.6 .7-0.7 1.7-0.6 2.7c1.6-0.4 3.1-0.2 4.8 .9c2.3 1.6 5 4 6.2 6.7c1.6 3.9 1.5 10.2 7.2 10c3.7-0.1 6.7-2 9.8-3.7c2.8-1.5 6-2.8 9-1.1c1.6 .9 3 1.9 5 1.9c1.7 0 3.4 0 5.1 .2c3.8 .5 7.4 2.5 11.2 2.1c2.4-0.2 2.4-2.2 3.4-3.8c.8-1.2 1.6-2.1 2.9-2.6c1.5-0.7 3.2-0.5 4.8-1c2.3-0.6 2.7-2.9 3.5-4.8c.9-2.6 2.7-4.5 5.1-5.7c1.2-0.6 6.6-2.3 5.9-4.2c-1-2.8-4-4.3-5.2-7.1c-1.2-2.9 .2-5.7 2.3-7.9c2.7-2.9 5.8-5.5 9.1-7.8c7.2-5 15.2-8.4 22.9-12.5c.1-0.5 .6-0.9 1.3-0.8c3.2 .3 5.1-3.8 5-6.5c0-0.3 0-0.6-0.1-1c-3.1-0.3-6.3 .4-9.3-0.3c-1.7-0.4-4.7-0.7-5.8-2.3c-0.5-0.7-0.5-1.7-1-2.4c-0.8-1.1-1.9-2.4-3.2-3c-2.7-1.3-6.1-0.9-9-1.5c-2.9-0.5-6.1 0-8.9-1.1c-1.7-0.7-3.4-1.7-4.9-2.9c-2.4-1.9-5.4-4.3-6.5-7.4c-1.6 .5-3.4 .4-5.4-0.2c-4.3-1.4-8.2-3.3-12.6-4.2c-4.2-0.8-8.5-1.4-12.6-2.8c-8.1-2.6-15.8-8.1-24.4-9.4c-4.9-0.8-9.4 1.2-14 2.6c-1.1 .3-3.3 .7-2.8 2.3c.3 1 .8 2 1.1 3Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M105.3 306.3c-1.9 4.6-8.7 2.9-13.1 1.3l-11.2 9.1c4.2 1.4 7.5 3.6 10.4 7c2.5 2.8 3.8 5.2 3.8 9c0 3 1.7 5.9 3.3 8.4c1.7 2.8 5 3.5 6.4 6.7c1.1 2.6 .7 5.9-0.1 8.5c-0.9 3.5-2.5 6.8-4 10.1c-1.4 3.1-2.1 6.4-3.3 9.6c-1.2 3.2-3.2 6.3-5.8 8c1 3.5 5.3 6.5 8.2 8.1c2.2 1.2 4.3 1.2 6.7 1.3c2.6 .2 5.2 .7 7.9 1c3.8 .3 8.8 2.1 10 6.3c.6 2.2 5.1 2.5 7 2.5c1.9-0.1 3.8-0.1 5.7 0c0-1 0-2.1 .2-3c1-3.8 3.9-6.1 7.2-7.7c3.6-1.6 8-2.4 11.9-1.5c2.8 .5 5.6 1.5 8 3.1c2.1 1.3 4.8 3.7 7.4 3.5c4.3-0.2 8.4-3.6 11.8-6c1.5-1.2 3.1-2.3 4.8-3.5c-1.4-1.5-2.9-2.8-4.3-4.4c-1.3-1.4-2.2-3-3.5-4.5c-1.7-1.9-4.2-4.6-2.7-7.4c2.4-4.3 .9-8.5 .4-13.1c-0.2-1 .6-4.3-0.8-4.2c-1.4 0-2.7 .2-4 .1c-1 0-1.8-0.9-1.5-1.9c1.3-4.1 3-8 6.3-10.9c3.9-3.2 5.6-7.2 8-11.5c2.2-4 2.4-8.6 5.1-12.5c1-1.4 1.9-2.2 0-3.1c-2-0.9-4.1-1.7-6-2.9c-2.2-1.3-4.3-3-6.8-3.8c-1.8-0.7-3.6-1.3-5.4-2c-4.1-1.9-7.9-4.7-11.8-7c-4.2-2.5-7.9-5.4-11.2-9c-2.7-3-4.5-7.7-7.8-9.9c-0.7 .4-1.3 .9-1.8 1.4c-2.5 2.5-3.9 5.6-5.8 8.4c-3.6 5.2-11.1 5.6-14.4 10.8c-0.1 .6-0.5 1.1-1.2 1.2c0 0-0.1 0-0.1 0c0 0-0.1 0-0.1 .1c0 0-0.1 0-0.1 0c0 0 0 0 0 0c-2.5 0-5 .4-7.5-0.3l-6.2 4.6Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M178.6 304.8c4.8 1.7 8.6 5 13.3 6.9c2.3 .9 4.6 2.4 3.6 5.2c-0.6 1.7-2 3-2.8 4.6c-1.2 2.3-1.6 5-2.5 7.4c-0.5 1.4-1.1 2.8-1.7 4.2c2.7 .7 5.6-0.7 8.2-1.3c2.5-0.6 4.5-0.2 6.9 .4c2.7 .6 5.2 1.3 7.6 2.7c.9 .5 1.2 .3 .7 .9c.1-0.1 .3-0.3 .4-0.5c.6-0.8 1.4-1.8 2.2-2.3c2.1-1.1 3.5-0.3 5.5 .3c3 1.1 6.8 1.6 9.8 .5c2.3-0.9 5-2.5 7.6-2c1.2 .3 3 2 4.4 2.8c-0.8-2.8-2.7-5.6-0.8-8.4c2.4-3.3 5.8-5.5 8.8-8.3c-2.2-0.9-4.8-1-6.6-2.8c-2.2-2.1-4.5-4.8-6-7.5c-1.4-2.5-3.2-5.4-4.2-8.2c-0.6-1.8-0.3-3.5 .9-5c1.7-2.1 3.4-3.4 6-4.1c1.4-0.4 3.2-0.6 4-2c.4-0.9 .9-1.9 1.7-2.5c2.1-1.7 4.4-1.7 7-1.8c1.2-0.1 2.4-0.3 3.6 0c.8 .3 1.5 .6 2.3 .8c-0.7-2.8-2.8-5.1-2.9-8.2c-0.2-4.8 0-8.7-3.9-12c-2.8-2.4-2.7-5.3-2.1-8.6c.6-3.6 .5-7.5 .5-11.2c-0.1 0-0.1 0-0.1 0c-2.3 0-3.8-2.3-4.6-4.2c-0.7-1.9-1.2-3.9-3.2-5c-1.6-0.8-3.1-0.5-4.6 .5c-2.3 1.6-4.1 3.8-6.5 5.3c-5 3-9.3 0-12.3-4.2c-1.8-2.6-3.7-5.1-5.5-7.7c-0.3-0.4-0.5-0.7-0.7-1.1c-3.8 .4-7.9-0.3-10.9 2.3c-0.1 .1-0.2 .1-0.2 .2c0 .2 .1 .4 .2 .7c1.1 3.3 3.8 6 4.5 9.4c.5 2.2 .6 4.3-1 6.1c-1.7 1.8-5.1 1.3-7.2 .7c-1.8-0.5-3.2-0.8-5.2-0.4c-0.8 .2-1.7 .4-2.6 .5c-1 3.9-0.7 7.9-1.6 11.9c-0.7 3.4-2.2 6.2-4.5 8.8c-2.5 2.8-3.4 5.2-4 8.8c-0.5 2.3-1 4.5-2.3 6.4c.3 .3 .6 .5 .8 .8c2.6 3 3.3 6.6 2 10.3c-0.6 1.9-1.8 3.1-3.3 4.3c-1.6 1.4-1.4 2.7-1.3 4.6c.9 .3 1.7 .7 2.6 1Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M286.7 458c.5-3.1 .1-5.4 2.1-7.7c1.6-1.9-1.4-7.5-2.3-9c-3.5-6 1.1-10.1 6.2-6.3c3.7 0 5.8 .9 8.6 2.3c.3 .2 3.1 .5 2.5-0.5c-0.4-0.8-1.1-1.4-1.8-1.9c-3.1-2.6-6.9-4.4-10.5-6.2c-5.2-2.6-12.4-4.8-15.5-10.2c-1-1.9-1.7-3.7-4.3-3.7c-1.8 0-3.6 .3-5.4 .1c-3-0.5-5.8-2.1-7.7-4.5c-4.3-5.2-6.5-11.8-10.3-17.4c-1.4-1.9-2.8-3.8-4.6-5.4c-1.3-1.1-2.8-2-4.1-3c-2.3-2-3.5-4.4-3.3-7.5c.1-2.1 1.7-4.5 0-6.3c-0.7-0.7-1.4-1.5-1.8-2.4c-0.7-1.7-0.5-4.2 1.4-5.1c2.6-1.2 5.4-0.5 8-1.3c1.1-0.3 2.6-0.7 4-1c.1-1.6 .3-3.4-0.2-4.9c-0.4-1-1.6-2.4-1.5-3.6c0-1 .3-1.6 .8-2c-4.4 .1-9.6 .2-12.3-2.7c-0.9-0.9-1.3-1.9-1.8-3c-1.1-2.1-3.1-0.8-4.4 .4c-1.8 1.8-3.5 3.4-6.1 3.3c-0.3 .5-0.9 .9-1.8 1.1c-1.1 .2-2.9 .2-3.5 1.4c-0.4 .8-0.6 1.5-1 2.2c-0.8 1.5-2.4 2-3.9 1.8c-1.8-0.2-3.6-0.6-5.3-1.2c-1.7-0.6-2.1 6-2.3 7.3c-0.2 1.2-1.7 1.3-2.5 .6c-1.4-1.3-3-2.3-4.2-3.8c-0.8-1.1-1.4-2.4-2.1-3.6c-0.8 1.9-1 4.1-3.5 4.9c-2.2 .6-3.9-0.1-6.1 0c-1.7 0-3.2 .6-4.8 .9c.3 1.2 .6 2.4 .7 3.5c.3 2.1 .5 4.3-0.1 6.4c-0.2 1-0.6 1.8-1.1 2.8c-0.8 1.5 .4 2.6 1.3 3.6c1.5 1.7 2.6 3.6 4.1 5.2c1.6 1.7 3.2 3.2 4.7 4.9c.3-0.3 .7-0.5 1.1-0.8c4.2-2.7 11.4-7.7 16.7-4.6c5.1 2.9 6.3 9.4 9 14.1c4.1 6.9 10.9 13.2 17.1 18.1c3.6 2.9 7.4 5.6 11.4 7.8c3.3 1.8 6.3 4.1 9.7 5.7c3.6 1.7 7.1 3.4 10 6.2c3 2.8 5.6 6 8.4 9c2.1 2.3 5.1 4.4 6.5 7.3c1.2 2.5 .8 5.9 1 8.5c.2 3.3-0.4 5.5-1.6 8.4c-1.8 6.4 5.5-2.3 6.4-8.2Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M180 137.4c0 11.1-1.8 24.8 4.5 34.6c3.1 4.9 10.4 11 16.2 6.5c2.3-1.7 3.9-4 6.1-5.8c2.6-2.1 5.6-3.7 8.4-5.4c1.7-1 3.9-2.2 5.7-0.7c.3 .2 .5 .4 .7 .7c.1-0.1 .2-0.1 .3-0.1c4.4-1.9 5.8-9.9 6.8-14c.7-2.8 1.8-6 1.7-9c-0.1-2.4-1.3-4.8-0.2-7.1c.4-1.2 1.2-2.1 1.7-3.2c.5-0.9 .5-0.3-0.1-0.7c-1-0.8-1.9-1.6-2.7-2.6c-1.5-1.8-0.7-3.5 .1-5.3c1.2-2.5-1.2-3.1-1.8-5.2c-0.5-1.7-0.6-3.4-0.7-5.1c0-3.3 .7-6.4 2-9.3c.8-1.9 1.8-3.6 2.3-5.6c.3-1.2 .6-2.6 1.2-3.7c1.3-2.2 3.2-2.5 5.5-2.4c4 0 1.8-3.7 .9-5.4c-0.7-1.3-0.8-2.7-0.6-4.1c.1-1.5 .8-2.7 1.4-4c1-2.3 1.1-4.6 1.3-7.1c.5-3.9 2-6 4.1-9.1c1.9-3 3.2-6.4 3.8-9.9c.6-3.2 .3-6.6 2.3-9.3c1.4-2 3.8-3.1 5.8-4.4c.1-0.1 .2-0.2 .3-0.3c1.2-1.1-0.1-3.9 .5-5.4c.8-1.9 2.2-2.4 4.1-2.2c2.5 .2 5.5 4.8 7.2 .9c1-2.2 .8-4.7 1.3-7c.3-1.6 .9-4 2.7-4.6c1.6-0.6 3.1 .7 3.9 2c.9 1.4 1.4 3.1 2.2 4.4c.9 1.3 2.2 1.8 3.1 3c0 0 0 0 0 0c2.1-2.8 4-5 8-3.7c2.4 .7 1.9-3.6 1.8-5.1c0-1.6-0.2-3.4 .3-5.1c1.9-7.1 9.3-8.5 15.5-10.2c-0.2-1 0-2 .8-3c2.7-3.2-2.8-3.1-5-2.9c-3 .1-5.5-0.4-8.5-0.9c-1.8-0.4-3.5 .1-4.3 2.1c-0.2 .7-0.7 1-1.4 1.3c-2.3 .8-7-4.5-8.4-1.7c-1.1 2.3-1.9 4.3-4.5 5.2c-2.2 .7-3.1 1.9-4.5 3.6c-0.7 .8-1.6 1.8-2.7 1.8c-1.5 .1-1.4 2.1-1.9 3.1c-0.5 1.2-1.2 1.8-2.2 2.4c-0.1 .1-0.1 .1-0.2 .1c-1.4 .8-3.2 1.7-4.4 .2c-0.9-1.2-0.1-2.9 0-4.2c.1-2.8-2.5-1.5-3.5-0.2c-1.6 1.9-2.7 4-3.7 6.2c-1.8 3.8-2.8 8.6-6.5 11.2c-2.3 1.6-5.1 2-7.4 3.4c-1.9 1.2-2.7 3.4-3.8 5.4c5-0.7 8.9-4.6 13.8-6.1c1.1-0.3 2.1 .8 1.8 1.8c-0.5 2.2-2 3.5-3.7 4.9c-2.2 1.7-3.4 3.7-4.7 6.2c-2.9 5.6-6.6 10.5-8.4 16.7c-0.8 2.8-1.6 5.7-3 8.3c-1.2 2.4-4 4.8-4.6 7.4c-0.5 2.9-0.2 5.7-1.6 8.4c-1 2.2-2.4 4.2-4.2 5.8c-3.9 3.8-8.4 6.2-12.8 9.1c-2.7 1.7-4.1 4.2-6.3 6.3c-1.9 1.8-4 3.1-6.2 4.4c-2.7 1.5-5.1 3.3-7.8 4.7c-2.5 1.4-5.7-0.2-7.3 2.9c-1.2 2.3-2.7 6-2.6 8.7c.1 2 .6 4 1.1 6.1c.5 .1 1 .6 1 1.3Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M293 30.3c-1.1 .9-2.5 .8-3.7 .4c-3.2-1.1-4.1 1.5-5.6 3.6c3.2 2.1 4.5 5.8 5.2 10.1c.3 1.7 .5 3.5 1.1 5.1c.7 1.8 1.7 3.4 2.5 5.1c.7 1.6 .9 3.3 1.5 4.9c.5 1.8 1.3 3.6 1.8 5.4c4.3 .3 18.6 7.6 12.9 13.1c-1.3 1.3-3.7 1.3-4.8 2.6c-1.5 1.8-2.1 4.2-3.1 6.2c-2.7 5-3.9 10.6-6.1 15.8c-0.9 2.2-2.2 3.8-3.4 5.8c-1.9 2.9-0.5 5 .9 7.8c2 4.1 3.8 8.5 3.9 13c.1 2.9-0.6 6.4 .4 9.2c1.3 3.3 5.2 4.8 8.1 6.6c1.7 1.2 4 3 6.2 2.8c2.1-0.2 3.5-1.6 4.9-3c2.4-2.7 5.1-4.8 8.3-6.5c3.6-1.8 7.5-3.3 11-5.3c1.2-0.6 2.3-1.2 3.5-1.6c1.5-6.2 6.8-11 7.5-17.4c0 0 .1 0 .1 0c0-0.2 0-0.3 0-0.4c.9-3.3 2.4-6.3 3.3-9.5c.8-2.7 2.1-8.2-1-10c-3.1-1.8-9.6-2.8-9.1-7.8c.1-1.9 .7-4-0.8-5.5c-1.1-1-2.4-1.8-3.6-2.7c-2.8-2-2.9-5.1-4.8-7.7c-1.3-1.9-2.4-3.8-1.2-6.1c.1-0.3 2-1.4 2-1.4c-0.1-0.9-0.6-1.7-1.1-2.5c-2.7-3.8-6.3-6.6-9.9-9.4c-1.6-1.3-2.3-2.7-2.2-4.7c.1-3.2 3.3-6.5 .9-9.6c-2.8-3.6-7.9-4.1-10-8.3c-2.7-5.4 1.7-11.9 2.2-17.4c-0.5-0.1-1.1-0.4-1.6-0.9c-3.3 .9-6.9 1.5-9.9 3.1c-3.6 2-4.6 4.9-4.5 8.9c.1 2.6 .5 6.3-1.8 8.2Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M334.9 151.1c-4.4 .6-7.6 2.5-11.4 4.5c-1.7 .9-3.3 1.6-5.1 2.2c-1.5 .4-2.5 .9-2.4 2.7c.2 4.1 4.4 5.3 7.3 7.4c1.5 1 2.7 2.3 3.3 3.9c1.9-0.4 3.7-1.6 5.9-1.5c1.9 0 3.5 1.2 5.1 2.1c1.7 .9 3.5 1.7 5.4 2c1.9 .3 5.9-0.4 5.1-3.3c-1.1-3.7-5-5.8-6-9.4c-1.3-4.5 .5-8.7 .9-13.1c-2.7 1-5.2 2.1-8.1 2.5Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M308.9 197.2c2-0.5 3.9 .1 5.9-0.3c1.8-0.4 3.7-0.9 5.6-0.8c2.6 .1 5.5 .6 8-0.3c1.3-0.5 2.7-1.2 4.2-1.2c3 .1 5.3 1.5 7.7 3.2c2.7 1.9 5.8 4.6 9.1 2.6c2.2-1.3 4.6-2.7 6.3-4.6c1.7-2-1.7-8.4-2.6-10.4c-1.4-3.1-3.1-6.1-4.9-9.1c-2.5 1.6-5.8 1.4-8.8 .2c-2.1-0.9-4.4-2.7-6.5-3.1c-2.1-0.4-3.9 .7-5.8 1.3c.3 2.8 .4 5.8 .4 8.7c0 .7-0.3 1.1-0.8 1.3c-0.9 2-3 2.9-5.4 3.1c-4 .3-5.5-1.7-8-4.2c-1.4-1.3-2.5-2.2-4.3-0.9c-1 .8-2.2 1.6-3 2.6c-1.2 1.6-1.7 3.4-2 5.3c-0.6 3.4-0.6 7-0.4 10.5c1.9-0.8 3.2-3.5 5.3-3.9Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M347.5 204.1c-0.4 0-0.9 0-1.4 0c-3.6-0.4-6.3-3.3-9.2-5c-2-1.3-3.9-1.9-6.2-1c-1.9 .8-3.8 1.3-5.9 1.2c-3.2-0.1-6-0.1-9.2 .4c-2 .4-5-0.4-6.6 .7c-1.8 1.3-3.1 3.3-5.2 3.8c0 .9 .1 1.8 .2 2.7c.1 2.4 .8 5.5 .9 8.3c5.4-0.1 10.6-0.9 15.3 2.4c1.5 1.1 2.8 2.5 2.8 4.5c-0.1 1.3-1.7 2.4-1.9 3.6c.2 .1 .5 .1 .7 .1c2.3 .3 4.1 1.1 5.9 2.5c2.2 1.6 4.6 2.9 6.8 .6c1.2-1.3 2.6-2.7 4.4-3.2c1.1-0.3 2.3-0.5 3.4-0.8c-0.5-0.2-1-0.4-1.3-0.6c-0.7-0.4-1-1.2-1.3-2c-0.4-1.3 1.3-3.6 2-4.6c1.2-1.9 3.2-3 4.6-4.7c1.8-2.3 1.4-5.9 1.2-8.9Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M252.3 260.7c.5 1.1 1.3 1.6 2.1 2.3c1.3 1.1 2.2 2.2 2.9 3.8c1.7 3.6 .3 7.5 1.5 11.1c.7 2.3 1.9 4 2.6 6.2c3.2 0 6.6 .3 9.3 2c3.1 2 5.2 3.9 8.9 4.4c2 .3 3.7 .8 5.4 1.7c1.7 1 3.3 2.2 5.2 2.8c3.9 1.2 7.5 2.7 11.2 4.4c1.4 .3 2.8 1 4.1 1.9c2 1.4 4 2.9 6.6 1.9c4.2-1.6 7.3-5 12.1-4.4c2.2 .3 3.7 1.6 5.4 2.8c1.3 .9 2.7 1.8 3.1-0.6c.3-1.5 .2-2.9 .2-4.4c.2-5.9 5-9.1 6.5-14.5c1-3.7-0.4-6.8-2.7-9.7c-1.5-1.8-2.1-3.6-2.6-5.9c-0.3-1.9-0.8-3.6-1.8-5.2c-0.5-0.7-1-1.5-1.2-2.3c-0.7-1.9 .1-3.7 1-5.4c.7-1.2 1.5-2.2 1.1-3.7c-0.3-1.2-0.7-2.2-1.3-3.3c-1.1-1.9-2.2-3.8-3.1-5.8c-1.2-2.8-1.6-5.8 .1-8.2c-2-0.9-3.5-2.9-5.6-3.5c-6.3-1.5-12.6 .8-18.6 2.2c-2.3 .6-4.6 1.6-7.1 1.3c-1.7-0.2-2.8-1.9-4.3-2.3c-1.4 1.3-3.1 2.1-5.7 2c-2.2-0.1-4.4-1.4-6.2-2.6c-2-1.3-4-3-6.5-2.2c-4.5 1.3-6.6 4.9-10.2 7.4c-2.9 2.1-7.1 3.2-9.4 5.8c-0.8 .9-1.5 1.9-2.3 2.8c.1 4 .3 8.3-0.4 12.3c-0.2 1.4-0.8 3.5-0.3 4.9Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M408.2 341.7c0-0.3-0.1-0.6-0.2-0.9c-2.7 .3-4.8 2.5-7.2 4c-1.9 1.2-4.4 2-6.3 .2c-0.8-0.7-1.4-1.5-1.9-2.4c-0.3-0.3-0.4-0.6-0.5-1c-1.1-2.3-1.5-5-1.9-7.5c-0.3-2.4-0.4-5.4-1.8-7.6c-1.5-2.2-3.9-3.4-6-4.9c-1.7-1.3-3.1-2.9-3.8-5c-0.7-2.3-1-6-3.4-7.2c-2-1.1-4.3 1-5.8 2.1c-1.8 1.4-3.7 2.4-5.6 3.5c-2.9 1.7-4.2 6.8-8.4 3.8c-2.2-1.6-5.6-0.2-8.2 .1c-2.4 .3-4.8 .5-7.3 .5c-5.6 2.4-8.6 8.3-9.2 14.1c-0.5 5.1-3.6 9.9-6.7 13.9c-0.9 1.2-1.7 2.2-2.6 3c2.1 2 2.3 5.5 4.5 7.7c2.3 2.2 4 4.5 6.8 6.2c1.4 .9 2.6 2.1 4 3c.5 .3 2.1-1.3 3.1-1.4c1.8-0.1 3.8 1.5 4.9 2.8c2 2.5-0.4 4.9-0.9 7.4c3.2-1.6 7.5-0.4 10.9-1.4c2.5-0.8 5-2 7.6-2.1c3.5-0.2 7.1 .2 10.4-0.8c3.5-1.1 4.4-3.2 6.7-5.6c1.8-1.8 4-2.6 6.5-2.9c2.7-0.4 5.8-0.7 8.4 .1c2.7 .9 4.9 2.4 7.6 2.7c.2-0.3 .3-0.7 .4-1c.9-2.8 1.7-5.7 1.6-8.6c-0.1-2.1-0.5-4.2 0-6.3c.5-1.6 1.9-2.5 2.9-3.7c1.2-1.4 1.9-2.9 1.4-4.8Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M328.5 315.1c-3.9 3.3-9.6-2.2-13.6 1.4c-2.3 2.1-3.8 4.8-6.6 6.2c-2.2 1.1-4.4 1.6-6.8 2.2c-2.8 .8-5.3 2.3-8.2 3.2c-2.1 .7-4.3 1-6.5 1.1c-0.5 2.1-4.7 2.3-6.5 2.9c-1.5 .5-1.6 4-2 5.3c-0.4 1.8-0.9 3.9-1.9 5.5c1.4 1.2 2.2 2.8 3.5 4.1c1.8 1.8 4.3 2.6 6 4.7c.4 .5 1 1.7 1.8 1.9c1.1 .3 2.3 .3 3.4 .6c2.4 .4 4.6 1.6 7 .3c1-0.6 1.9-0.8 2.8-0.8c1.6-1.3 2.8-3.6 4.9-4.2c2-0.5 4.2-0.4 6.3-0.2c2.5 .3 5.1 1.1 7.2-1c1.9-1.9 3.1-4 4.6-6.3c2-3.2 3.5-5.7 3.9-9.6c.3-2.5 .9-4.8 2.2-7.1c1.5-2.8 3.5-5.3 6-7c-2.6-1-4.9-2.3-6.1-4.6c-0.4 .5-0.9 1-1.4 1.4Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M246.7 289.3c-0.7 1.3-1.5 2.4-2.9 2.9c-1.9 .8-4.4 .9-5.9 2.3c-0.9 .8-2.7 2.2-2.2 3.6c.4 1 1 1.9 1.5 2.9c1.3 2.5 2.3 5 4 7.2c1.5 1.8 3.2 5 5.6 5.7c2.3 .7 4.3 .9 6.3 2.4c0 0 .1 .1 .2 .2c2.7 .1 5.2 .1 6.7-2.6c.8-1.3 1.9-3.3 3.6-3.6c2.3-0.5 3.7 .6 5.6 1.7c2.9 1.6 5.7 .2 8.7 .3c.8 0 1.7 .2 2.4 .6c3-1.4 7-1.6 9.7-3.5c3.1-2.2 8.4-5 11.6-6.8c-1.4-0.7-6.8-3-8.3-3.5c-1.7-0.6-3.5-1-5.1-1.7c-1.6-0.8-3.1-1.8-4.7-2.6c-1.8-0.9-3.5-1.2-5.5-1.5c-2.6-0.5-4.6-1.4-6.7-3.1c-3-2.4-6.1-3-9.7-3.1c-0.2 .5-0.7 .9-1.3 .9c-2.4 0-4.5-1.2-6.9-1.1c-2.5 .1-5.3-0.2-6.7 2.4Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M229.4 161.3c-1.3 3.3-3.1 7.2-6.4 8.5c.5 1.5 .8 3.1 .9 4.6c.9 7.8 6.8 13.7 10.8 20.2c1.7 2.7 3 5.5 3.5 8.7c.5 2.6 .3 5.3 .7 8c.5 2.6 1.4 6.4 4.5 6.9c4 .5 5.1-4.1 6.4-6.9c1.1-2.3 2.8-3.8 5.2-4.5c3.7-1 10.3-1.2 11-5.9c.7-4.3-2.7-7.2-2.8-11.3c-0.1-3.5-0.1-7.2 .4-10.7c.9-6.4 6.1-13.3 11.5-16.7c1.4-0.9 3.7-1.8 4.4-3.4c1-2 0-4.2-1.4-5.7c-2.2-2.4-5.1-3.6-7.5-5.8c-4.7-4.3-6.9-11.1-7.4-17.3c-0.6-7.4 1.4-13.8 5.8-19.8c3-4.1 6.5-7.8 9.3-12.2c1.5-2.4 7-10.1 4-12.8c-0.7-0.5-0.6-1.2-0.3-1.7c0-2.8-0.7-5.8 .3-8.4c.8-1.9 1.8-3.6 3.2-5.1c2.1-2.5 4.3-4.3 7.2-4.9c-0.5-1.6-1.2-3.1-1.6-4.8c-0.5-1.7-0.7-3.4-1.6-4.9c-1.2-2.5-2.4-4.7-3-7.4c-1-5.3-1.1-11-7.4-12.3c-1.3-0.3-1.4-2.1-0.3-2.7c.4-0.3-1.4-1.6-1.8-2c-0.5-0.6-0.8-1.3-1.1-2c-0.1-0.3-2.2-3.9-2.2-3.8c-0.4 .7-0.6 1.5-0.7 2.3c-0.6 3.4-0.4 6.9-3 9.5c-1 1.1-3.2 1.8-4.6 1.2c-1.4-0.6-3-2.6-4.4-2.5c-1.3 0-0.5 3-0.6 3.9c-0.1 1-0.3 1.9-1 2.6c-0.1 .3-0.3 .5-0.6 .7c-1.1 .7-2.2 1.4-3.3 2.1c-3.6 2.4-3.1 5.6-3.8 9.4c-0.7 3.2-1.5 6.5-3.1 9.3c-0.9 1.7-2.1 3-3.1 4.6c-1.3 1.9-1.7 3.9-1.8 6.2c-0.2 1.9-0.3 3.8-0.9 5.5c-0.6 1.6-2 3.6-2 5.3c.1 3.1 3.4 5 2 8.3c-1.1 2.6-3 3.4-5.7 3.3c-2.5-0.1-2.7 2-3.2 4c-0.4 1.4-0.8 2.5-1.4 3.8c-1.8 3.6-3 7.2-2.7 11.3c.1 1.8 .3 3.2 1.6 4.7c.3 .4 .6 .8 .8 1.2c.4 1.1 .6 2.4 .2 3.5c-0.4 1-1.7 2.6-0.7 3.6c.8 .9 1.8 1.5 2.6 2.4c1.8 1.9 .2 3.7-0.8 5.6c-1.5 2.8 .1 6-0.3 9.1c-0.6 5-2 10.5-3.8 15.2Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M281.7 326.4c-1.8-2-4.8-4.7-4.9-7.6c0-1.2 .9-2.3 1.5-3.3c0 0-0.1-0.1-0.1-0.2c-0.9-0.1-1.7-0.1-2.6 .1c-1 .2-2.2 .5-3.3 .5c-2.3-0.1-3.9-1-5.9-2.2c-2.7-1.5-3.1 1-4.5 2.8c-2.4 3.1-5.8 3-9.4 2.9c-2.9 2.7-7.2 4.9-8.9 8.3c-0.9 1.8 .1 3.1 .7 4.7c.5 1.4 .7 2.6 .7 4c.1 .7-0.4 1.4-1.1 1.5c-2.1 .4-3.5-0.8-5.1-2.1c-3.1-2.4-6.5 .6-9.8 1.3c-2.8 .6-6.2 .3-9-0.6c-1.1-0.4-3.1-1.7-4.2-0.6c-0.7 .6-1.2 1.5-1.8 2.1c-1.1 1-2.2 .6-3.4 0c-1.1 1.4-1.3 2.6 .7 3.3c1.2 .3 2.4 .6 3.6 .6c1.7 .1 3.7 .3 5.2 1.3c.7 .5 1.4 1.4 2 2.3c0 0 0 0 0 0c3.4 .3 4.5-3.8 7.5-4.5c2.2-0.5 4.5-0.4 5.6 1.9c.6 1.1 1 2.6 2.1 3.2c1.6 .8 3.3 1.1 5.1 1.2c2.9 .2 5.8 .1 8.7 .2c.3 0 .7 .2 1 .4c1.3 .3 2.6 .9 3.9 1.5c.4 .2 2.5-1.2 2.9-1.3c1.4-0.5 2.8-0.9 4.2-1.4c2.5-0.8 5.2-1.9 7.6-3.1c2.4-1.1 3.4-2.2 4.1-4.6c.6-2.1 1.1-4.2 1.6-6.3c.3-1 .6-2.1 1.6-2.8c1.3-0.9 2.9-0.9 4.4-1.3c.4 0 .7-0.2 1.1-0.3c-0.1 0-0.1-0.1-0.2-0.2c-0.5-0.6-1-1.1-1.6-1.7Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M209.3 438.5c-0.1 1.3-0.4 2.8-1.2 3.9c-0.7 .9-2.1 2.1-1.1 3.3c1.6 1.9 1.2 4.4-0.1 6.4c-1 1.6-0.7 1 1 1.9c2.5 1.3 4.8 1.3 5.9-1.7c.4-1.1 1.3-2.2 2.4-2.7c1-0.5 3.8-0.7 4.4-1.4c1.5-2 .7-5.9 .4-8.5c-0.3-0.2-0.6-0.5-0.7-1.1c-0.3-1.8 0-3.4-0.1-5.3c0-2.2-1-4.1-2.6-5.7c-1.5-1.5-3.5-3.6-5.9-2.8c-2.2 .8-5 2.7-6 4.9c-0.8 1.7 1.8 3.8 2.5 5.1c.5 1.1 1.3 2.4 1.1 3.7Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M254.5 470.8c2.7 2.5 6.2 4.1 9.7 5.3c3.1 1 6.4 2.3 9.6 2.8c1.7 .2 3.7 .5 5.5 .3c1.7-0.3 .3-4.1 0-5c-0.6-1.5-1.1-3.1-0.8-4.7c.1-1.4 .4-2.6 .3-3.9c-1.7 .3-3.3 1-5 1.4c-1.8 .4-3.7 .5-5.6 .5c-2.6 0-5.3-0.1-7.9-0.2c-2 0-4.2-0.2-6.3 .2c-2.6 .6-1.2 1.8 .5 3.3Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M394.3 338.9c1.7-2 2.9-4.3 3.3-7c.2-1.9 .1-4.7 2.1-5.8c1.9-1 4.1-0.6 6.1-1.2c1.9-0.5-3.5-4-4-4.4c-2.1-1.5-2.4-3.8-2.9-6.2c-0.7-3.6-3.5-5.5-6.5-7.2c-3.1-1.7-6.8-3.9-10.5-3.1c-2.2 .5-3.7 1.6-5.3 2.7c2.8 1.6 3.8 5.3 4.7 8.3c1.5 5.2 7.9 5.9 10 10.7c1.9 4.1 1.3 8.7 2.9 12.9c0 .1 0 .2 .1 .3Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M328.6 418c.9 1.4 2.1 2.6 3.1 3.8c6.3-3.1 12.4-6.5 18.7-9.5c0 0 0-0.1 0-0.1c0-2.3 .9-5.9-1.3-7.2c-1.5-0.9-2.6-2.1-3.7-3.5c-0.4-0.4-0.7-0.9-1.1-1.3c-6.7 .2-11.7 6.9-17.6 9.6c.1 .5 .1 1 .2 1.5c.2 2.3 .4 4.7 1.7 6.7Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M314.2 352.5c-2.2-0.2-4.9-0.9-7.1-0.3c-1.3 .4-2.4 1.7-3.4 2.8c.3 .4 .6 .8 .9 1.3c2.2 3.9 4.2 8.3 3.9 12.8c-0.1 .4-0.3 .8-0.5 1c.4 1.1 .3 2.2 .4 3.5c.1 2.2 1.8 4 2.8 5.8c1.2 2 3.1 5.3 2.2 7.7c-0.1 .2-0.2 .4-0.3 .6c1 1.4 2.1 2.8 3.4 3.9c1.3 1.2 2.8 1.7 4.3 2.5c1.5-1.5 2.6-3.3 3.8-5.1c.4-0.7 1.3-1 2-0.6c4.5 2.5 11.8 4.3 12.3 10.1c1.2-0.6 2.4-1 3.7-1.2c-0.7-1.6-0.8-3.4 .9-5c1-1 4.9-3.6 3.6-5.4c-0.8-1.1-2.3-1.7-3.4-2.5c-1.7-1.2-3.1-3.3-2.6-5.3c-0.1-0.1-0.1-0.3-0.2-0.5c-0.4-1.7-0.2-3.1 .5-4.7c.9-2.1 1.8-3.6-1-4.7c-0.9-0.4-0.7 .2-1.5 .8c-0.4 .3-0.9 .5-1.5 .5c-1.3 .1-2.1-0.5-3.1-1.2c-1.4-1.1-2.9-2-4.3-3c-1.8-1.4-3.2-3-4.8-4.7c-1.5-1.6-2.6-2.9-3.5-4.9c-0.7-1.6-1.4-3.9-3.1-4.6c-1.2 .4-2.6 .6-4.4 .4Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M322.7 398.1c-0.1 .5-0.4 .9-0.6 1.4c1.8 2.2 3.1 4.7 3.9 7.3c3.6-1.6 6.6-4.4 9.9-6.6c0-0.1 0-0.1 0-0.1c.5-4.9-5.5-6.7-9.5-8.4c-1.1 1.6-2.2 3.2-3.6 4.6c.1 .5 .1 1.1-0.1 1.8Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M73.2 238.7c-0.3-2.7-0.4-5.4-0.3-8.1c0-1.5 0-3.2 .8-4.6c.8-1.5 2.1-2.7 3.5-3.6c1.5-0.9 4.5-1.7 5.3-3.4c.4-0.8-1.6-2.2-1.9-2.9c-0.5-0.7-0.7-1.4-0.8-2.3c-0.3-2 .8-4.5-2-5c-2.2-0.5-4.9 .8-6.9-0.5c-1.1-0.6-3.4-2.8-4.4-1c-0.3 .7-0.5 1.4-0.7 2.2c-0.9 3.6-2.8 6.5-6.8 7c-2.3 .2-4.5-0.7-6.7-0.6c-3.5 .4-1.4 3-3.1 4.7c-1.4 1.4-4.4 2.4-2.4 4.7c1.2 1.4 2.8 1.6 4.1 2.8c1.1 1 .7 3.1 .3 4.3c-0.6 1.3-1.9 1.9-2.8 2.9c.8 .5 1.5 1.2 2.3 2c.7 .8 .4 2.2-0.7 2.5c-2.8 .7-10.9 2.8-10.8 6.6c0 5.1 8.9 4.8 12.3 4.4c3.2-0.4 4.1-2.1 6.2-4.1c1.5-1.4 3.4-1.8 5.3-1.2c2.8 .9 5.6 1.3 8.1-0.6c1.7-1.3 2.4-3.3 2.6-5.3c-0.2-0.2-0.4-0.5-0.5-0.9Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M5 435.8c1.6 1.9 2.9 4.5 2 7.1c-1 2.7-2.8 5.2-3.4 8c-1 4 2.9 3.5 5.7 3.6c2.5 0 3.9 2.7 6.1 1.7c-0.1-2-0.1-3.7 .8-5.4c.6-1.2 2-1.5 2.8-2.5c2.6-2.9 4.3-7.9 4.2-11.7c0-2.5-0.5-4.3-1.4-6.5c-0.5-1.4-0.6-2.4 .2-3.6c.4-0.6 1.1-0.9 1.7-1.3c1.4-0.7 1.6-2.2 1.8-3.5c.3-2.1-0.2-4.2 0-6.3c.3-4 3.6-6.5 7-8c1.9-0.8 7.3-2.4 6.2-5.3c-0.8-1.9-2.4-3.7-3.7-5.2c-2.7-2.9-6.9-2.1-10.2-3.9c-3.1-1.7-5.5-4.2-7.7-6.8c-0.6 .8-1.1 1.6-1.5 2.5c-1 2-0.8 4.2-0.6 6.4c0 .1 0 .2 0 .4c0 0 0 .1 0 .1c0 0 0 .1 0 .1c0 .2 0 .3 0 .5c-0.4 7.3-4.6 13.4-7.1 20.1c-1.3 3.6-2.7 6.8-5 9.7c-1.5 1.9-3 4.5-1 6.6c1 1.1 2.2 2 3.1 3.2Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M165.5 297.9c2.6 1.5 5 3 7.5 4.4c-0.1-1.1 0-2 .3-3c.4-1.2 1.6-1.9 2.5-2.6c3.9-3.5 2.9-8.6-1.1-11.5c-2.8-2-5.4-6-8.8-6.8c-3.7-0.8-7.5-0.2-11-1.5c-0.1-0.1-0.1-0.1-0.2-0.1c-0.9 .7-2 1.3-3.3 1.7c-1.9 .5-3.9-0.1-5.8 .3c2.7 2.6 4.2 6.3 6.8 9.1c3.9 4.1 8.2 7.1 13.1 10Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M216 193.1c.7-2-0.4-4-2.2-1.9c-1.7 2-2.5 4.6-4.6 6.2c-2.2 1.7-5.1 2-7.7 2.4c-4.9 5.4-3.3 12.9-1.7 19.4c.6 2.8 .7 5.7 1 8.5c3.2-2 6.5-1.7 10.2-2c-0.7-1.5-1.3-3.1-1.4-4.8c-0.2-3 .3-6.5 2.3-8.9c1.3-1.5 3.8-2.7 4.7-4.5c1.5-3.2-2-7-1.7-10.4c.2-1.5 .5-2.6 1.1-4Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M202 334.9c-5.1-1.3-9.9 2.4-14.9 .9c-1 1.9-2.2 3.7-3.4 5.2c-1.5 1.7-3.5 2.9-5 4.7c-1.4 1.6-2.4 3.7-3.1 5.9c2.1-0.2 4.5-0.4 5.4 1.5c.6 1.3 .5 2.3 .3 3.7c0 .1 0 .2-0.1 .3c1.3-0.2 2.5-0.8 3.9-0.9c1.8 0 5.1 1.1 6.6 0c1-0.7 1-2.2 1.4-3.2c.4-0.9 .9-1.6 1.5-2.3c.5-0.6 1.5-0.5 2.1 0c1.4 1.3 2 2.8 2.9 4.4c.7 1.1 1.6 1.9 2.5 2.7c.5-3.4 1.7-8.3 5.2-7c1.6 .6 5.7 2.4 6.6 .2c.7-1.7 1.7-3.4 3.7-3.8c.6-0.2 1.1-0.2 1.7-0.4c.7 0 .7-0.1 .1-0.3c-0.8-1.1-2.6-1.5-4-1.6c-1.9-0.1-4-0.3-5.8-1.1c-3.4-1.7-3.4-4.5-1.7-7.2c-1.9-0.7-3.8-1.3-5.9-1.7Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M318.8 223.6c.4-0.7 1.8-1.6 .7-2.6c-0.6-0.7-1.4-1.2-2.2-1.7c-3.8-2.1-8.5-1.2-12.7-1.1c-0.2 .7-0.4 1.3-0.8 1.9c-1.9 3.2-5.9 3.9-8 6.9c-0.2 .3-0.4 .6-0.6 .9c.1 0 .2 .1 .3 .2c.8 .6 1.8 1.6 2.9 1.6c2.4-0.2 5-1.1 7.3-1.7c4.1-1 8.2-2.1 12.3-2.3c0-0.7 .3-1.4 .8-2.1Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M332.1 310.8c0 0 0 0 0 0c.3 3.7 4.7 4.7 7.6 5.6c3.1 0 6.2-0.2 9.3-0.7c2.1-0.4 4.4-1.1 6.5-0.3c.5 .2 2.3 1.8 2.8 1.1c.6-0.7 1.1-1.6 1.7-2.3c1.4-1.7 3.7-2.3 5.5-3.5c1.8-1.3 3.9-3.2 6.2-4.1c.1-0.4 .3-0.7 .7-0.9c1.8-0.8 3.1-2.3 4.8-3.2c1.6-0.9 3.4-1.4 5.3-1.6c3.6-0.2 6.8 1.1 9.9 2.8c2.8 1.5 6.6 3.4 8.1 6.3c1.6 3.1 1 7 4.3 9c2.2 1.2 4.4 3.1 4.4 5.9c0 2.3-2.2 3-4.1 3.1c-1.2 .1-3.9-0.1-4.2 1.4c-0.3 1.7-0.4 3.3-0.8 4.9c-0.9 3-2.4 5.4-4.5 7.5c.5 .9 1.2 1.5 2.1 1.2c1.2-0.4 2.3-1.3 3.3-2c2.1-1.5 4.2-2.9 6.7-3.2c.3-3.3 2.7-4.9 4.4-7.5c-0.1-0.4 0-0.9 .4-1.3c2.4-2.5 2.3-6 4.1-8.9c1.4-2.4 3.4-4.4 5.9-5.6c1.8-0.8 5.6-1.3 6.9 .8c.8 1.4-1.3 4.6 .2 5c2.7 .6 5.1 .3 7.2-1.5c1.4-1.2 3.1-2.7 5-2.2c2.2 .6 2.8 3.3 2.4 5.2c-0.5 2.2-3.1 3.4-4.7 4.5c-2 1.3-3 3.7-0.4 5.1c1.6 .8 3.2 .6 4.8 1.2c3 1 4.1 4.2 6.8 5.4c4.1 1.8 5.6-3.4 6.9-6.1c1.3-2.8 3.4-5.3 5.8-7.2c1.3-1.1 3.1-1.7 4.2-3c-0.1 .1-3.6-0.5-4.1-0.5c-2.1 0-4.4 .4-6.5-0.2c-4.9-1.4-5.2-8-2.9-11.8c1.7-2.8 3.9-5.7 6-8.1c2-2.1 4.4-3.1 6.9-4.5c3.2-1.8 5.8-3.5 7.8-6.4c0-0.1 0-0.2-0.1-0.3c-0.3-1.8-1.2-4-0.6-5.8c.6-2.2 2.3-3.8 3.7-5.5c2.4-2.7 5.8-5.8 4.2-9.7c-0.9-2.2-2.6-4.3-2.8-6.8c-0.1-2.1 1.4-7.1-0.5-8.6c-0.5-0.4-2-1.5-1.9-1.5c-0.3 .5-0.5 1.2-1 1.6c-1 .9-2.3 1.2-3.3 .2c-0.3-0.4-0.7-0.7-1-1.1c-0.2 .3-0.6 .5-1.1 .5c-1.6 .1-2.5-0.6-3.6-1.6c-1.6-1.7-3 1.1-4.4 1.7c-1.5 .6-3.5 .5-4.7-0.7c-0.8-0.9-1.7-4-3.2-2.1c-1.6 2.1-3.5 6.1-6.8 4.6c-0.9-0.4-1.8-1.2-2.8-1.4c-0.3 0-1.5 .7-1.8 .8c-1.3 .5-3-0.2-3.8-1.2c-1.1-1.4-1.9-3.7-3.8-4.1c-2.2-0.5-4.6-0.2-6.7-1c-2-0.8-3.7-1.8-4.6-3.9c-1-2.2-0.5-4.6-2.4-6.4c-4.5-4.2-8-1.3-12.1 1.5c-2.3 1.5-4.9 3.2-7.6 2.1c-0.1 .2-0.3 .4-0.4 .6c-0.7 .7-1.7 .7-2.6 .7c-1.8 0-2.3 1.8-2.4 3.4c-0.1 3.5 3.7 11.9-3 10.9c-2.6-0.3-5.1-1-7.8-1.2c-1.4-0.1-2.1-0.3-2.7 1c-0.4 1-1.7 1.4-2.6 1.6c-1.5 .4-3.7-0.1-5.2-0.1c-2.1 .1-4.2 .1-6.3 .2c-4.3 .1-8.8-0.8-13.1-0.5c-4.4 .4-8.5 1.7-12.1 4.2c-2.4 1.6-4.6 2.2-7.2 2.4c.2 1 .5 1.9 .7 3c.7 2.5 3 4 4 6.4c2.1 4.9 1.3 9.1-1.5 13.6c-2 3.2-4 5.8-4 9.9c0 2.1 .1 5.5-1.7 7.1c-0.1 .1-0.1 .1-0.2 .2c.4 1.6 0 3.3-1.1 4.8c-0.2 .3-0.5 .7-0.8 1.1Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M345.7 226.7c-1.7 .9-3.5 1.2-5.2 1.7c-2.6 .7-3.4 3-5.6 4.1c-0.9 .4-1.7 .6-2.5 .6c-0.1 .2-0.2 .3-0.3 .4c-3.9 3.4 1.6 9.8 3.2 13.3c.8 1.8 1.3 3.8 .7 5.7c-0.6 2.3-3.1 4-1.6 6.6c.6 .9 1 1.8 1.3 2.7c1.9-0.1 3.7-0.2 5.3-1.2c1.1-0.7 2.2-1.6 3.3-2.2c2.4-1.5 5.4-2.3 8.2-2.8c4.6-0.8 8.9 .1 13.5 0c4 0 8.2-0.6 12.1-0.1c2.9 .3 3.4-2.8 6.4-2.7c2.2 .1 4.6 .3 6.8 .8c1.3 .3 4.1 1.6 3.4-0.7c-0.3-1.2-0.7-2.4-0.8-3.6c-0.3-2.5-0.3-5.4 1.1-7.6c.6-0.9 1.8-1.7 2.8-1.8c1.1-0.1 2.4 .2 1.8-1.3c-0.8-2.1-2.8-3.6-4.2-5.2c-2.3-2.6-4.5-7.8 .7-9c1.4-0.3 8.5-1 4.8-4.5c-1.5-1.4-3.2-2.2-5.2-2.7c-2.8-0.8-6.1-1.5-8.3-3.8c-2.5-2.6-4.4-5.6-5.5-9.1c-0.6-1.8-1.4-10-4.8-8.7c-2.7 1.1-4.5 3.7-7.7 1.9c-1.6-0.8-3.2-2.5-5.1-2.6c-1.7-0.1-3.4 0-5 .1c-0.1 .3-0.1 .5-0.2 .8c-0.9 2.5-3.5 4.1-5.6 5.6c-1 .6-2 1.3-3.1 1.8c.2 2.8 .7 6-0.2 8.7c-0.8 2.2-2.1 3.5-3.8 5.1c-1 .8-1.8 1.6-2.4 2.7c-0.4 .5-0.7 1.1-1 1.7c-0.5 .5-0.5 .8 .2 .7c1.3 .4 2.9 1.5 3.1 3c.2 .6 0 1.3-0.6 1.6Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M319 396.5c-0.2 0-0.3 0-0.4-0.1c-1.2-0.5-2.2-1.1-3.2-1.9c-1.8-1.4-3.3-3.1-4.7-4.9c-0.8 .2-1.2 .2-1.9 1c-0.6 .7-1.1 1.5-1.6 2.3c-1.5 2.2-1.8 4-2.1 6.7c-0.1 1.1-0.3 2.2-0.7 3.2c2.3 1.8 4.5 3.7 6.5 5.7c0-1.3 0-2.6 .7-3.7c1.5-2.7 4.5-2.7 6.4-4.9c.6-0.6 1.2-1.5 1.6-2.3c-0.3-0.2-0.6-0.6-0.6-1.1Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M324.5 443.2c0-3.6 .1-7.4 2.2-10.4c1-1.4 2.1-2.6 3.2-3.9c1.6-2 .8-3.5-0.7-5.3c-2.5-2.8-4.3-5.5-5-9.2c-0.8-4.7-1.1-8.7-4-12.5c-0.9 .8-2 1.6-3.2 2.1c-2.1 1-3.1 2.1-3 4.6c0 1.2 .2 2.3 .2 3.5c.5 .6 1 1.2 1.5 1.8c2 2.5 2.6 5.5 2.2 8.6c-0.4 3.3-1.8 7.4 .4 10.3c1 1.3 2 2.7 3.2 3.8c.7 .6 1.8 1.1 2.3 1.9c.8 1.2 0 2.5-0.9 3.6c.5 .4 1.1 .8 1.6 1.1Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M387.6 401.8c0-0.7 0-1.5-0.2-2.2c0-0.6-0.1-0.7-0.2-0.2c-1 1.1-1.6 2.2-2.2 3.5c-2.5 5.4-6.5 6.7-12.2 6.3c-7.4-0.4-13.8 2.3-20.5 5.5c-6.4 3-12.6 6.5-19 9.7c1.1 2.6 .3 4.8-1.7 7c-1.5 1.8-3.1 3.5-3.6 5.8c-0.5 2.5-0.5 5-0.5 7.5c.7 .2 1.3 .5 2 .8c2.6 1.2 4.3 2.7 6.2 4.8c1.9 2.1 4.5 5.2 7.6 5.2c3 .1 5.7-1.8 8.7-1.8c2.1 0 4.1 .6 5.4 2.3c1 1.3-0.3 3.2-1.5 3.8c-2.9 1.4-5.9 1.1-9 1.9c-1.3 .5-7.1 1-5.2 3.5c1.6 2.2 4.6 3.2 6.8 4.8c1.1 .8 2 1.8 3 2.7c2.4 2 4.8 1.6 7.1-0.3c1.7-1.5 2.3-2.4 .6-4.4c-0.5-0.6-1.1-1.2-1.5-1.9c-0.7-1.2 .1-2.4 1.1-3c.9-0.6 1.9-1.2 2.8-1.8c.8-0.5 .5-1.8 .8-2.5c.6-1.5 2.1-2.6 3.6-3.1c3.6-1.4 7.4-1.3 11.2-1.4c-2.5-2.1-8-1.8-10.6-2.3c-2.7-0.5-4.7-2.3-3.5-4.3c-2.1-0.9-4.8 0-7 0c-0.7 0-1.3-0.5-1.5-1.1c-0.3-1.5-0.3-3 .7-4.3c.8-0.8 2.6-1.5 3-2.5c.1-0.2-3.4-1.4-3.8-1.7c-1.7-1-2.6-3-3.5-4.7c-1.2-2.3-3-6.3-0.7-8.6c2.1-2 5.6-2.3 7.7-0.2c1.2 1.1 2.3 3.5 4 3.9c2.5 .6 3-1.2 2.6-3.3c-0.5-2.2-2.9-5.7-0.9-7.8c1-1 2.2-1.4 3.5-1.6c2.3-0.5 4.6-1 6.8-1.8c2.2-0.8 4.5-1.9 6.9-2.2c1.9-0.2 3.8 0 5.7 .3c.2-0.2 .5-0.3 .8-0.4c.1-3.3 .3-6.6 .2-9.9Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M409.1 400.2c-0.9-0.7-1.9-1.2-2.9-1.8c-1.7-1.2-3.4-2.5-4.9-4c-1.5 .5-3.1 .8-4.9 .8c-2.7-0.1-5-0.2-6.8 1.8c.8 1.1 .9 3 1 4.1c0 3.5-0.2 7-0.2 10.5c2.1 .1 4.2 0 5.6-1.7c1.4-1.6 2.4-3.7 4-5c1.8-1.6 3.6-2.3 5.9-2.8c.3-0.1 4.1-1.2 3.1-1.9Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M396.4 378.5c.9-3.4 2.8-6.4 4.3-9.5c-1.8-0.4-3.3-1-5-1.8c-2.8-1.4-5.8-1.4-8.9-1.1c-1.9 .3-4 .6-5.3 2.2c-0.8 1-1.5 2.1-2.3 3c-1.5 1.7-3.4 2.8-5.7 3.3c-3.1 .8-6.2 .9-9.3 .9c-2.9 0-5.2 1-7.9 1.8c-2.4 .7-4.6 .7-7 .8c-1.5 0-5.5 0-5.3 2.3c.2 2.1 4.6 3 5.7 5c1.6 3.2-0.9 6.2-3.2 8.2c-1.6 1.3-1.4 2.5-0.6 3.7c.5 .2 .8 .7 .8 1.2c.3 .3 .5 .6 .8 .9c1.1 1.3 2 2.4 3.5 3.2c2.9 1.6 2.6 5.3 2.4 8.3c.4-0.2 .9-0.4 1.3-0.6c3.4-1.4 7-3.1 10.6-3.7c3.4-0.6 6.7-0.1 10.1-0.3c2.5-0.1 4.8-0.6 6-2.9c.7-1.3 1.2-2.7 2-3.9c.7-1.1 1.7-2.4 2.9-3c0-0.1 .1-0.1 .1-0.2c1.4-2.1 3.3-3.7 5.9-4c2.4-0.3 4.7 .1 6.9-0.4c-2.7-3.8-4.1-8.4-2.8-13.4Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M287.8 368.5c-3.9 .4-7.9 .8-11.8 1.1c-1.2 .1-1.4 0-1.4 1.3c.1 1.4 .2 2.8 1.5 3.6c2 1.3 3.9 2.8 5 4.9c1.4 2.4 2.2 5 3.5 7.4c1.3 2.5 3 3.5 5.1 5.2c1 .8 1.4 1.9 1.7 3c2.2 .9 4.4 1.9 6.4 3.2c1.4 .9 2.7 1.8 4.1 2.7c.3-1.5 .2-2.9 .5-4.5c.2-1.6 .8-2.9 1.7-4.3c1.2-2 2.9-5 5.4-5.6c1.8-0.3 .8-2.4 .2-3.7c-0.7-1.3-1.4-2.5-2.1-3.6c-0.9-1.4-1.6-2.8-2.1-4.4c-0.4-1.5 .3-2.8-0.7-4.2c-2.3-0.2-4.5-0.9-6.9-1.6c-3.5-1-6.6-0.8-10.1-0.5Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M301.3 356.7c-0.2 0-0.4-0.1-0.6-0.2c-0.7 0-2.2 1.2-2.8 1.3c-1.7 .5-3.1 .3-4.8-0.1c-2.2-0.6-4.6-0.6-6.7-1.4c-1.3-0.5-1.7-1.6-2.6-2.5c-1.6-1.8-3.9-2.5-5.5-4.2c-0.1-0.1-0.3-0.2-0.4-0.4c-3.5 1.1-6.1 6.1-7.9 9.1c-1.7 3-2.5 6.5-5.6 8.3c-2 1.1-4.5-0.5-6.5 .2c-0.8 .3 1.4 3.4 1.6 4c.4 1.6 .3 3.1 .3 4.7c2.9 2.1 5 4.7 7.5 7.3c1.4 1.5 3.2 3.5 5.2 4.1c1.6 .4 3.1 .5 4.7 1c3 .9 5.4 3.1 8.2 4.6c-0.7-0.6-1.4-1.1-1.9-1.8c-1.9-2.5-2.7-5.6-4.2-8.4c-0.7-1.5-1.6-2.9-3-4c-0.9-0.7-2-1.2-2.8-2c-1.7-1.7-1.9-4.2-1.8-6.5c.1-1.7 1.1-2.7 2.8-3c3.6-0.7 7.4-0.7 11.1-1c3.8-0.4 7.7-1.1 11.4-0.1c2.9 .8 5.6 1.9 8.5 1.9c-0.1-1.8-0.6-3.5-1.2-5.2c-0.5-1.3-1.6-4.7-3-5.7Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M256.5 371.3c-0.4-0.7-0.9-1.4-1.3-2.1c-0.5-1-0.7-2.6-0.1-3.6c1.4-2.6 4.5-1.7 6.9-1.7c2.6 .1 3.4-3 4.3-4.9c.8-1.8 2-3.5 3.1-5.2c1.8-2.6 3.7-5.6 6.6-7c-0.5-0.7-1-1.3-1.7-1.8c-1.1 .8-2.3 1.3-3.6 1.8c-2.2 1-4.5 2.1-6.8 2.8c-2.7 .8-5.3 2.5-8 2.8c-0.6 .1-1.3-0.4-1.8-0.7c-0.9-0.4-1.8-0.7-2.7-0.9c-0.3 .2-0.6 .5-0.9 .7c-1.4 .8-0.7 1.9-0.3 3c.9 2.2 .7 4.4 .6 6.7c.4 .1 .8 .3 1.1 .6c2.3 2 0 4.4 .8 6.7c.8 2.1 2.4 3.6 4.2 5c0-0.8-0.1-1.6-0.4-2.2Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M311.3 306.4c-4.1 .7-4.4 .2-7.9-0.8c-4.2 2.5-23.7 5.8-21.1 9c1.9 2.3-0.2-1.1-0.7 1c-0.2 .9-1 1.7-1.4 2.5c-1.3 2.4 3.4 5.8 5.5 8.1c2.6 0 5.2-0.2 7.7-1.3c2.2-0.9 4.2-2 6.6-2.7c2.3-0.5 4.8-0.9 6.8-2.1c2.3-1.3 3.5-3.4 5.4-5.2c2.8-2.5 5.8-3.1 9.4-2.4c2.8 .5 4.5 1.2 6.4-1.3c1.1-1.4 3.5-3.5 3.1-5.5c-2-0.5-3.9-2.5-5.7-3.4c-4.8-2.6-9.4 3.3-14.1 4.1Z"
+                fill="#02080e" fill-opacity=".35" />
+            <path
+                d="M173.8 280.7c.5 .5 1.1 .9 1.6 1.3c1.6-2.3 1.7-5.5 2.3-8.2c.6-2.7 2-4.7 3.8-6.8c2.8-3.1 4.2-6.3 4.6-10.6c.2-2.8 .4-5.6 1-8.3c-2.1 .1-4.4-0.1-6.3 .6c-1.7 .6-3.2 1.6-4.7 2.6c-1.6 1-3.2 1.9-4.9 2.6c-1.3 .5-2.9 1-3.9 2c-2.4 2.3-3.6 6-5.3 8.8c-1.8 3.1-3 6.8-5 9.7c3.8 .9 8.2-0.1 11.8 1.9c1.9 1.2 3.3 2.8 5 4.4Z"
+                fill="#02080e" fill-opacity=".35" />
+        </g>
+        <g>
+            <path d="M317.5 140c-5.3-10.7-29.9-12.5-46 19" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a0_da, 12s infinite both a0_do;" />
+            <path d="M332 190c26.6-33.6-22.3-58-60.5-31" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a1_da, 12s infinite both a1_do;" />
+            <path d="M170 261c-1.3-41.5 60.8-98.8 101.5-102" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a2_da, 12s infinite both a2_do;" />
+            <path d="M314 254.5c45.6 18.5-10.5-128.1-42.5-95.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a3_da, 12s infinite both a3_do;" />
+            <path d="M314 254.5c26.7-11.4 9.5-109.9-42.5-95.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a4_da, 12s infinite both a4_do;" />
+            <path d="M353 382.5c-32.7-205.5-50.6-262.8-81.5-223.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a5_da, 12s infinite both a5_do;" />
+            <path d="M318 140c27.6-7.9 21.7 26.6-3.5 115" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a6_da, 12s infinite both a6_do;" />
+            <path d="M318 140c-22.5-28-176.2 137.2-176 170.5" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a7_da, 12s infinite both a7_do;" />
+            <path d="M318 140c-54.6-15.8-255.5 236-252 280.5" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a8_da, 12s infinite both a8_do;" />
+            <path d="M221.5 164.5c5.6-23.5 22 44 20.4 95" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a9_da, 12s infinite both a9_do;" />
+            <path d="M221.5 164.5c-19.2-22.9-54.3 19.3-52 95.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a10_da, 12s infinite both a10_do;" />
+            <path d="M221.5 164.5c32.5-25.1 157.1 129 158 177" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a11_da, 12s infinite both a11_do;" />
+            <path d="M221.5 164.5c28.2-18.5 109 4.9 110 25.5" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a12_da, 12s infinite both a12_do;" />
+            <path d="M221.5 164.5c-29.4 1.8-99.7 200-99 253" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a13_da, 12s infinite both a13_do;" />
+            <path d="M169.5 260.5c20-19.5 61.6-17.3 72.4-1" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a14_da, 12s infinite both a14_do;" />
+            <path d="M65.5 421c33.9-69.2 162.3-185.4 176.4-161.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a15_da, 12s infinite both a15_do;" />
+            <path d="M121.5 417.5c2.1-36.1 65.4-106.4 100-98.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a16_da, 12s infinite both a16_do;" />
+            <path d="M121.5 417.5c3.5-68 243-101 257.5-75" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a17_da, 12s infinite both a17_do;" />
+            <path d="M121.5 417.5c-1.3-106 115.5-280.7 150-258" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a18_da, 12s infinite both a18_do;" />
+            <path d="M232.5 390.5c-6-46.5-15.3-149.2 9.4-131" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a19_da, 12s infinite both a19_do;" />
+            <path d="M332 160.5c-21.3-23.6-83.2 16.4-90.1 99" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a20_da, 12s infinite both a20_do;" />
+            <path d="M332 160.5c-30-23.9-61.9 73.1-64.5 165" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a21_da, 12s infinite both a21_do;" />
+            <path d="M332 160.5c33.6-6.8 48 124.5 47 181.5" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a22_da, 12s infinite both a22_do;" />
+            <path d="M332 160.5c-94.3-1.8-192.8 112.8-189.5 150" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a23_da, 12s infinite both a23_do;" />
+            <path d="M332 160.5c-3.9-39.1-137.6-2.6-161.5 98" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a24_da, 12s infinite both a24_do;" />
+            <path d="M332 160.5c-29.3 7.5-103.3 81.9-99.5 229" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a25_da, 12s infinite both a25_do;" />
+            <path d="M332.5 190c-55.9-25.1-86.9 36.8-90.6 69.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a26_da, 12s infinite both a26_do;" />
+            <path d="M328.5 222c-27-3.1-44.2 .4-86.6 37.5" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a27_da, 12s infinite both a27_do;" />
+            <path d="M380.5 343c-20.3-65.5-71.9-107.6-138.6-83.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a28_da, 12s infinite both a28_do;" />
+            <path d="M353.5 383c-3.5-51-45.1-119.2-111.6-123.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a29_da, 12s infinite both a29_do;" />
+            <path d="M353.5 383c-7-47.5-39.4-61.1-86.5-57" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a30_da, 12s infinite both a30_do;" />
+            <path d="M353.5 383c-5.6-26.3-50.5-100.5-132-63.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a31_da, 12s infinite both a31_do;" />
+            <path d="M353.5 383c0-21.5 6.9-47.2 26-41" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a32_da, 12s infinite both a32_do;" />
+            <path d="M353.5 383c1.5-84.7 6-178.5-25.5-160.5" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a33_da, 12s infinite both a33_do;" />
+            <path d="M353.5 383c-1.4-46.2-211.1-93.6-287.5 37" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a34_da, 12s infinite both a34_do;" />
+            <path d="M142 311.5c7.5-31.4 49.6-62.3 99.9-52" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a35_da, 12s infinite both a35_do;" />
+            <path d="M221.5 319c10.3-66.4 76.7-119.4 106.5-97" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a36_da, 12s infinite both a36_do;" />
+            <path d="M221.5 319c-4.3-16.4-25-53-79-8" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a37_da, 12s infinite both a37_do;" />
+            <path d="M267 326.5c-15.2-23.2-30.6 14.4-34.5 62.5" stroke="#fff" stroke-dasharray="0 1000"
+                stroke-width="1.5" style="animation: 12s infinite both a38_da, 12s infinite both a38_do;" />
+            <path d="M267 326.5c3.6-13.1-25.6-25-44.5-7.5" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a39_da, 12s infinite both a39_do;" />
+            <path d="M267 326.5c-47.2-41.4-169.5 38.7-144 90" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a40_da, 12s infinite both a40_do;" />
+            <path d="M314 255.5c10.2-5.2-31.8-53.4-72.1 4" stroke="#fff" stroke-dasharray="0 1000" stroke-width="1.5"
+                style="animation: 12s infinite both a41_da, 12s infinite both a41_do;" />
+        </g>
+    </g>
+</svg>

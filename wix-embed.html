@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EuGreen Energy – eugreen.energy" />
+  <title>EuGreen Energy | eugreen.energy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+/* EuGreen Energy – eugreen.energy | Light default + dark + multi-step form */
+:root,
+[data-theme="light"] {
+  --bg: #f4f7fb;
+  --bg-soft: #ffffff;
+  --bg-elevated: #ffffff;
+  --text: #0a1628;
+  --text-muted: #5a6b85;
+  --green: #0d7a55;
+  --green-bright: #00c896;
+  --green-deep: #064d38;
+  --orange: #e85d04;
+  --border: rgba(10, 22, 40, 0.1);
+  --shadow: 0 20px 60px rgba(10, 22, 40, 0.08);
+  --nav-bg: rgba(255, 255, 255, 0.92);
+  --hero-grad: linear-gradient(135deg, #e8f5ef 0%, #f4f7fb 50%, #fff 100%);
+  --band-green: #0b6e4f;
+  --band-orange: #e85d04;
+  --input-bg: #f0f4f8;
+  --flow-track: #d0e8dc;
+  --flow-glow: #00c896;
+}
+
+[data-theme="dark"] {
+  --bg: #0a1628;
+  --bg-soft: #111d33;
+  --bg-elevated: #152238;
+  --text: #ffffff;
+  --text-muted: #8ba3c7;
+  --green: #0b6e4f;
+  --green-bright: #00e5a8;
+  --border: rgba(255, 255, 255, 0.12);
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  --nav-bg: rgba(10, 22, 40, 0.9);
+  --hero-grad: radial-gradient(ellipse 80% 60% at 70% 20%, rgba(0, 229, 168, 0.1), transparent), var(--bg);
+  --input-bg: rgba(255, 255, 255, 0.05);
+  --flow-track: rgba(255, 255, 255, 0.15);
+  --flow-glow: #00e5a8;
+}
+
+:root {
+  --radius: 16px;
+  --radius-lg: 24px;
+  --font: "DM Sans", system-ui, sans-serif;
+  --font-display: "Outfit", system-ui, sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.55;
+  transition: background 0.35s, color 0.35s;
+}
+
+.container { width: min(1140px, 92vw); margin-inline: auto; }
+.section { padding: clamp(3.5rem, 7vw, 6rem) 0; }
+
+/* Top bar */
+.topbar {
+  position: fixed; inset: 0 0 auto; z-index: 120;
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.topbar-inner {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.65rem 0; flex-wrap: wrap;
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 0.5rem;
+  text-decoration: none; color: var(--text); margin-right: auto;
+}
+.logo-svg { flex-shrink: 0; border-radius: 10px; box-shadow: 0 4px 14px rgba(0, 200, 150, 0.25); }
+.logo-wordmark {
+  font-family: var(--font-display); font-weight: 800; font-size: 1.05rem;
+  letter-spacing: -0.04em; line-height: 1.1;
+}
+.logo-eu { color: var(--text); }
+.logo-green { color: var(--green); }
+[data-theme="dark"] .logo-green { color: var(--green-bright); }
+.logo-energy { color: var(--text-muted); font-weight: 600; font-size: 0.92rem; }
+
+.topbar-controls { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
+.topbar-select {
+  padding: 0.45rem 0.6rem; border-radius: 8px; max-width: 130px;
+  border: 1px solid var(--border); background: var(--bg-elevated);
+  color: var(--text); font-size: 0.78rem; cursor: pointer;
+}
+.theme-switch {
+  width: 48px; height: 26px; padding: 0; border: none; background: none; cursor: pointer;
+}
+.theme-switch-track {
+  display: block; width: 100%; height: 100%; border-radius: 99px;
+  background: var(--border); position: relative; transition: background 0.3s;
+}
+.theme-switch-thumb {
+  position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
+  border-radius: 50%; background: var(--bg-elevated);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: transform 0.3s var(--ease);
+}
+[data-theme="dark"] .theme-switch-track { background: var(--green-bright); }
+[data-theme="dark"] .theme-switch-thumb { transform: translateX(22px); background: #0a1628; }
+.nav-links {
+  display: flex; gap: 1.1rem; list-style: none; margin: 0; padding: 0;
+}
+.nav-links a {
+  color: var(--text-muted); text-decoration: none; font-size: 0.88rem; font-weight: 500;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: linear-gradient(135deg, var(--green-bright), #00a878);
+  color: #042a1c; border: none;
+  padding: 0.6rem 1.15rem; border-radius: 999px; font-weight: 700;
+  cursor: pointer; font-size: 0.85rem; white-space: nowrap;
+  box-shadow: 0 4px 16px rgba(0, 200, 150, 0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0, 200, 150, 0.45); }
+.price-note { margin: 1rem 0 0; font-size: 0.88rem; color: var(--text-muted); }
+.nav-toggle { display: none; background: none; border: none; font-size: 1.4rem; cursor: pointer; color: var(--text); }
+
+/* Hero */
+.hero {
+  padding: 7rem 0 4rem;
+  background: var(--hero-grad);
+  min-height: 90vh;
+  display: flex; align-items: center;
+}
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 3rem; align-items: center; }
+.hero-badge {
+  display: inline-flex; padding: 0.35rem 0.85rem; border-radius: 999px;
+  background: rgba(0, 200, 150, 0.12); border: 1px solid rgba(0, 200, 150, 0.25);
+  font-size: 0.78rem; font-weight: 600; color: var(--green); margin-bottom: 1rem;
+}
+[data-theme="dark"] .hero-badge { color: var(--green-bright); }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800; line-height: 1.1; margin: 0 0 1rem; letter-spacing: -0.03em;
+}
+.hero h1 em { font-style: normal; color: var(--green); display: block; }
+[data-theme="dark"] .hero h1 em { color: var(--green-bright); }
+.hero-desc { color: var(--text-muted); font-size: 1.08rem; max-width: 50ch; margin-bottom: 1.75rem; }
+.hero-stats { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+.stat-num { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; color: var(--green); }
+[data-theme="dark"] .stat-num { color: var(--green-bright); }
+.stat-label { font-size: 0.82rem; color: var(--text-muted); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+  padding: 0.85rem 1.5rem; border-radius: 999px; font-weight: 700;
+  border: none; cursor: pointer; text-decoration: none; transition: transform 0.2s var(--ease);
+}
+.btn-primary { background: var(--green-bright); color: #042a1c; }
+.btn-primary:hover { transform: translateY(-2px); }
+.btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text); }
+
+.price-card {
+  background: var(--bg-elevated); border-radius: var(--radius-lg);
+  padding: 2rem; box-shadow: var(--shadow); border: 1px solid var(--border);
+}
+.price-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem; }
+.price-tag { font-family: var(--font-display); font-size: 1.75rem; font-weight: 800; min-width: 5ch; }
+.price-bar-wrap { flex: 1; height: 14px; background: var(--flow-track); border-radius: 99px; overflow: hidden; }
+.price-bar { height: 100%; border-radius: 99px; }
+.price-bar.market { background: #ff6b6b; width: 100%; }
+.price-bar.eugreen { background: linear-gradient(90deg, var(--green), var(--green-bright)); width: 87.5%; }
+.price-label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.35rem; }
+
+/* How + partners */
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.how-card {
+  padding: 1.75rem; background: var(--bg-elevated); border-radius: var(--radius);
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+}
+.how-card .num { font-size: 2.5rem; font-weight: 800; color: var(--green-bright); opacity: 0.5; line-height: 1; }
+.partners-row {
+  display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; align-items: center;
+  margin-top: 2rem; opacity: 0.7;
+}
+.partner-pill {
+  padding: 0.6rem 1.2rem; background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: 8px; font-weight: 700; font-size: 0.85rem; color: var(--text-muted);
+}
+
+/* Timeline – Über uns */
+.about-section { background: var(--bg-soft); overflow: hidden; }
+.timeline-animated {
+  margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0;
+  position: relative; padding-left: 0;
+}
+.timeline-animated::before {
+  content: ""; position: absolute; left: 27px; top: 12px; bottom: 12px; width: 3px;
+  background: var(--border); border-radius: 99px;
+}
+.timeline-animated::after {
+  content: ""; position: absolute; left: 27px; top: 12px; width: 3px; height: 0%;
+  background: linear-gradient(180deg, var(--green-bright), var(--green));
+  border-radius: 99px; transition: height 1.2s var(--ease);
+}
+.timeline-animated:has(.tl-visible)::after { height: calc(100% - 24px); }
+.timeline-item {
+  display: grid; grid-template-columns: 56px 1fr; gap: 1.25rem;
+  padding: 1.25rem 0; opacity: 0; transform: translateX(-20px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+  transition-delay: calc(var(--i) * 0.12s);
+}
+.timeline-item.tl-visible { opacity: 1; transform: none; }
+.tl-marker { display: flex; flex-direction: column; align-items: center; gap: 0.35rem; z-index: 1; }
+.tl-dot {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--bg-soft); border: 3px solid var(--border);
+  transition: all 0.4s var(--ease);
+}
+.timeline-item.tl-visible .tl-dot {
+  border-color: var(--green-bright); background: var(--green-bright);
+  box-shadow: 0 0 0 6px rgba(0, 200, 150, 0.2), 0 0 20px rgba(0, 200, 150, 0.4);
+  animation: tl-pulse 2s ease-in-out infinite;
+}
+@keyframes tl-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(0, 200, 150, 0.15); }
+  50% { box-shadow: 0 0 0 10px rgba(0, 200, 150, 0.08); }
+}
+.tl-year {
+  font-family: var(--font-display); font-size: 0.75rem; font-weight: 800;
+  color: var(--green); letter-spacing: 0.02em;
+}
+.tl-body {
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.timeline-item.tl-visible .tl-body {
+  border-color: rgba(0, 200, 150, 0.35);
+  transform: translateX(4px);
+}
+.tl-body h3 { margin: 0 0 0.4rem; font-size: 1.12rem; }
+.tl-body p { margin: 0; color: var(--text-muted); font-size: 0.92rem; }
+
+/* Green / Orange bands */
+.band-green { background: var(--band-green); color: #fff; }
+.band-green .section-label { color: rgba(255,255,255,0.75); }
+.band-green .text-muted { color: rgba(255,255,255,0.85); }
+.band-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+.visual-panel {
+  position: relative; border-radius: var(--radius-lg);
+  background: rgba(0,0,0,0.15); overflow: hidden; min-height: 360px;
+}
+.map-stage { min-height: 400px; }
+.map-bg { width: 100%; height: auto; display: block; pointer-events: none; }
+.map-overlay {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  pointer-events: none;
+}
+.map-overlay #map-dots { pointer-events: all; }
+.map-hint {
+  position: absolute; bottom: 0.75rem; left: 50%; transform: translateX(-50%);
+  font-size: 0.75rem; opacity: 0.75; margin: 0; pointer-events: none;
+  white-space: nowrap;
+}
+.map-dot { fill: rgba(255,255,255,0.45); stroke: rgba(255,255,255,0.6); stroke-width: 1; cursor: pointer; transition: all 0.25s; }
+.map-dot-city { fill: rgba(255,255,255,0.7); r: 3.5; }
+.map-dot:hover { fill: #fff; transform-origin: center; }
+.map-dot.active { fill: var(--green-bright); stroke: #fff; stroke-width: 2; filter: drop-shadow(0 0 6px #00e5a8); }
+.location-panel {
+  position: absolute; top: 1rem; right: 1rem; width: min(280px, 90%);
+  max-height: calc(100% - 3rem); overflow-y: auto;
+  background: rgba(10, 22, 40, 0.94); backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.15); border-radius: var(--radius);
+  padding: 1rem 1rem 0.75rem; z-index: 10;
+  display: none; pointer-events: none;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+}
+.location-panel.visible { display: block; pointer-events: auto; animation: panelIn 0.3s var(--ease); }
+@keyframes panelIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+.panel-close {
+  position: absolute; top: 0.5rem; right: 0.5rem;
+  width: 32px; height: 32px; border: none; border-radius: 8px;
+  background: rgba(255,255,255,0.1); color: #fff; font-size: 1rem;
+  cursor: pointer; line-height: 1; transition: background 0.2s;
+}
+.panel-close:hover { background: rgba(255,255,255,0.22); }
+.location-panel h3 { margin: 0 2rem 0.75rem 0; font-size: 0.95rem; color: #fff; }
+.office-card {
+  padding: 0.75rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.12);
+  margin-bottom: 0.5rem; cursor: pointer; transition: background 0.2s, border-color 0.2s;
+  color: rgba(255,255,255,0.9);
+}
+.office-card:hover, .office-card.selected { background: rgba(0, 229, 168, 0.12); border-color: var(--green-bright); }
+.office-card strong { display: block; margin-bottom: 0.25rem; }
+.office-card small { display: block; color: rgba(255,255,255,0.65); font-size: 0.78rem; line-height: 1.4; }
+
+.globe-stage { min-height: 420px; display: flex; align-items: center; justify-content: center; }
+.globe-img { width: 100%; max-width: 480px; height: auto; position: relative; z-index: 0; }
+.globe-fx {
+  position: absolute; inset: 8% 12%; z-index: 2; pointer-events: none;
+}
+.globe-pin {
+  position: absolute; transform: translate(-50%, -50%) scale(0);
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.95); display: grid; place-items: center;
+  font-size: 1.1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  transition: transform 0.45s var(--ease);
+}
+.globe-pin.pop { transform: translate(-50%, -50%) scale(1); }
+.globe-pin-solar { border: 2px solid #ffd43b; }
+.globe-pin-power { border: 2px solid #74c0fc; animation: pin-zap 1s ease infinite; }
+.globe-pin-heat { border: 2px solid #ff922b; }
+@keyframes pin-zap {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(116, 192, 252, 0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(116, 192, 252, 0); }
+}
+.globe-phase {
+  position: absolute; bottom: 4.5rem; left: 50%; transform: translateX(-50%);
+  margin: 0; font-size: 0.85rem; font-weight: 600; color: rgba(255,255,255,0.9);
+  z-index: 3; text-align: center;
+}
+.globe-brand {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; z-index: 4;
+  background: rgba(232, 93, 4, 0.55); backdrop-filter: blur(4px);
+  opacity: 0; pointer-events: none; transition: opacity 0.8s var(--ease);
+  border-radius: inherit;
+}
+.globe-brand.show { opacity: 1; }
+.globe-brand-name {
+  font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 800; color: #fff; letter-spacing: -0.03em;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  animation: brandIn 0.8s var(--ease);
+}
+.globe-brand small { color: rgba(255,255,255,0.9); margin-top: 0.35rem; font-size: 1rem; }
+@keyframes brandIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: none; }
+}
+.svc-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.band-orange { background: var(--band-orange); color: #fff; }
+.band-orange .visual-panel { background: rgba(0,0,0,0.12); }
+.office-stat {
+  display: grid; grid-template-columns: auto 1px 1fr; gap: 1rem; margin-bottom: 1.5rem;
+}
+.office-stat-num { font-family: var(--font-display); font-size: 2.75rem; font-weight: 800; }
+.office-stat-divider { width: 1px; background: rgba(255,255,255,0.35); }
+
+/* Multi-step form – full width wizard */
+.form-section { background: var(--bg); }
+.form-wizard-wrap {
+  max-width: 720px; margin: 2rem auto 0;
+}
+.energy-flow { margin-bottom: 1.5rem; }
+.flow-bar-wrap { position: relative; padding-bottom: 2.5rem; }
+.flow-track {
+  height: 8px; background: var(--flow-track); border-radius: 99px;
+  position: relative; overflow: hidden;
+}
+.flow-nodes-row {
+  display: flex; justify-content: space-between; align-items: center;
+  position: absolute; left: 0; right: 0; top: 0; transform: translateY(-10px);
+  padding: 0 2px;
+}
+.flow-fill {
+  position: absolute; left: 0; top: 0; height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--green), var(--flow-glow));
+  border-radius: 99px; transition: width 0.6s var(--ease);
+  box-shadow: 0 0 12px var(--flow-glow);
+}
+.flow-node {
+  width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+  background: var(--bg-elevated); border: 2px solid var(--flow-track);
+  display: grid; place-items: center; font-size: 0.65rem; font-weight: 700;
+  color: var(--text-muted); margin: 0 -6px; z-index: 1; transition: all 0.35s;
+}
+.flow-node.done { border-color: var(--green-bright); background: rgba(0,200,150,0.15); color: var(--green); }
+.flow-node.active { border-color: var(--green-bright); transform: scale(1.15); box-shadow: 0 0 16px rgba(0,200,150,0.4); }
+.flow-bulb {
+  width: 44px; height: 44px; border-radius: 50%; flex-shrink: 0;
+  background: var(--flow-track); border: 2px solid var(--border);
+  display: grid; place-items: center; font-size: 1.4rem;
+  transition: all 0.5s var(--ease); margin-left: 0.5rem;
+}
+.flow-bulb.lit {
+  background: linear-gradient(135deg, #fff9c4, #ffe066);
+  border-color: #ffd43b;
+  box-shadow: 0 0 30px #ffe066, 0 0 60px rgba(255, 224, 102, 0.5);
+  animation: bulb-pulse 1.5s ease-in-out infinite;
+}
+@keyframes bulb-pulse {
+  0%, 100% { box-shadow: 0 0 20px #ffe066; }
+  50% { box-shadow: 0 0 40px #fff3bf, 0 0 80px rgba(255,224,102,0.6); }
+}
+
+.wizard-card {
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--shadow); min-height: 380px;
+  display: flex; flex-direction: column;
+}
+.wizard-step { display: none; flex: 1; animation: fadeStep 0.4s var(--ease); }
+.wizard-step.active { display: flex; flex-direction: column; }
+@keyframes fadeStep { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+.wizard-step h3 {
+  font-family: var(--font-display); font-size: 1.5rem; margin: 0 0 0.5rem;
+}
+.wizard-step .step-hint { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
+
+.form-group { margin-bottom: 1.1rem; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text-muted); }
+input, select, textarea {
+  width: 100%; padding: 0.8rem 1rem; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--input-bg); color: var(--text);
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--green-bright); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.choice-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 0.75rem; }
+.choice-card {
+  padding: 1rem; border: 2px solid var(--border); border-radius: 12px;
+  cursor: pointer; text-align: center; transition: all 0.2s; background: var(--input-bg);
+}
+.choice-card:has(input:checked), .choice-card.selected {
+  border-color: var(--green-bright); background: rgba(0,200,150,0.08);
+}
+.choice-card input { display: none; }
+.choice-card .icon { font-size: 1.75rem; display: block; margin-bottom: 0.35rem; }
+
+.wizard-nav {
+  display: flex; justify-content: space-between; margin-top: auto; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.section-label {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--green); margin-bottom: 0.5rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700; margin: 0 0 0.75rem; line-height: 1.15;
+}
+.section-lead { color: var(--text-muted); max-width: 58ch; margin: 0; }
+
+.services-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1rem; margin-top: 2rem;
+}
+.service-card {
+  padding: 1.5rem; background: var(--bg-elevated); border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  width: 100%; text-align: left; padding: 1.1rem 0; background: none; border: none;
+  color: var(--text); font-weight: 600; cursor: pointer;
+  display: flex; justify-content: space-between;
+}
+.faq-a { max-height: 0; overflow: hidden; color: var(--text-muted); transition: max-height 0.35s; }
+.faq-item.open .faq-a { max-height: 180px; padding-bottom: 1rem; }
+
+.footer {
+  padding: 2.5rem 0; border-top: 1px solid var(--border);
+  background: var(--bg-soft); color: var(--text-muted); font-size: 0.88rem;
+}
+.footer a { color: var(--text-muted); }
+
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.6);
+  display: none; align-items: center; justify-content: center; padding: 1rem;
+}
+.modal-overlay.visible { display: flex; }
+.modal {
+  background: var(--bg-elevated); border-radius: var(--radius-lg);
+  padding: 2.5rem; max-width: 420px; text-align: center; border: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .hero-grid, .band-grid { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .topbar.open .nav-links {
+    display: flex; flex-direction: column; width: 100%; padding: 0.5rem 0;
+  }
+  .form-row { grid-template-columns: 1fr; }
+  .energy-flow { flex-wrap: wrap; gap: 0.5rem; }
+  .flow-node { width: 22px; height: 22px; font-size: 0.55rem; }
+}
+
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#" class="nav-logo" aria-label="EuGreen Energy">
+        <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+          <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#00e5a8"/><stop offset="100%" stop-color="#0b6e4f"/></linearGradient></defs>
+          <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
+          <path d="M20 8c-3 5-9 8-9 14a9 9 0 1 0 18 0c0-6-6-9-9-14z" fill="#fff" opacity=".95"/>
+          <path d="M17 22h6l-2 8h-4l-2-8 4 8z" fill="#00e5a8"/>
+        </svg>
+        <span class="logo-wordmark"><span class="logo-eu">Eu</span><span class="logo-green">Green</span> <span class="logo-energy">Energy</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="#leistungen" data-i18n="nav_services">Leistungen</a></li>
+        <li><a href="#europa" data-i18n="nav_europe">Europa</a></li>
+        <li><a href="#ueber-uns" data-i18n="nav_about">Über uns</a></li>
+        <li><a href="#ablauf" data-i18n="nav_how">Ablauf</a></li>
+        <li><a href="#anfrage" data-i18n="nav_form">Anfrage</a></li>
+        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+      </ul>
+      <div class="topbar-controls">
+        <select id="lang-select" class="topbar-select" aria-label="Language"></select>
+        <button type="button" class="theme-switch" id="theme-toggle" aria-pressed="false" title="Theme">
+          <span class="theme-switch-track"><span class="theme-switch-thumb"></span></span>
+        </button>
+        <button class="nav-cta" type="button" data-scroll="#anfrage" data-i18n="nav_cta">Kostenlos anfragen</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge" data-i18n="hero_badge">18+ EU-Märkte · Seit 2010</div>
+          <h1><span data-i18n="hero_title">Zahlen Sie nicht den Einzelpreis.</span><em data-i18n="hero_title_em">Profitieren Sie von unserer Bündelkraft.</em></h1>
+          <p class="hero-desc" data-i18n="hero_desc">Sie allein zahlen 40.000 € – wir sichern oft 35.000 €. Kostenfrei.</p>
+          <div class="hero-stats">
+            <div><div class="stat-num">−15%</div><div class="stat-label" data-i18n="hero_stat1">Ø Ersparnis</div></div>
+            <div><div class="stat-num">2.400+</div><div class="stat-label" data-i18n="hero_stat2">Vergleiche/Jahr</div></div>
+            <div><div class="stat-num">24h</div><div class="stat-label" data-i18n="hero_stat3">Erste Antwort</div></div>
+          </div>
+          <div class="hero-actions">
+            <a href="#anfrage" class="btn btn-primary" data-scroll="#anfrage" data-i18n="hero_cta">Angebot starten</a>
+            <a href="#ueber-uns" class="btn btn-ghost" data-scroll="#ueber-uns" data-i18n="hero_cta2">Unsere Geschichte</a>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-row">
+            <span class="price-tag" style="color:#e85d04">40.000€</span>
+            <div><div class="price-bar-wrap"><div class="price-bar market"></div></div><div class="price-label" data-i18n="price_market">Markt (allein)</div></div>
+          </div>
+          <div class="price-row">
+            <span class="price-tag" style="color:var(--green)">35.000€</span>
+            <div><div class="price-bar-wrap"><div class="price-bar eugreen"></div></div><div class="price-label" data-i18n="price_bundle">EuGreen (Bündel)</div></div>
+          </div>
+          <p class="price-note" data-i18n="price_note">eugreen.energy · Kostenfrei.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ablauf">
+      <div class="container">
+        <p class="section-label" data-i18n="nav_how">Ablauf</p>
+        <h2 class="section-title" data-i18n="how_title">So funktioniert EuGreen</h2>
+        <p class="section-lead" data-i18n="how_sub">Drei einfache Schritte</p>
+        <div class="how-grid">
+          <div class="how-card"><div class="num">1</div><h3 data-i18n="how1_t">Daten eingeben</h3><p data-i18n="how1_d">Land, Bedarf & Kontakt.</p></div>
+          <div class="how-card"><div class="num">2</div><h3 data-i18n="how2_t">Wir verhandeln</h3><p data-i18n="how2_d">Angebote von Partnern.</p></div>
+          <div class="how-card"><div class="num">3</div><h3 data-i18n="how3_t">Sie sparen</h3><p data-i18n="how3_d">Bestes Angebot per Mail/Telefon.</p></div>
+        </div>
+        <p class="section-label" style="margin-top:3rem;text-align:center" data-i18n="partners_title">Partner & Anbieter</p>
+        <div class="partners-row">
+          <span class="partner-pill">Vattenfall</span>
+          <span class="partner-pill">E.ON</span>
+          <span class="partner-pill">Enphase</span>
+          <span class="partner-pill">Viessmann</span>
+          <span class="partner-pill">SMA</span>
+          <span class="partner-pill">Daikin</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="ueber-uns">
+      <div class="container">
+        <p class="section-label" data-i18n="about_label">Über uns</p>
+        <h2 class="section-title" data-i18n="about_title">Seit über 15 Jahren Energie europäisch denken</h2>
+        <p class="section-lead" data-i18n="about_lead">EuGreen Energy (eugreen.energy) verbindet Verbraucher mit den besten Tarifen – ohne Aufschlag.</p>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="band-green section">
+      <div class="container band-grid">
+        <div>
+          <p class="section-label" data-i18n="green_label">EuGreen Portfolio</p>
+          <h2 class="section-title" style="color:#fff" data-i18n="green_title">Nachhaltige Energie mit messbarer Ersparnis</h2>
+          <p class="text-muted section-lead" data-i18n="green_lead">Ohne versteckte Kosten.</p>
+          <p style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;margin:1.5rem 0 0">
+            <span data-i18n="savings_upto">bis</span> <span id="savings-pct">32</span>% <span data-i18n="savings_less">weniger Energiekosten</span>
+          </p>
+          <label style="display:block;margin-top:1rem;font-size:0.85rem;opacity:0.9" data-i18n="savings_time">Ersparnis im Zeitverlauf</label>
+          <input type="range" id="year-slider" min="0" max="4" value="3" style="width:100%;accent-color:#fff;margin-top:0.5rem" />
+          <a href="#anfrage" class="btn btn-primary" style="margin-top:1.25rem;background:#fff;color:var(--green)" data-scroll="#anfrage" data-i18n="green_cta">Jetzt starten</a>
+        </div>
+        <div class="visual-panel map-stage">
+          <img src="assets/map-animation.svg" alt="" class="map-bg" loading="lazy" />
+          <svg id="europe-map" class="map-overlay" aria-hidden="true"></svg>
+          <p class="map-hint" data-i18n="map_hint">Klicken Sie auf einen Punkt</p>
+          <aside id="location-panel" class="location-panel" role="dialog" aria-modal="false">
+            <button type="button" class="panel-close" id="panel-close" aria-label="Schließen">✕</button>
+            <h3 id="panel-title"></h3>
+            <div id="panel-offices" class="office-cards"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-orange section" id="europa">
+      <div class="container band-grid">
+        <div>
+          <p class="section-label" data-i18n="orange_label">Wir verbinden Europa</p>
+          <h2 class="section-title" style="color:#fff" data-i18n="orange_title">EuGreen-Standorte in der EU</h2>
+          <div class="office-stat">
+            <div class="office-stat-num">24</div>
+            <div class="office-stat-divider"></div>
+            <p data-i18n="orange_stat1">Büros in 18 Ländern</p>
+          </div>
+          <div class="office-stat">
+            <div class="office-stat-num">18</div>
+            <div class="office-stat-divider"></div>
+            <p data-i18n="orange_stat2">Länder mit Experten</p>
+          </div>
+          <p style="opacity:0.9;margin-top:1rem" data-i18n="orange_de">Deutschland: 5 Standorte.</p>
+          <a href="#anfrage" class="btn" style="background:#fff;color:var(--orange);margin-top:1rem" data-scroll="#anfrage" data-i18n="orange_cta">Kontakt</a>
+        </div>
+        <div class="visual-panel globe-stage" id="globe-stage">
+          <img src="assets/globe-new.svg" alt="" class="globe-img" loading="lazy" />
+          <div id="globe-fx" class="globe-fx"></div>
+          <p class="globe-phase" id="globe-phase-label"></p>
+          <div class="globe-brand" id="globe-brand">
+            <span class="globe-brand-name">EuGreen Energy</span>
+            <small>eugreen.energy</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="leistungen">
+      <div class="container">
+        <p class="section-label" data-i18n="services_label">Leistungen</p>
+        <h2 class="section-title" data-i18n="services_title">Was wir vergleichen</h2>
+        <div class="services-grid">
+          <article class="service-card"><span class="svc-icon">⚡</span><h3 data-i18n="serv1_t">Strom & Gas</h3><p data-i18n="serv1_d">Tarife</p></article>
+          <article class="service-card"><span class="svc-icon">☀️</span><h3 data-i18n="serv2_t">Solar</h3><p data-i18n="serv2_d">PV</p></article>
+          <article class="service-card"><span class="svc-icon">🌡️</span><h3 data-i18n="serv3_t">Wärmepumpe</h3><p data-i18n="serv3_d">Planung</p></article>
+          <article class="service-card"><span class="svc-icon">🏢</span><h3 data-i18n="serv4_t">Gewerbe</h3><p data-i18n="serv4_d">EU</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form-section" id="anfrage">
+      <div class="container">
+        <p class="section-label" data-i18n="form_label">Anfrage</p>
+        <h2 class="section-title" data-i18n="form_title">Ihr Weg zum besten Angebot</h2>
+        <p class="section-lead" data-i18n="form_lead">Schritt für Schritt – Energie fließt zu Ihnen.</p>
+
+        <div class="form-wizard-wrap">
+          <div class="energy-flow" aria-label="Fortschritt">
+            <div class="flow-bar-wrap">
+              <div class="flow-track"><div class="flow-fill" id="flow-fill"></div></div>
+              <div class="flow-nodes-row">
+                <span class="flow-node">1</span><span class="flow-node">2</span><span class="flow-node">3</span>
+                <span class="flow-node">4</span><span class="flow-node">5</span><span class="flow-node">6</span>
+                <span class="flow-bulb" id="flow-bulb">💡</span>
+              </div>
+            </div>
+          </div>
+          <p id="bulb-label" style="text-align:center;font-size:0.82rem;color:var(--text-muted);margin:-1rem 0 1rem" data-i18n="bulb_charge">Energie fließt…</p>
+
+          <form id="eugreen-form" class="wizard-card" data-wix-form="EuGreenLeads">
+            <input type="hidden" name="brand" value="EuGreen Energy" />
+            <input type="hidden" id="field-country" name="country" />
+
+            <div class="wizard-step active" data-step="0">
+              <h3 data-step-title data-i18n="form_step_country">Wo ist Ihre Immobilie?</h3>
+              <p class="step-hint" data-i18n="step_hint_plz">PLZ bestimmt Förderungen.</p>
+              <div class="form-group">
+                <label data-i18n="country">Land</label>
+                <select id="wizard-country" name="countrySelect" required></select>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label data-i18n="zip">PLZ</label><input name="zip" required /></div>
+                <div class="form-group"><label data-i18n="city">Ort</label><input id="wizard-city" name="city" required /></div>
+              </div>
+            </div>
+
+            <div class="wizard-step" data-step="1">
+              <h3 data-step-title data-i18n="form_step_property">Gebäudetyp?</h3>
+              <div class="choice-grid">
+                <label class="choice-card"><input type="radio" name="propertyType" value="house" required /><span class="icon">🏠</span><span data-i18n="prop_house">Haus</span></label>
+                <label class="choice-card"><input type="radio" name="propertyType" value="apt" /><span class="icon">🏢</span><span data-i18n="prop_apt">Wohnung</span></label>
+                <label class="choice-card"><input type="radio" name="propertyType" value="comm" /><span class="icon">🏭</span><span data-i18n="prop_comm">Gewerbe</span></label>
+              </div>
+            </div>
+
+            <div class="wizard-step" data-step="2">
+              <h3 data-step-title data-i18n="form_step_services">Was benötigen Sie?</h3>
+              <div class="choice-grid">
+                <label class="choice-card"><input type="checkbox" name="service" value="strom" /><span class="icon">⚡</span>Strom</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="gas" /><span class="icon">🔥</span>Gas</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="solar" /><span class="icon">☀️</span>Solar</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="waermepumpe" /><span class="icon">🌡️</span>WP</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="speicher" /><span class="icon">🔋</span>Speicher</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="wallbox" /><span class="icon">🚗</span>Wallbox</label>
+              </div>
+            </div>
+
+            <div class="wizard-step" data-step="3">
+              <h3 data-step-title data-i18n="form_step_usage">Verbrauch</h3>
+              <div class="form-group"><label data-i18n="usage_kwh">kWh/Jahr</label><input type="number" name="consumption" placeholder="3500" /></div>
+              <div class="form-group"><label data-i18n="usage_bill">€/Monat</label><input type="number" name="monthlyBill" /></div>
+              <label class="choice-card" style="display:inline-flex;width:auto"><input type="checkbox" name="usageUnknown" value="1" /><span data-i18n="usage_unknown">Weiß nicht</span></label>
+            </div>
+
+            <div class="wizard-step" data-step="4">
+              <h3 data-step-title data-i18n="form_step_contact">Kontakt</h3>
+              <div class="form-row">
+                <div class="form-group"><label data-i18n="firstName">Vorname</label><input name="firstName" required /></div>
+                <div class="form-group"><label data-i18n="lastName">Nachname</label><input name="lastName" required /></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label data-i18n="email">E-Mail</label><input type="email" name="email" required /></div>
+                <div class="form-group"><label data-i18n="phone">Telefon</label><input type="tel" name="phone" /></div>
+              </div>
+              <div class="form-group">
+                <label>Kontakt</label>
+                <select name="contactPreference">
+                  <option value="email" data-i18n-option="contact_email">E-Mail</option>
+                  <option value="phone" data-i18n-option="contact_phone">Telefon</option>
+                  <option value="both" data-i18n-option="contact_both">Beides</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="wizard-step" data-step="5">
+              <h3 data-step-title data-i18n="form_step_extra">Noch etwas?</h3>
+              <div class="form-group">
+                <textarea name="message" rows="5" data-i18n-placeholder="message_ph"></textarea>
+              </div>
+              <p style="font-size:0.85rem;color:var(--text-muted)" data-i18n="form_done">Fast fertig – Ampel leuchtet nach Absenden!</p>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn btn-ghost" id="btn-back" data-i18n="form_back">Zurück</button>
+              <button type="button" class="btn btn-primary" id="btn-next" data-i18n="form_next">Weiter</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title" data-i18n="faq_title">FAQ</h2>
+        <div class="faq-list">
+          <div class="faq-item"><button type="button" class="faq-q"><span data-i18n="faq1_q">Kostet es etwas?</span> <span>▼</span></button><div class="faq-a" data-i18n="faq1_a"></div></div>
+          <div class="faq-item"><button type="button" class="faq-q"><span data-i18n="faq2_q">Warum günstiger?</span> <span>▼</span></button><div class="faq-a" data-i18n="faq2_a"></div></div>
+          <div class="faq-item"><button type="button" class="faq-q"><span data-i18n="faq3_q">Welche Länder?</span> <span>▼</span></button><div class="faq-a" data-i18n="faq3_a"></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem">
+      <div><strong>EuGreen Energy</strong><br />eugreen.energy · info@eugreen.energy</div>
+      <div><a href="#" data-i18n="footer_legal">Impressum</a> · <a href="#">Datenschutz</a></div>
+    </div>
+    <div class="container" style="margin-top:1rem;font-size:0.8rem">© 2026 EuGreen Energy</div>
+  </footer>
+
+  <div id="success-modal" class="modal-overlay">
+    <div class="modal">
+      <div style="font-size:3rem">💡</div>
+      <h2 data-i18n="success_title">Vielen Dank!</h2>
+      <p data-i18n="success_body">Wir melden uns in 24h.</p>
+      <button type="button" class="btn btn-primary" id="modal-close" data-i18n="modal_ok">OK</button>
+    </div>
+  </div>
+
+  <script>
+/* EuGreen Energy – geo positions on map viewBox 0 0 483 480 (sennder map-animation) */
+window.EUR_GEO = function (lon, lat) {
+  const x = ((lon + 11) / 43) * 483;
+  const y = ((71 - lat) / 36) * 480;
+  return { x: +x.toFixed(1), y: +y.toFixed(1) };
+};
+
+window.EUR_LOCATIONS = {
+  DE: {
+    name: "Deutschland", flag: "🇩🇪",
+    offices: [
+      { city: "Berlin", address: "Friedrichstraße 68, 10117 Berlin", phone: "+49 30 1234 5601", email: "de-berlin@eugreen.energy", lon: 13.405, lat: 52.52 },
+      { city: "München", address: "Leopoldstraße 112, 80802 München", phone: "+49 89 1234 5602", email: "de-muenchen@eugreen.energy", lon: 11.582, lat: 48.135 },
+      { city: "Hamburg", address: "Speersort 1, 20095 Hamburg", phone: "+49 40 1234 5603", email: "de-hamburg@eugreen.energy", lon: 9.993, lat: 53.551 },
+      { city: "Köln", address: "Domstraße 10, 50667 Köln", phone: "+49 221 1234 5604", email: "de-koeln@eugreen.energy", lon: 6.9603, lat: 50.9375 },
+      { city: "Frankfurt", address: "Zeil 106, 60313 Frankfurt", phone: "+49 69 1234 5605", email: "de-frankfurt@eugreen.energy", lon: 8.6821, lat: 50.1109 }
+    ]
+  },
+  FR: { name: "Frankreich", flag: "🇫🇷", offices: [{ city: "Paris", address: "24 rue Petrelle, 75009 Paris", phone: "+33 1 89 71 09 02", email: "fr@eugreen.energy", lon: 2.3522, lat: 48.8566 }] },
+  NL: { name: "Niederlande", flag: "🇳🇱", offices: [{ city: "Amsterdam", address: "Trompenburgstraat 2c, 1079 TX", phone: "+31 20 808 0243", email: "nl@eugreen.energy", lon: 4.9041, lat: 52.3676 }] },
+  IT: { name: "Italien", flag: "🇮🇹", offices: [{ city: "Milano", address: "Via Arbe 49, 20125 Milano", phone: "+39 02 8295 4676", email: "it@eugreen.energy", lon: 9.19, lat: 45.4642 }] },
+  ES: { name: "Spanien", flag: "🇪🇸", offices: [{ city: "Barcelona", address: "Avinguda Diagonal 123", phone: "+34 639 98 53 09", email: "es@eugreen.energy", lon: 2.1734, lat: 41.3851 }] },
+  PL: { name: "Polen", flag: "🇵🇱", offices: [{ city: "Wrocław", address: "ul. Powstańców Śląskich 17", phone: "+48 71 881 03 40", email: "pl@eugreen.energy", lon: 17.0385, lat: 51.1079 }] },
+  AT: { name: "Österreich", flag: "🇦🇹", offices: [{ city: "Wien", address: "Mariahilfer Straße 88, 1070 Wien", phone: "+43 1 234 5606", email: "at@eugreen.energy", lon: 16.3738, lat: 48.2082 }] },
+  BE: { name: "Belgien", flag: "🇧🇪", offices: [{ city: "Brüssel", address: "Avenue Louise 250", phone: "+32 2 808 0243", email: "be@eugreen.energy", lon: 4.3517, lat: 50.8503 }] },
+  PT: { name: "Portugal", flag: "🇵🇹", offices: [{ city: "Lissabon", address: "Av. da Liberdade 110", phone: "+351 21 123 4567", email: "pt@eugreen.energy", lon: -9.1393, lat: 38.7223 }] },
+  SE: { name: "Schweden", flag: "🇸🇪", offices: [{ city: "Stockholm", address: "Kungsgatan 33", phone: "+46 8 123 4567", email: "se@eugreen.energy", lon: 18.0686, lat: 59.3293 }] },
+  DK: { name: "Dänemark", flag: "🇩🇰", offices: [{ city: "Kopenhagen", address: "Vesterbrogade 6", phone: "+45 33 123 456", email: "dk@eugreen.energy", lon: 12.5683, lat: 55.6761 }] },
+  CZ: { name: "Tschechien", flag: "🇨🇿", offices: [{ city: "Prag", address: "Václavské nám. 28", phone: "+420 222 123 456", email: "cz@eugreen.energy", lon: 14.4378, lat: 50.0755 }] },
+  RO: { name: "Rumänien", flag: "🇷🇴", offices: [{ city: "Bukarest", address: "Str. Progresului 1-3", phone: "+40 371 700 442", email: "ro@eugreen.energy", lon: 26.1025, lat: 44.4268 }] },
+  LV: { name: "Lettland", flag: "🇱🇻", offices: [{ city: "Riga", address: "Krišjāņa Valdemāra iela 62", phone: "+371 63 588 681", email: "lv@eugreen.energy", lon: 24.1052, lat: 56.9496 }] },
+  IE: { name: "Irland", flag: "🇮🇪", offices: [{ city: "Dublin", address: "Grand Canal Dock", phone: "+353 1 234 5678", email: "ie@eugreen.energy", lon: -6.2603, lat: 53.3498 }] },
+  GR: { name: "Griechenland", flag: "🇬🇷", offices: [{ city: "Athen", address: "Leof. Vasilissis Sofias 45", phone: "+30 210 123 4567", email: "gr@eugreen.energy", lon: 23.7275, lat: 37.9838 }] },
+  HU: { name: "Ungarn", flag: "🇭🇺", offices: [{ city: "Budapest", address: "Andrássy út 60", phone: "+36 1 234 5678", email: "hu@eugreen.energy", lon: 19.0402, lat: 47.4979 }] },
+  FI: { name: "Finnland", flag: "🇫🇮", offices: [{ city: "Helsinki", address: "Mannerheimintie 12", phone: "+358 9 123 4567", email: "fi@eugreen.energy", lon: 24.9384, lat: 60.1699 }] }
+};
+
+window.EUR_MAP_COUNTRIES = Object.keys(window.EUR_LOCATIONS).map((id) => {
+  const o = window.EUR_LOCATIONS[id].offices[0];
+  const p = window.EUR_GEO(o.lon, o.lat);
+  return { id, x: p.x, y: p.y };
+});
+
+window.EUR_DE_CITIES = window.EUR_LOCATIONS.DE.offices.map((o, i) => {
+  const p = window.EUR_GEO(o.lon, o.lat);
+  return { id: "DE", index: i, city: o.city, x: p.x, y: p.y };
+});
+/* EuGreen Energy – i18n */
+window.EUGREEN_LANGS = {
+  de: "Deutsch", en: "English", es: "Español", fr: "Français", tr: "Türkçe",
+  it: "Italiano", nl: "Nederlands", pl: "Polski", pt: "Português", sv: "Svenska",
+  da: "Dansk", fi: "Suomi", cs: "Čeština", sk: "Slovenčina", hu: "Magyar",
+  ro: "Română", bg: "Български", hr: "Hrvatski", sl: "Slovenščina", et: "Eesti",
+  lv: "Latviešu", lt: "Lietuvių", el: "Ελληνικά", ga: "Gaeilge", mt: "Malti",
+  no: "Norsk", uk: "Українська", sr: "Српски", mk: "Македонски", sq: "Shqip",
+  bs: "Bosanski", is: "Íslenska", lb: "Lëtzebuergesch", ca: "Català", eu: "Euskara"
+};
+
+const T = {
+  de: {
+    metaTitle: "EuGreen Energy | Energieberatung für ganz Europa",
+    metaDesc: "EuGreen Energy – Bündelkraft für Strom, Solar & Wärmepumpe. Bis zu 15% günstiger. Kostenlose Beratung.",
+    nav_services: "Leistungen", nav_europe: "Europa", nav_about: "Über uns", nav_how: "Ablauf", nav_form: "Anfrage", nav_faq: "FAQ",
+    nav_cta: "Kostenlos anfragen", theme_light: "Hell", theme_dark: "Dunkel",
+    hero_badge: "18+ EU-Märkte · Seit 2010",
+    hero_title: "Zahlen Sie nicht den Einzelpreis.",
+    hero_title_em: "Profitieren Sie von unserer Bündelkraft.",
+    hero_desc: "Sie allein zahlen 40.000 € – wir gehen mit Hunderten Anfragen zu Partnern und sichern Ihnen dieselbe Lösung oft für 35.000 €. Unser Service ist für Sie komplett kostenfrei.",
+    hero_stat1: "Ø Ersparnis", hero_stat2: "Vergleiche/Jahr", hero_stat3: "Erste Antwort",
+    hero_cta: "Angebot starten", hero_cta2: "Unsere Geschichte",
+    price_market: "Marktpreis (allein)", price_bundle: "Über EuGreen (Bündel)",
+    price_note: "eugreen.energy · Unser Service ist für Sie kostenfrei.",
+    how_title: "So funktioniert EuGreen", how_sub: "Drei einfache Schritte",
+    how1_t: "Daten eingeben", how1_d: "Land, Bedarf & Kontakt – in wenigen Minuten.",
+    how2_t: "Wir verhandeln", how2_d: "Experten holen Angebote bei zertifizierten Partnern ein.",
+    how3_t: "Sie sparen", how3_d: "Bestes Preis-Leistungs-Verhältnis – per Mail oder Rückruf.",
+    partners_title: "Partner & Anbieter",
+    about_label: "Über uns", about_title: "Seit über 15 Jahren Energie europäisch denken",
+    about_lead: "EuGreen Energy (eugreen.energy) verbindet Verbraucher und Gewerbe mit den besten Tarifen und Installateuren – unabhängig, transparent und ohne Aufschlag.",
+    timeline: [
+      { y: "2010", t: "Gründung in Deutschland", d: "Start als unabhängige Energieberatung mit Fokus Strom & Gas." },
+      { y: "2014", t: "5 Standorte DE", d: "Berlin, München, Hamburg, Köln, Frankfurt – persönliche Beratung vor Ort." },
+      { y: "2018", t: "EU-Expansion", d: "Erste Märkte in Benelux, Frankreich, Italien und Iberien." },
+      { y: "2022", t: "Solar & Wärmepumpe", d: "Komplettangebote für PV, Speicher und Wärmepumpen aus einer Hand." },
+      { y: "2026", t: "EuGreen Energy", d: "Rebrand zu eugreen.energy – 2.400+ Vergleiche, 18 Länder, 24 Partner-Hubs." }
+    ],
+    green_label: "EuGreen Portfolio", green_title: "Nachhaltige Energie mit messbarer Ersparnis",
+    green_lead: "Wir finden Tarife und Anlagen, die zu Ihrem Gebäude passen – ohne versteckte Kosten.",
+    savings_upto: "bis", savings_less: "weniger Energiekosten", savings_time: "Ersparnis im Zeitverlauf", green_cta: "Jetzt starten",
+    map_hint: "Klicken Sie auf einen Punkt – Schließen mit ✕ oder außerhalb",
+    panel_close: "Schließen",
+    orange_label: "Wir verbinden Europa", orange_title: "EuGreen-Standorte in der gesamten EU",
+    orange_stat1: "Büros & Partner-Hubs in 18 Ländern", orange_stat2: "Länder mit lokalen Experten",
+    orange_de: "Deutschland: 5 Standorte – Berlin, München, Hamburg, Köln, Frankfurt.",
+    orange_cta: "Kontakt",
+    globe_solar: "Solar auf Dächern", globe_power: "Strom ins Netz", globe_heat: "Wärmepumpen aktiv",
+    services_label: "Leistungen", services_title: "Was wir für Sie vergleichen",
+    serv1_t: "Strom & Gas", serv1_d: "Tarife, Einspeisung, Gewerbe",
+    serv2_t: "Solar & Speicher", serv2_d: "PV, Batterie, Wallbox",
+    serv3_t: "Wärmepumpe", serv3_d: "Planung & WP-Strom",
+    serv4_t: "Gewerbe", serv4_d: "EU-weite Verträge",
+    form_label: "Kostenlose Anfrage", form_title: "Ihr Weg zum besten Angebot",
+    form_lead: "Schritt für Schritt – wie Energie von der Quelle bis zu Ihnen fließt.",
+    form_step_country: "Wo befindet sich Ihre Immobilie?", form_step_property: "Welche Art von Gebäude?",
+    form_step_services: "Was benötigen Sie?", form_step_usage: "Ihr Energieverbrauch",
+    form_step_contact: "Wie erreichen wir Sie?", form_step_extra: "Noch etwas Wichtiges?",
+    step_hint_plz: "PLZ bestimmt Förderungen & regionale Tarife.",
+    form_next: "Weiter", form_back: "Zurück", form_submit: "Anfrage absenden",
+    form_done: "Fast fertig – Ampel leuchtet nach dem Absenden!",
+    prop_house: "Einfamilienhaus", prop_apt: "Wohnung", prop_comm: "Gewerbe",
+    usage_kwh: "Jahresverbrauch Strom (kWh)", usage_bill: "Monatliche Rechnung (€)", usage_unknown: "Weiß ich nicht",
+    country: "Land", zip: "PLZ / Postleitzahl", city: "Ort",
+    firstName: "Vorname", lastName: "Nachname", email: "E-Mail", phone: "Telefon",
+    contact_email: "E-Mail", contact_phone: "Telefon", contact_both: "Beides",
+    message_ph: "Optional: Vertrag, Solar, Wärmepumpe…",
+    faq_title: "Häufige Fragen", faq1_q: "Kostet EuGreen etwas?", faq1_a: "Nein. Beratung ist kostenfrei – wir werden von Partnern provisioniert, ohne Aufschlag für Sie.",
+    faq2_q: "Warum günstiger?", faq2_a: "Bündelkraft: viele Kunden = bessere Konditionen (z.B. 35.000 € statt 40.000 €).",
+    faq3_q: "Welche Länder?", faq3_a: "18 EU-Märkte. Deutschland: Berlin, München, Hamburg, Köln, Frankfurt.",
+    footer_legal: "Rechtliches", footer_contact: "Kontakt", footer_privacy: "Datenschutz",
+    success_title: "Vielen Dank!", success_body: "Ihre Anfrage ist bei uns eingegangen. Wir melden uns innerhalb von 24 Stunden.",
+    bulb_ready: "Energie bereit!", bulb_charge: "Energie fließt…", modal_ok: "OK"
+  },
+  en: {
+    metaTitle: "EuGreen Energy | Energy consulting across Europe",
+    metaDesc: "EuGreen Energy – bulk buying for electricity, solar & heat pumps. Up to 15% cheaper. Free advice.",
+    nav_services: "Services", nav_europe: "Europe", nav_about: "About us", nav_how: "How it works", nav_form: "Request", nav_faq: "FAQ",
+    nav_cta: "Free quote", theme_light: "Light", theme_dark: "Dark",
+    hero_badge: "18+ EU markets · Since 2010",
+    hero_title: "Don't pay the retail price.",
+    hero_title_em: "Use our collective buying power.",
+    hero_desc: "Alone you pay €40,000 – we often secure the same solution for €35,000. Our service is completely free.",
+    hero_stat1: "Avg. savings", hero_stat2: "Quotes/year", hero_stat3: "First response",
+    hero_cta: "Start quote", hero_cta2: "Our story",
+    price_market: "Market price (alone)", price_bundle: "Via EuGreen (bundle)",
+    price_note: "eugreen.energy · Our service is free for you.",
+    how_title: "How EuGreen works", how_sub: "Three simple steps",
+    how1_t: "Enter details", how1_d: "Country, needs & contact in minutes.",
+    how2_t: "We negotiate", how2_d: "Experts collect offers from certified partners.",
+    how3_t: "You save", how3_d: "Best value – by email or callback.",
+    partners_title: "Partners & providers",
+    about_label: "About us", about_title: "Over 15 years of European energy expertise",
+    about_lead: "EuGreen Energy (eugreen.energy) connects households and businesses with the best tariffs and installers – independent, transparent, no markup.",
+    timeline: [
+      { y: "2010", t: "Founded in Germany", d: "Independent energy consulting for electricity & gas." },
+      { y: "2014", t: "5 DE locations", d: "Berlin, Munich, Hamburg, Cologne, Frankfurt." },
+      { y: "2018", t: "EU expansion", d: "Benelux, France, Italy, Iberia." },
+      { y: "2022", t: "Solar & heat pumps", d: "Full PV, storage and heat pump packages." },
+      { y: "2026", t: "EuGreen Energy", d: "Rebrand to eugreen.energy – 2,400+ comparisons, 18 countries." }
+    ],
+    green_label: "EuGreen portfolio", green_title: "Sustainable energy, measurable savings",
+    green_lead: "We match tariffs and systems to your building – no hidden fees.",
+    savings_upto: "up to", savings_less: "lower energy costs", savings_time: "Savings over time", green_cta: "Start now",
+    map_hint: "Click a point – close with ✕ or click outside",
+    panel_close: "Close",
+    orange_label: "We connect Europe", orange_title: "EuGreen locations across the EU",
+    orange_stat1: "Offices & partner hubs in 18 countries", orange_stat2: "Countries with local experts",
+    orange_de: "Germany: 5 sites – Berlin, Munich, Hamburg, Cologne, Frankfurt.",
+    orange_cta: "Contact",
+    globe_solar: "Solar on rooftops", globe_power: "Power to the grid", globe_heat: "Heat pumps active",
+    services_label: "Services", services_title: "What we compare for you",
+    serv1_t: "Electricity & gas", serv1_d: "Tariffs, feed-in, business",
+    serv2_t: "Solar & storage", serv2_d: "PV, battery, wallbox",
+    serv3_t: "Heat pump", serv3_d: "Planning & HP tariff",
+    serv4_t: "Commercial", serv4_d: "EU-wide contracts",
+    form_label: "Free request", form_title: "Your path to the best offer",
+    form_lead: "Step by step – energy flows to you.",
+    form_step_country: "Where is your property?", form_step_property: "What type of building?",
+    form_step_services: "What do you need?", form_step_usage: "Your energy usage",
+    form_step_contact: "How can we reach you?", form_step_extra: "Anything else?",
+    step_hint_plz: "Postal code determines grants & regional tariffs.",
+    form_next: "Next", form_back: "Back", form_submit: "Submit request",
+    form_done: "Almost done – bulb lights up when you submit!",
+    prop_house: "Detached house", prop_apt: "Apartment", prop_comm: "Commercial",
+    usage_kwh: "Annual electricity (kWh)", usage_bill: "Monthly bill (€)", usage_unknown: "I don't know",
+    country: "Country", zip: "Postal code", city: "City",
+    firstName: "First name", lastName: "Last name", email: "Email", phone: "Phone",
+    contact_email: "Email", contact_phone: "Phone", contact_both: "Both",
+    message_ph: "Optional: contract, solar, heat pump…",
+    faq_title: "FAQ", faq1_q: "Does it cost anything?", faq1_a: "No. Advice is free – we earn commission from partners, with no markup for you.",
+    faq2_q: "Why cheaper?", faq2_a: "Bulk buying: many customers = better rates (e.g. €35k vs €40k).",
+    faq3_q: "Which countries?", faq3_a: "18 EU markets. Germany: Berlin, Munich, Hamburg, Cologne, Frankfurt.",
+    footer_legal: "Legal", footer_contact: "Contact", footer_privacy: "Privacy",
+    success_title: "Thank you!", success_body: "We received your request and will respond within 24 hours.",
+    bulb_ready: "Energy ready!", bulb_charge: "Energy flowing…", modal_ok: "OK"
+  },
+  es: {
+    metaTitle: "EuGreen Energy | Asesoría energética en Europa",
+    metaDesc: "EuGreen Energy – poder de compra colectivo. Hasta 15% más barato. Asesoramiento gratuito.",
+    nav_services: "Servicios", nav_europe: "Europa", nav_about: "Sobre nosotros", nav_how: "Proceso", nav_form: "Solicitud", nav_faq: "FAQ",
+    nav_cta: "Presupuesto gratis", theme_light: "Claro", theme_dark: "Oscuro",
+    hero_badge: "18+ mercados UE · Desde 2010",
+    hero_title: "No pague el precio individual.", hero_title_em: "Aproveche nuestro volumen.",
+    hero_desc: "Solo paga 40.000 € – a menudo la misma solución por 35.000 €. Servicio totalmente gratuito.",
+    hero_stat1: "Ahorro medio", hero_stat2: "Comparaciones/año", hero_stat3: "Primera respuesta",
+    hero_cta: "Empezar", hero_cta2: "Nuestra historia",
+    price_market: "Precio de mercado (solo)", price_bundle: "Vía EuGreen (grupo)", price_note: "eugreen.energy · Servicio gratuito.",
+    how_title: "Cómo funciona EuGreen", how_sub: "Tres pasos simples",
+    how1_t: "Introduzca datos", how1_d: "País, necesidad y contacto.", how2_t: "Negociamos", how2_d: "Ofertas de partners certificados.", how3_t: "Ahorra", how3_d: "Mejor precio por email o llamada.",
+    partners_title: "Socios y proveedores",
+    about_label: "Sobre nosotros", about_title: "Más de 15 años de experiencia energética en Europa",
+    about_lead: "EuGreen Energy (eugreen.energy) conecta hogares y empresas con las mejores tarifas – sin recargo.",
+    timeline: [
+      { y: "2010", t: "Fundación en Alemania", d: "Consultoría independiente de electricidad y gas." },
+      { y: "2014", t: "5 sedes en DE", d: "Berlín, Múnich, Hamburgo, Colonia, Fráncfort." },
+      { y: "2018", t: "Expansión UE", d: "Benelux, Francia, Italia e Iberia." },
+      { y: "2022", t: "Solar y bomba de calor", d: "Paquetes PV, almacenamiento y bomba de calor." },
+      { y: "2026", t: "EuGreen Energy", d: "eugreen.energy – 2.400+ comparaciones, 18 países." }
+    ],
+    green_label: "Portfolio EuGreen", green_title: "Energía sostenible con ahorro medible", green_lead: "Sin costes ocultos.",
+    savings_upto: "hasta", savings_less: "menos costes energéticos", savings_time: "Ahorro en el tiempo", green_cta: "Empezar",
+    map_hint: "Clic en un punto – cerrar con ✕ o fuera", panel_close: "Cerrar",
+    orange_label: "Conectamos Europa", orange_title: "Ubicaciones EuGreen en la UE",
+    orange_stat1: "24 oficinas en 18 países", orange_stat2: "Expertos locales",
+    orange_de: "Alemania: 5 ciudades.", orange_cta: "Contacto",
+    globe_solar: "Solar en tejados", globe_power: "Electricidad a la red", globe_heat: "Bombas de calor",
+    services_label: "Servicios", services_title: "Qué comparamos",
+    serv1_t: "Luz y gas", serv1_d: "Tarifas y empresas", serv2_t: "Solar y batería", serv2_d: "FV, wallbox",
+    serv3_t: "Bomba de calor", serv3_d: "Planificación", serv4_t: "Comercial", serv4_d: "Contratos UE",
+    form_label: "Solicitud gratuita", form_title: "Su mejor oferta", form_lead: "Paso a paso.",
+    form_step_country: "¿Dónde está su propiedad?", form_step_property: "¿Tipo de edificio?", form_step_services: "¿Qué necesita?",
+    form_step_usage: "Consumo", form_step_contact: "Contacto", form_step_extra: "¿Algo más?",
+    step_hint_plz: "El código postal define ayudas y tarifas.", form_next: "Siguiente", form_back: "Atrás", form_submit: "Enviar",
+    form_done: "¡Casi listo!", prop_house: "Casa", prop_apt: "Piso", prop_comm: "Comercial",
+    usage_kwh: "kWh/año", usage_bill: "Factura €/mes", usage_unknown: "No sé",
+    country: "País", zip: "Código postal", city: "Ciudad",
+    firstName: "Nombre", lastName: "Apellido", email: "Email", phone: "Teléfono",
+    contact_email: "Email", contact_phone: "Teléfono", contact_both: "Ambos", message_ph: "Opcional…",
+    faq_title: "Preguntas", faq1_q: "¿Tiene coste?", faq1_a: "No. Asesoramiento gratuito.", faq2_q: "¿Por qué más barato?", faq2_a: "Volumen de clientes = mejores precios.", faq3_q: "¿Qué países?", faq3_a: "18 mercados UE.",
+    footer_legal: "Legal", footer_contact: "Contacto", footer_privacy: "Privacidad",
+    success_title: "¡Gracias!", success_body: "Recibimos su solicitud.", bulb_ready: "¡Energía lista!", bulb_charge: "Fluyendo…", modal_ok: "OK"
+  },
+  fr: {
+    metaTitle: "EuGreen Energy | Conseil énergie en Europe",
+    metaDesc: "EuGreen Energy – achat groupé. Jusqu'à 15% moins cher. Conseil gratuit.",
+    nav_services: "Services", nav_europe: "Europe", nav_about: "À propos", nav_how: "Processus", nav_form: "Demande", nav_faq: "FAQ",
+    nav_cta: "Devis gratuit", theme_light: "Clair", theme_dark: "Sombre",
+    hero_badge: "18+ marchés UE · Depuis 2010",
+    hero_title: "Ne payez pas seul.", hero_title_em: "Profitez de notre volume.",
+    hero_desc: "40 000 € seul – souvent 35 000 € via nous. Service gratuit.",
+    hero_stat1: "Économie moy.", hero_stat2: "Comparaisons/an", hero_stat3: "Réponse 24h",
+    hero_cta: "Commencer", hero_cta2: "Notre histoire",
+    price_market: "Prix marché (seul)", price_bundle: "Via EuGreen (groupe)", price_note: "eugreen.energy · Service gratuit.",
+    how_title: "Comment fonctionne EuGreen", how_sub: "Trois étapes",
+    how1_t: "Vos données", how1_d: "Pays et contact.", how2_t: "Nous négocions", how2_d: "Offres partenaires.", how3_t: "Vous économisez", how3_d: "Meilleur prix.",
+    partners_title: "Partenaires",
+    about_label: "À propos", about_title: "Plus de 15 ans d'expertise énergétique en Europe",
+    about_lead: "EuGreen Energy (eugreen.energy) – indépendant, transparent, sans majoration.",
+    timeline: [
+      { y: "2010", t: "Fondation en Allemagne", d: "Conseil indépendant électricité & gaz." },
+      { y: "2014", t: "5 sites DE", d: "Berlin, Munich, Hambourg, Cologne, Francfort." },
+      { y: "2018", t: "Expansion UE", d: "Benelux, France, Italie, Ibérie." },
+      { y: "2022", t: "Solaire & pompe à chaleur", d: "Offres PV, stockage et PAC." },
+      { y: "2026", t: "EuGreen Energy", d: "eugreen.energy – 18 pays." }
+    ],
+    green_label: "Portfolio EuGreen", green_title: "Énergie durable, économies mesurables", green_lead: "Sans frais cachés.",
+    savings_upto: "jusqu'à", savings_less: "moins de coûts", savings_time: "Économies dans le temps", green_cta: "Démarrer",
+    map_hint: "Cliquez un point – fermer avec ✕", panel_close: "Fermer",
+    orange_label: "Nous connectons l'Europe", orange_title: "Sites EuGreen dans l'UE",
+    orange_stat1: "24 bureaux, 18 pays", orange_stat2: "Experts locaux",
+    orange_de: "Allemagne : 5 villes.", orange_cta: "Contact",
+    globe_solar: "Solaire sur les toits", globe_power: "Électricité au réseau", globe_heat: "Pompes à chaleur",
+    services_label: "Services", services_title: "Nos comparatifs",
+    serv1_t: "Électricité & gaz", serv1_d: "Tarifs, injection", serv2_t: "Solaire & stockage", serv2_d: "PV, batterie",
+    serv3_t: "Pompe à chaleur", serv3_d: "Planification", serv4_t: "Professionnel", serv4_d: "Contrats UE",
+    form_label: "Demande gratuite", form_title: "Meilleure offre", form_lead: "Étape par étape.",
+    form_step_country: "Où est le bien ?", form_step_property: "Type de bâtiment ?", form_step_services: "Besoins ?",
+    form_step_usage: "Consommation", form_step_contact: "Contact", form_step_extra: "Autre chose ?",
+    step_hint_plz: "Le code postal détermine les aides.", form_next: "Suivant", form_back: "Retour", form_submit: "Envoyer",
+    form_done: "Presque fini !", prop_house: "Maison", prop_apt: "Appartement", prop_comm: "Pro",
+    usage_kwh: "kWh/an", usage_bill: "Facture €/mois", usage_unknown: "Je ne sais pas",
+    country: "Pays", zip: "Code postal", city: "Ville",
+    firstName: "Prénom", lastName: "Nom", email: "E-mail", phone: "Téléphone",
+    contact_email: "E-mail", contact_phone: "Téléphone", contact_both: "Les deux", message_ph: "Optionnel…",
+    faq_title: "FAQ", faq1_q: "Est-ce payant ?", faq1_a: "Non. Conseil gratuit.", faq2_q: "Pourquoi moins cher ?", faq2_a: "Volume d'achat groupé.", faq3_q: "Quels pays ?", faq3_a: "18 marchés UE.",
+    footer_legal: "Mentions", footer_contact: "Contact", footer_privacy: "Confidentialité",
+    success_title: "Merci !", success_body: "Demande reçue.", bulb_ready: "Prêt !", bulb_charge: "En cours…", modal_ok: "OK"
+  },
+  tr: {
+    metaTitle: "EuGreen Energy | Avrupa enerji danışmanlığı",
+    metaDesc: "EuGreen Energy – toplu alım gücü. %15'e varan tasarruf. Ücretsiz danışmanlık.",
+    nav_services: "Hizmetler", nav_europe: "Avrupa", nav_about: "Hakkımızda", nav_how: "Süreç", nav_form: "Talep", nav_faq: "SSS",
+    nav_cta: "Ücretsiz teklif", theme_light: "Açık", theme_dark: "Koyu",
+    hero_badge: "18+ AB pazarı · 2010'dan beri",
+    hero_title: "Tek başına fiyat ödemeyin.", hero_title_em: "Toplu alım gücümüzden yararlanın.",
+    hero_desc: "Tek başınıza 40.000 € – çoğu zaman 35.000 €. Hizmetimiz tamamen ücretsiz.",
+    hero_stat1: "Ort. tasarruf", hero_stat2: "Karşılaştırma/yıl", hero_stat3: "İlk yanıt",
+    hero_cta: "Teklif al", hero_cta2: "Hikayemiz",
+    price_market: "Piyasa fiyatı (tek başına)", price_bundle: "EuGreen ile (toplu)", price_note: "eugreen.energy · Hizmet ücretsiz.",
+    how_title: "EuGreen nasıl çalışır", how_sub: "Üç basit adım",
+    how1_t: "Bilgileriniz", how1_d: "Ülke ve iletişim.", how2_t: "Biz pazarlık yaparız", how2_d: "Sertifikalı partner teklifleri.", how3_t: "Siz kazanırsınız", how3_d: "En iyi fiyat.",
+    partners_title: "Partnerler",
+    about_label: "Hakkımızda", about_title: "15+ yıl Avrupa enerji deneyimi",
+    about_lead: "EuGreen Energy (eugreen.energy) – bağımsız, şeffaf, komisyonsuz.",
+    timeline: [
+      { y: "2010", t: "Almanya'da kuruluş", d: "Elektrik & gaz danışmanlığı." },
+      { y: "2014", t: "5 Almanya ofisi", d: "Berlin, Münih, Hamburg, Köln, Frankfurt." },
+      { y: "2018", t: "AB genişlemesi", d: "Benelüks, Fransa, İtalya, İberya." },
+      { y: "2022", t: "Solar & ısı pompası", d: "PV, depolama, ısı pompası paketleri." },
+      { y: "2026", t: "EuGreen Energy", d: "eugreen.energy – 18 ülke." }
+    ],
+    green_label: "EuGreen portföy", green_title: "Sürdürülebilir enerji, ölçülebilir tasarruf", green_lead: "Gizli ücret yok.",
+    savings_upto: "", savings_less: "daha az enerji maliyeti", savings_time: "Zaman içinde tasarruf", green_cta: "Başla",
+    map_hint: "Noktaya tıklayın – ✕ veya dışarı ile kapatın", panel_close: "Kapat",
+    orange_label: "Avrupa'yı bağlıyoruz", orange_title: "AB'de EuGreen ofisleri",
+    orange_stat1: "18 ülkede 24 ofis", orange_stat2: "Yerel uzmanlar",
+    orange_de: "Almanya: 5 şehir.", orange_cta: "İletişim",
+    globe_solar: "Çatılarda solar", globe_power: "Şebekeye elektrik", globe_heat: "Isı pompaları",
+    services_label: "Hizmetler", services_title: "Karşılaştırdıklarımız",
+    serv1_t: "Elektrik & gaz", serv1_d: "Tarifeler", serv2_t: "Solar & depolama", serv2_d: "PV, wallbox",
+    serv3_t: "Isı pompası", serv3_d: "Planlama", serv4_t: "Ticari", serv4_d: "AB sözleşmeleri",
+    form_label: "Ücretsiz talep", form_title: "En iyi teklife giden yol", form_lead: "Adım adım.",
+    form_step_country: "Mülkünüz nerede?", form_step_property: "Bina tipi?", form_step_services: "Ne istiyorsunuz?",
+    form_step_usage: "Tüketim", form_step_contact: "İletişim", form_step_extra: "Ek not?",
+    step_hint_plz: "Posta kodu teşvikleri belirler.", form_next: "İleri", form_back: "Geri", form_submit: "Gönder",
+    form_done: "Neredeyse bitti!", prop_house: "Müstakil", prop_apt: "Daire", prop_comm: "Ticari",
+    usage_kwh: "Yıllık kWh", usage_bill: "Aylık fatura (€)", usage_unknown: "Bilmiyorum",
+    country: "Ülke", zip: "Posta kodu", city: "Şehir",
+    firstName: "Ad", lastName: "Soyad", email: "E-posta", phone: "Telefon",
+    contact_email: "E-posta", contact_phone: "Telefon", contact_both: "İkisi", message_ph: "İsteğe bağlı…",
+    faq_title: "SSS", faq1_q: "Ücretli mi?", faq1_a: "Hayır, tamamen ücretsiz.", faq2_q: "Neden ucuz?", faq2_a: "Toplu alım gücü.", faq3_q: "Hangi ülkeler?", faq3_a: "18 AB ülkesi.",
+    footer_legal: "Yasal", footer_contact: "İletişim", footer_privacy: "Gizlilik",
+    success_title: "Teşekkürler!", success_body: "Talebiniz alındı.", bulb_ready: "Enerji hazır!", bulb_charge: "Enerji akıyor…", modal_ok: "Tamam"
+  }
+};
+
+Object.keys(window.EUGREEN_LANGS).forEach((code) => {
+  if (!T[code]) T[code] = { ...T.en };
+  else T[code] = { ...T.en, ...T[code] };
+});
+
+window.EUGREEN_T = T;
+
+window.eugreenDetectLang = function () {
+  const saved = localStorage.getItem("eugreen-lang");
+  if (saved && T[saved]) return saved;
+  const nav = (navigator.language || "de").toLowerCase();
+  const primary = nav.split("-")[0];
+  const region = (nav.split("-")[1] || "").toUpperCase();
+  const regionMap = { AT: "de", CH: "de", BE: "nl", LU: "fr", IE: "en", GB: "en", UK: "en", GR: "el", CY: "el" };
+  if (regionMap[region] && T[regionMap[region]]) return regionMap[region];
+  if (T[primary]) return primary;
+  return "en";
+};
+(function () {
+  "use strict";
+  const $ = (s, c = document) => c.querySelector(s);
+  const $ = (s, c = document) => [...c.querySelectorAll(s)];
+
+  let lang = window.eugreenDetectLang?.() || "de";
+  let theme = localStorage.getItem("eugreen-theme") || "light";
+  const locations = window.EUR_LOCATIONS || {};
+  const mapCountries = window.EUR_MAP_COUNTRIES || [];
+  const deCities = window.EUR_DE_CITIES || [];
+  const FORM_STEPS = 6;
+
+  function t(key) {
+    return (window.EUGREEN_T?.[lang] || window.EUGREEN_T?.en || {})[key] ?? key;
+  }
+
+  function applyI18n() {
+    const pack = window.EUGREEN_T?.[lang] || window.EUGREEN_T?.en;
+    if (!pack) return;
+    document.documentElement.lang = lang;
+    document.title = pack.metaTitle;
+    const meta = $('meta[name="description"]');
+    if (meta) meta.content = pack.metaDesc;
+    $("[data-i18n]").forEach((el) => {
+      const v = pack[el.dataset.i18n];
+      if (v != null) el.textContent = v;
+    });
+    $("[data-i18n-placeholder]").forEach((el) => {
+      const v = pack[el.dataset.i18nPlaceholder];
+      if (v) el.placeholder = v;
+    });
+    $("[data-i18n-option]").forEach((el) => {
+      const v = pack[el.dataset.i18nOption];
+      if (v) el.textContent = v;
+    });
+    renderTimeline(pack.timeline || []);
+    updateWizardLabels();
+    $("#panel-close")?.setAttribute("aria-label", t("panel_close"));
+    applyTheme();
+  }
+
+  function renderTimeline(items) {
+    const box = $("#timeline");
+    if (!box) return;
+    box.className = "timeline-animated";
+    box.innerHTML = items
+      .map(
+        (it, i) => `
+      <article class="timeline-item" data-tl="${i}" style="--i:${i}">
+        <div class="tl-marker"><span class="tl-dot"></span><span class="tl-year">${it.y}</span></div>
+        <div class="tl-body"><h3>${it.t}</h3><p>${it.d}</p></div>
+      </article>`
+      )
+      .join("");
+    initTimelineObserver();
+  }
+
+  function initTimelineObserver() {
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("tl-visible");
+        });
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -40px 0px" }
+    );
+    $(".timeline-item").forEach((el) => io.observe(el));
+  }
+
+  function initLangSelect() {
+    const sel = $("#lang-select");
+    if (!sel) return;
+    sel.innerHTML = "";
+    Object.entries(window.EUGREEN_LANGS || {}).forEach(([code, label]) => {
+      const o = document.createElement("option");
+      o.value = code;
+      o.textContent = label;
+      if (code === lang) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.addEventListener("change", () => {
+      lang = sel.value;
+      localStorage.setItem("eugreen-lang", lang);
+      applyI18n();
+    });
+  }
+
+  function applyTheme() {
+    document.documentElement.setAttribute("data-theme", theme);
+    const btn = $("#theme-toggle");
+    if (btn) {
+      btn.setAttribute("aria-pressed", theme === "dark");
+      btn.title = theme === "light" ? t("theme_dark") : t("theme_light");
+    }
+    localStorage.setItem("eugreen-theme", theme);
+  }
+
+  $("#theme-toggle")?.addEventListener("click", () => {
+    theme = theme === "light" ? "dark" : "light";
+    applyTheme();
+  });
+
+  const topbar = $(".topbar");
+  $(".nav-toggle")?.addEventListener("click", () => topbar?.classList.toggle("open"));
+  $("[data-scroll]").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      const href = el.getAttribute("href") || el.dataset.scroll;
+      if (href?.startsWith("#")) {
+        e.preventDefault();
+        $(href)?.scrollIntoView({ behavior: "smooth" });
+        topbar?.classList.remove("open");
+      }
+    });
+  });
+
+  const yearSlider = $("#year-slider");
+  const savingsPct = $("#savings-pct");
+  const data = [12, 18, 24, 32, 38];
+  yearSlider?.addEventListener("input", () => {
+    if (savingsPct) savingsPct.textContent = data[Number(yearSlider.value)] ?? 32;
+  });
+
+  /* ── Map ── */
+  let selectedCountry = null;
+
+  function closeLocationPanel() {
+    $("#location-panel")?.classList.remove("visible");
+    $(".map-dot").forEach((d) => d.classList.remove("active"));
+    selectedCountry = null;
+  }
+
+  function openLocationPanel(code) {
+    const data = locations[code];
+    if (!data) return;
+    selectedCountry = code;
+    $(".map-dot").forEach((d) => {
+      d.classList.toggle("active", d.dataset.country === code && !d.dataset.city);
+    });
+    const panel = $("#location-panel");
+    const title = $("#panel-title");
+    const offices = $("#panel-offices");
+    if (title) title.textContent = data.flag + " " + data.name;
+    if (offices) {
+      offices.innerHTML = data.offices
+        .map(
+          (o, i) => `
+        <div class="office-card" data-country="${code}" data-index="${i}">
+          <strong>${o.city}</strong>
+          <small>${o.address}</small>
+          <small>${o.phone}</small>
+        </div>`
+        )
+        .join("");
+      offices.querySelectorAll(".office-card").forEach((card) => {
+        card.addEventListener("click", (e) => {
+          e.stopPropagation();
+          pickOffice(card);
+        });
+      });
+    }
+    panel?.classList.add("visible");
+    const sel = $("#wizard-country");
+    if (sel) sel.value = code;
+    $("#field-country").value = code;
+  }
+
+  function pickOffice(card) {
+    const code = card.dataset.country;
+    const idx = card.dataset.index;
+    const office = locations[code]?.offices[idx];
+    if (office && $("#wizard-city")) $("#wizard-city").value = office.city;
+    if ($("#wizard-country")) $("#wizard-country").value = code;
+    closeLocationPanel();
+    goToStep(0);
+    $("#anfrage")?.scrollIntoView({ behavior: "smooth" });
+  }
+
+  function renderMap() {
+    const svg = $("#europe-map");
+    if (!svg || svg.querySelector("#map-dots")) return;
+    svg.setAttribute("viewBox", "0 0 483 480");
+    const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    g.id = "map-dots";
+
+    mapCountries.forEach((c) => {
+      const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      circle.setAttribute("class", "map-dot map-dot-country");
+      circle.setAttribute("cx", c.x);
+      circle.setAttribute("cy", c.y);
+      circle.setAttribute("r", "5");
+      circle.dataset.country = c.id;
+      g.appendChild(circle);
+    });
+
+    deCities.forEach((c) => {
+      const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+      circle.setAttribute("class", "map-dot map-dot-city");
+      circle.setAttribute("cx", c.x);
+      circle.setAttribute("cy", c.y);
+      circle.setAttribute("r", "3.5");
+      circle.dataset.country = c.id;
+      circle.dataset.city = c.index;
+      circle.dataset.title = c.city;
+      g.appendChild(circle);
+    });
+
+    svg.appendChild(g);
+    g.addEventListener("click", (e) => {
+      const dot = e.target.closest(".map-dot");
+      if (!dot) return;
+      e.stopPropagation();
+      if (dot.dataset.city != null) {
+        openLocationPanel("DE");
+        const card = $("#panel-offices")?.querySelector(`[data-index="${dot.dataset.city}"]`);
+        card?.classList.add("selected");
+      } else {
+        openLocationPanel(dot.dataset.country);
+      }
+    });
+  }
+
+  $("#panel-close")?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeLocationPanel();
+  });
+
+  $(".map-stage")?.addEventListener("click", (e) => {
+    if (e.target.closest("#location-panel") || e.target.closest(".map-dot")) return;
+    closeLocationPanel();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeLocationPanel();
+  });
+
+  const countrySel = $("#wizard-country");
+  if (countrySel) {
+    Object.keys(locations).forEach((code) => {
+      const o = document.createElement("option");
+      o.value = code;
+      o.textContent = locations[code].flag + " " + locations[code].name;
+      countrySel.appendChild(o);
+    });
+  }
+  renderMap();
+
+  /* ── Globe animation ── */
+  const GLOBE_SPOTS = [
+    { x: 48, y: 42, type: "solar" }, { x: 52, y: 38, type: "power" }, { x: 46, y: 45, type: "heat" },
+    { x: 55, y: 40, type: "solar" }, { x: 44, y: 48, type: "power" }, { x: 58, y: 44, type: "heat" }
+  ];
+
+  function runGlobeAnimation() {
+    const fx = $("#globe-fx");
+    const brand = $("#globe-brand");
+    const label = $("#globe-phase-label");
+    if (!fx) return;
+    fx.innerHTML = "";
+    brand?.classList.remove("show");
+
+    const phases = [
+      { key: "globe_solar", icon: "☀️", type: "solar" },
+      { key: "globe_power", icon: "⚡", type: "power" },
+      { key: "globe_heat", icon: "🌡️", type: "heat" }
+    ];
+    let idx = 0;
+
+    function nextPhase() {
+      if (idx >= phases.length) {
+        if (label) label.textContent = "";
+        brand?.classList.add("show");
+        return;
+      }
+      const p = phases[idx++];
+      if (label) label.textContent = t(p.key);
+      GLOBE_SPOTS.filter((s) => s.type === p.type).forEach((s, i) => {
+        setTimeout(() => {
+          const el = document.createElement("div");
+          el.className = `globe-pin globe-pin-${s.type}`;
+          el.style.left = s.x + "%";
+          el.style.top = s.y + "%";
+          el.innerHTML = `<span>${p.icon}</span>`;
+          fx.appendChild(el);
+          requestAnimationFrame(() => el.classList.add("pop"));
+        }, i * 220);
+      });
+      setTimeout(nextPhase, 2100);
+    }
+    nextPhase();
+  }
+
+  const globeIo = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          runGlobeAnimation();
+          globeIo.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+  const globeStage = $("#globe-stage");
+  if (globeStage) globeIo.observe(globeStage);
+
+  /* ── Form wizard ── */
+  let step = 0;
+  const flowFill = $("#flow-fill");
+  const flowBulb = $("#flow-bulb");
+  const bulbLabel = $("#bulb-label");
+
+  function updateWizardLabels() {
+    const titles = ["form_step_country", "form_step_property", "form_step_services", "form_step_usage", "form_step_contact", "form_step_extra"];
+    $(".wizard-step").forEach((el, i) => {
+      const h = el.querySelector("[data-step-title]");
+      if (h) h.textContent = t(titles[i]);
+    });
+    const back = $("#btn-back");
+    const next = $("#btn-next");
+    if (back) back.textContent = t("form_back");
+    if (next) next.textContent = step === FORM_STEPS - 1 ? t("form_submit") : t("form_next");
+  }
+
+  function updateFlow() {
+    const pct = (step / (FORM_STEPS - 1)) * 100;
+    if (flowFill) flowFill.style.width = pct + "%";
+    $(".flow-node").forEach((n, i) => {
+      n.classList.toggle("done", i < step);
+      n.classList.toggle("active", i === step);
+    });
+    const lit = step >= FORM_STEPS - 1;
+    flowBulb?.classList.toggle("lit", lit);
+    if (bulbLabel) bulbLabel.textContent = lit ? t("bulb_ready") : t("bulb_charge");
+    const back = $("#btn-back");
+    if (back) back.style.visibility = step === 0 ? "hidden" : "visible";
+    updateWizardLabels();
+  }
+
+  function goToStep(n) {
+    step = Math.max(0, Math.min(FORM_STEPS - 1, n));
+    $(".wizard-step").forEach((s, i) => s.classList.toggle("active", i === step));
+    updateFlow();
+  }
+
+  function validateStep() {
+    const active = $(".wizard-step.active");
+    if (!active) return true;
+    let ok = true;
+    active.querySelectorAll("[required]").forEach((inp) => {
+      if (inp.type === "checkbox" || inp.type === "radio") return;
+      if (!String(inp.value || "").trim()) {
+        inp.style.borderColor = "#ff6b6b";
+        ok = false;
+      } else inp.style.borderColor = "";
+    });
+    if (step === 2 && !active.querySelector('input[name="service"]:checked')) ok = false;
+    return ok;
+  }
+
+  $("#btn-next")?.addEventListener("click", () => {
+    if (!validateStep()) return;
+    if (step < FORM_STEPS - 1) goToStep(step + 1);
+    else submitForm();
+  });
+  $("#btn-back")?.addEventListener("click", () => goToStep(step - 1));
+
+  $(".choice-card").forEach((card) => {
+    card.addEventListener("click", () => {
+      const inp = card.querySelector("input");
+      if (inp?.type === "radio") {
+        $('input[name="' + inp.name + '"]').forEach((r) => r.closest(".choice-card")?.classList.remove("selected"));
+        inp.checked = true;
+        card.classList.add("selected");
+      } else if (inp?.type === "checkbox") {
+        inp.checked = !inp.checked;
+        card.classList.toggle("selected", inp.checked);
+      }
+    });
+  });
+
+  function submitForm() {
+    const form = $("#eugreen-form");
+    const fd = new FormData(form);
+    const payload = Object.fromEntries(fd.entries());
+    payload.services = $('input[name="service"]:checked').map((i) => i.value);
+    payload.lang = lang;
+    payload.submittedAt = new Date().toISOString();
+    window.EuGreenLastSubmission = payload;
+    window.parent?.postMessage?.({ type: "EUGREEN_FORM_SUBMIT", payload }, "*");
+    flowBulb?.classList.add("lit");
+    $("#success-modal")?.classList.add("visible");
+    form.reset();
+    goToStep(0);
+  }
+
+  $("#modal-close")?.addEventListener("click", () => $("#success-modal")?.classList.remove("visible"));
+
+  $(".faq-q").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.closest(".faq-item");
+      const open = item.classList.contains("open");
+      $(".faq-item").forEach((i) => i.classList.remove("open"));
+      if (!open) item.classList.add("open");
+    });
+  });
+
+  initLangSelect();
+  applyTheme();
+  applyI18n();
+  goToStep(0);
+})();
+
+  </script>
+</body>
+</html>

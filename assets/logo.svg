@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E5A8"/>
+      <stop offset="1" stop-color="#0B6E4F"/>
+    </linearGradient>
+  </defs>
+  <circle cx="24" cy="24" r="22" fill="url(#g)" opacity=".15"/>
+  <path d="M24 8c-2 6-8 10-8 16a8 8 0 1 0 16 0c0-6-6-10-8-16z" fill="url(#g)"/>
+  <path d="M30 20l-4 12h-3l-3-8 3 8h3l4-12z" fill="#00E5A8" opacity=".9"/>
+  <text x="54" y="22" font-family="system-ui,sans-serif" font-size="15" font-weight="800" fill="#0A1628" letter-spacing="-.02em">EUR</text>
+  <text x="54" y="38" font-family="system-ui,sans-serif" font-size="15" font-weight="800" fill="#0B6E4F" letter-spacing="-.02em">ENERGY</text>
+</svg>

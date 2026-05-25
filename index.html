@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="EuGreen Energy – eugreen.energy" />
+  <title>EuGreen Energy | eugreen.energy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="#" class="nav-logo" aria-label="EuGreen Energy">
+        <svg class="logo-svg" width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+          <defs><linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40"><stop offset="0%" stop-color="#00e5a8"/><stop offset="100%" stop-color="#0b6e4f"/></linearGradient></defs>
+          <rect width="40" height="40" rx="10" fill="url(#logoGrad)"/>
+          <path d="M20 8c-3 5-9 8-9 14a9 9 0 1 0 18 0c0-6-6-9-9-14z" fill="#fff" opacity=".95"/>
+          <path d="M17 22h6l-2 8h-4l-2-8 4 8z" fill="#00e5a8"/>
+        </svg>
+        <span class="logo-wordmark"><span class="logo-eu">Eu</span><span class="logo-green">Green</span> <span class="logo-energy">Energy</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="#leistungen" data-i18n="nav_services">Leistungen</a></li>
+        <li><a href="#europa" data-i18n="nav_europe">Europa</a></li>
+        <li><a href="#ueber-uns" data-i18n="nav_about">Über uns</a></li>
+        <li><a href="#ablauf" data-i18n="nav_how">Ablauf</a></li>
+        <li><a href="#anfrage" data-i18n="nav_form">Anfrage</a></li>
+        <li><a href="#faq" data-i18n="nav_faq">FAQ</a></li>
+      </ul>
+      <div class="topbar-controls">
+        <select id="lang-select" class="topbar-select" aria-label="Language"></select>
+        <button type="button" class="theme-switch" id="theme-toggle" aria-pressed="false" title="Theme">
+          <span class="theme-switch-track"><span class="theme-switch-thumb"></span></span>
+        </button>
+        <button class="nav-cta" type="button" data-scroll="#anfrage" data-i18n="nav_cta">Kostenlos anfragen</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge" data-i18n="hero_badge">18+ EU-Märkte · Seit 2010</div>
+          <h1><span data-i18n="hero_title">Zahlen Sie nicht den Einzelpreis.</span><em data-i18n="hero_title_em">Profitieren Sie von unserer Bündelkraft.</em></h1>
+          <p class="hero-desc" data-i18n="hero_desc">Sie allein zahlen 40.000 € – wir sichern oft 35.000 €. Kostenfrei.</p>
+          <div class="hero-stats">
+            <div><div class="stat-num">−15%</div><div class="stat-label" data-i18n="hero_stat1">Ø Ersparnis</div></div>
+            <div><div class="stat-num">2.400+</div><div class="stat-label" data-i18n="hero_stat2">Vergleiche/Jahr</div></div>
+            <div><div class="stat-num">24h</div><div class="stat-label" data-i18n="hero_stat3">Erste Antwort</div></div>
+          </div>
+          <div class="hero-actions">
+            <a href="#anfrage" class="btn btn-primary" data-scroll="#anfrage" data-i18n="hero_cta">Angebot starten</a>
+            <a href="#ueber-uns" class="btn btn-ghost" data-scroll="#ueber-uns" data-i18n="hero_cta2">Unsere Geschichte</a>
+          </div>
+        </div>
+        <div class="price-card">
+          <div class="price-row">
+            <span class="price-tag" style="color:#e85d04">40.000€</span>
+            <div><div class="price-bar-wrap"><div class="price-bar market"></div></div><div class="price-label" data-i18n="price_market">Markt (allein)</div></div>
+          </div>
+          <div class="price-row">
+            <span class="price-tag" style="color:var(--green)">35.000€</span>
+            <div><div class="price-bar-wrap"><div class="price-bar eugreen"></div></div><div class="price-label" data-i18n="price_bundle">EuGreen (Bündel)</div></div>
+          </div>
+          <p class="price-note" data-i18n="price_note">eugreen.energy · Kostenfrei.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="ablauf">
+      <div class="container">
+        <p class="section-label" data-i18n="nav_how">Ablauf</p>
+        <h2 class="section-title" data-i18n="how_title">So funktioniert EuGreen</h2>
+        <p class="section-lead" data-i18n="how_sub">Drei einfache Schritte</p>
+        <div class="how-grid">
+          <div class="how-card"><div class="num">1</div><h3 data-i18n="how1_t">Daten eingeben</h3><p data-i18n="how1_d">Land, Bedarf & Kontakt.</p></div>
+          <div class="how-card"><div class="num">2</div><h3 data-i18n="how2_t">Wir verhandeln</h3><p data-i18n="how2_d">Angebote von Partnern.</p></div>
+          <div class="how-card"><div class="num">3</div><h3 data-i18n="how3_t">Sie sparen</h3><p data-i18n="how3_d">Bestes Angebot per Mail/Telefon.</p></div>
+        </div>
+        <p class="section-label" style="margin-top:3rem;text-align:center" data-i18n="partners_title">Partner & Anbieter</p>
+        <div class="partners-row">
+          <span class="partner-pill">Vattenfall</span>
+          <span class="partner-pill">E.ON</span>
+          <span class="partner-pill">Enphase</span>
+          <span class="partner-pill">Viessmann</span>
+          <span class="partner-pill">SMA</span>
+          <span class="partner-pill">Daikin</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="ueber-uns">
+      <div class="container">
+        <p class="section-label" data-i18n="about_label">Über uns</p>
+        <h2 class="section-title" data-i18n="about_title">Seit über 15 Jahren Energie europäisch denken</h2>
+        <p class="section-lead" data-i18n="about_lead">EuGreen Energy (eugreen.energy) verbindet Verbraucher mit den besten Tarifen – ohne Aufschlag.</p>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="band-green section">
+      <div class="container band-grid">
+        <div>
+          <p class="section-label" data-i18n="green_label">EuGreen Portfolio</p>
+          <h2 class="section-title" style="color:#fff" data-i18n="green_title">Nachhaltige Energie mit messbarer Ersparnis</h2>
+          <p class="text-muted section-lead" data-i18n="green_lead">Ohne versteckte Kosten.</p>
+          <p style="font-family:var(--font-display);font-size:2.5rem;font-weight:800;margin:1.5rem 0 0">
+            <span data-i18n="savings_upto">bis</span> <span id="savings-pct">32</span>% <span data-i18n="savings_less">weniger Energiekosten</span>
+          </p>
+          <label style="display:block;margin-top:1rem;font-size:0.85rem;opacity:0.9" data-i18n="savings_time">Ersparnis im Zeitverlauf</label>
+          <input type="range" id="year-slider" min="0" max="4" value="3" style="width:100%;accent-color:#fff;margin-top:0.5rem" />
+          <a href="#anfrage" class="btn btn-primary" style="margin-top:1.25rem;background:#fff;color:var(--green)" data-scroll="#anfrage" data-i18n="green_cta">Jetzt starten</a>
+        </div>
+        <div class="visual-panel map-stage">
+          <img src="assets/map-animation.svg" alt="" class="map-bg" loading="lazy" />
+          <svg id="europe-map" class="map-overlay" aria-hidden="true"></svg>
+          <p class="map-hint" data-i18n="map_hint">Klicken Sie auf einen Punkt</p>
+          <aside id="location-panel" class="location-panel" role="dialog" aria-modal="false">
+            <button type="button" class="panel-close" id="panel-close" aria-label="Schließen">✕</button>
+            <h3 id="panel-title"></h3>
+            <div id="panel-offices" class="office-cards"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-orange section" id="europa">
+      <div class="container band-grid">
+        <div>
+          <p class="section-label" data-i18n="orange_label">Wir verbinden Europa</p>
+          <h2 class="section-title" style="color:#fff" data-i18n="orange_title">EuGreen-Standorte in der EU</h2>
+          <div class="office-stat">
+            <div class="office-stat-num">24</div>
+            <div class="office-stat-divider"></div>
+            <p data-i18n="orange_stat1">Büros in 18 Ländern</p>
+          </div>
+          <div class="office-stat">
+            <div class="office-stat-num">18</div>
+            <div class="office-stat-divider"></div>
+            <p data-i18n="orange_stat2">Länder mit Experten</p>
+          </div>
+          <p style="opacity:0.9;margin-top:1rem" data-i18n="orange_de">Deutschland: 5 Standorte.</p>
+          <a href="#anfrage" class="btn" style="background:#fff;color:var(--orange);margin-top:1rem" data-scroll="#anfrage" data-i18n="orange_cta">Kontakt</a>
+        </div>
+        <div class="visual-panel globe-stage" id="globe-stage">
+          <img src="assets/globe-new.svg" alt="" class="globe-img" loading="lazy" />
+          <div id="globe-fx" class="globe-fx"></div>
+          <p class="globe-phase" id="globe-phase-label"></p>
+          <div class="globe-brand" id="globe-brand">
+            <span class="globe-brand-name">EuGreen Energy</span>
+            <small>eugreen.energy</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="leistungen">
+      <div class="container">
+        <p class="section-label" data-i18n="services_label">Leistungen</p>
+        <h2 class="section-title" data-i18n="services_title">Was wir vergleichen</h2>
+        <div class="services-grid">
+          <article class="service-card"><span class="svc-icon">⚡</span><h3 data-i18n="serv1_t">Strom & Gas</h3><p data-i18n="serv1_d">Tarife</p></article>
+          <article class="service-card"><span class="svc-icon">☀️</span><h3 data-i18n="serv2_t">Solar</h3><p data-i18n="serv2_d">PV</p></article>
+          <article class="service-card"><span class="svc-icon">🌡️</span><h3 data-i18n="serv3_t">Wärmepumpe</h3><p data-i18n="serv3_d">Planung</p></article>
+          <article class="service-card"><span class="svc-icon">🏢</span><h3 data-i18n="serv4_t">Gewerbe</h3><p data-i18n="serv4_d">EU</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section form-section" id="anfrage">
+      <div class="container">
+        <p class="section-label" data-i18n="form_label">Anfrage</p>
+        <h2 class="section-title" data-i18n="form_title">Ihr Weg zum besten Angebot</h2>
+        <p class="section-lead" data-i18n="form_lead">Schritt für Schritt – Energie fließt zu Ihnen.</p>
+
+        <div class="form-wizard-wrap">
+          <div class="energy-flow" aria-label="Fortschritt">
+            <div class="flow-bar-wrap">
+              <div class="flow-track"><div class="flow-fill" id="flow-fill"></div></div>
+              <div class="flow-nodes-row">
+                <span class="flow-node">1</span><span class="flow-node">2</span><span class="flow-node">3</span>
+                <span class="flow-node">4</span><span class="flow-node">5</span><span class="flow-node">6</span>
+                <span class="flow-bulb" id="flow-bulb">💡</span>
+              </div>
+            </div>
+          </div>
+          <p id="bulb-label" style="text-align:center;font-size:0.82rem;color:var(--text-muted);margin:-1rem 0 1rem" data-i18n="bulb_charge">Energie fließt…</p>
+
+          <form id="eugreen-form" class="wizard-card" data-wix-form="EuGreenLeads">
+            <input type="hidden" name="brand" value="EuGreen Energy" />
+            <input type="hidden" id="field-country" name="country" />
+
+            <div class="wizard-step active" data-step="0">
+              <h3 data-step-title data-i18n="form_step_country">Wo ist Ihre Immobilie?</h3>
+              <p class="step-hint" data-i18n="step_hint_plz">PLZ bestimmt Förderungen.</p>
+              <div class="form-group">
+                <label data-i18n="country">Land</label>
+                <select id="wizard-country" name="countrySelect" required></select>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label data-i18n="zip">PLZ</label><input name="zip" required /></div>
+                <div class="form-group"><label data-i18n="city">Ort</label><input id="wizard-city" name="city" required /></div>
+              </div>
+            </div>
+
+            <div class="wizard-step" data-step="1">
+              <h3 data-step-title data-i18n="form_step_property">Gebäudetyp?</h3>
+              <div class="choice-grid">
+                <label class="choice-card"><input type="radio" name="propertyType" value="house" required /><span class="icon">🏠</span><span data-i18n="prop_house">Haus</span></label>
+                <label class="choice-card"><input type="radio" name="propertyType" value="apt" /><span class="icon">🏢</span><span data-i18n="prop_apt">Wohnung</span></label>
+                <label class="choice-card"><input type="radio" name="propertyType" value="comm" /><span class="icon">🏭</span><span data-i18n="prop_comm">Gewerbe</span></label>
+              </div>
+            </div>
+
+            <div class="wizard-step" data-step="2">
+              <h3 data-step-title data-i18n="form_step_services">Was benötigen Sie?</h3>
+              <div class="choice-grid">
+                <label class="choice-card"><input type="checkbox" name="service" value="strom" /><span class="icon">⚡</span>Strom</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="gas" /><span class="icon">🔥</span>Gas</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="solar" /><span class="icon">☀️</span>Solar</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="waermepumpe" /><span class="icon">🌡️</span>WP</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="speicher" /><span class="icon">🔋</span>Speicher</label>
+                <label class="choice-card"><input type="checkbox" name="service" value="wallbox" /><span class="icon">🚗</span>Wallbox</label>
+              </div>
+            </div>
+
+            <div class="wizard-step" data-step="3">
+              <h3 data-step-title data-i18n="form_step_usage">Verbrauch</h3>
+              <div class="form-group"><label data-i18n="usage_kwh">kWh/Jahr</label><input type="number" name="consumption" placeholder="3500" /></div>
+              <div class="form-group"><label data-i18n="usage_bill">€/Monat</label><input type="number" name="monthlyBill" /></div>
+              <label class="choice-card" style="display:inline-flex;width:auto"><input type="checkbox" name="usageUnknown" value="1" /><span data-i18n="usage_unknown">Weiß nicht</span></label>
+            </div>
+
+            <div class="wizard-step" data-step="4">
+              <h3 data-step-title data-i18n="form_step_contact">Kontakt</h3>
+              <div class="form-row">
+                <div class="form-group"><label data-i18n="firstName">Vorname</label><input name="firstName" required /></div>
+                <div class="form-group"><label data-i18n="lastName">Nachname</label><input name="lastName" required /></div>
+              </div>
+              <div class="form-row">
+                <div class="form-group"><label data-i18n="email">E-Mail</label><input type="email" name="email" required /></div>
+                <div class="form-group"><label data-i18n="phone">Telefon</label><input type="tel" name="phone" /></div>
+              </div>
+              <div class="form-group">
+                <label>Kontakt</label>
+                <select name="contactPreference">
+                  <option value="email" data-i18n-option="contact_email">E-Mail</option>
+                  <option value="phone" data-i18n-option="contact_phone">Telefon</option>
+                  <option value="both" data-i18n-option="contact_both">Beides</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="wizard-step" data-step="5">
+              <h3 data-step-title data-i18n="form_step_extra">Noch etwas?</h3>
+              <div class="form-group">
+                <textarea name="message" rows="5" data-i18n-placeholder="message_ph"></textarea>
+              </div>
+              <p style="font-size:0.85rem;color:var(--text-muted)" data-i18n="form_done">Fast fertig – Ampel leuchtet nach Absenden!</p>
+            </div>
+
+            <div class="wizard-nav">
+              <button type="button" class="btn btn-ghost" id="btn-back" data-i18n="form_back">Zurück</button>
+              <button type="button" class="btn btn-primary" id="btn-next" data-i18n="form_next">Weiter</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h2 class="section-title" data-i18n="faq_title">FAQ</h2>
+        <div class="faq-list">
+          <div class="faq-item"><button type="button" class="faq-q"><span data-i18n="faq1_q">Kostet es etwas?</span> <span>▼</span></button><div class="faq-a" data-i18n="faq1_a"></div></div>
+          <div class="faq-item"><button type="button" class="faq-q"><span data-i18n="faq2_q">Warum günstiger?</span> <span>▼</span></button><div class="faq-a" data-i18n="faq2_a"></div></div>
+          <div class="faq-item"><button type="button" class="faq-q"><span data-i18n="faq3_q">Welche Länder?</span> <span>▼</span></button><div class="faq-a" data-i18n="faq3_a"></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem">
+      <div><strong>EuGreen Energy</strong><br />eugreen.energy · info@eugreen.energy</div>
+      <div><a href="#" data-i18n="footer_legal">Impressum</a> · <a href="#">Datenschutz</a></div>
+    </div>
+    <div class="container" style="margin-top:1rem;font-size:0.8rem">© 2026 EuGreen Energy</div>
+  </footer>
+
+  <div id="success-modal" class="modal-overlay">
+    <div class="modal">
+      <div style="font-size:3rem">💡</div>
+      <h2 data-i18n="success_title">Vielen Dank!</h2>
+      <p data-i18n="success_body">Wir melden uns in 24h.</p>
+      <button type="button" class="btn btn-primary" id="modal-close" data-i18n="modal_ok">OK</button>
+    </div>
+  </div>
+
+  <script src="data/locations.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
