@@ -257,24 +257,34 @@ body {
   font-size: 1.05rem; font-weight: 700; color: var(--text);
 }
 .savings-row {
-  display: grid; grid-template-columns: 3.5rem 1fr; grid-template-rows: auto auto;
-  gap: 0.35rem 1rem; align-items: center; margin-bottom: 1.35rem;
+  display: grid; grid-template-columns: 4rem 1fr; grid-template-rows: auto auto;
+  gap: 0.3rem 0.75rem; align-items: center; margin-bottom: 1.35rem;
 }
 .savings-val {
-  grid-row: 1 / 3; font-family: var(--font-display);
-  font-size: 1.65rem; font-weight: 800; line-height: 1;
+  grid-column: 1; grid-row: 1;
+  justify-self: start; text-align: left;
+  font-family: var(--font-display);
+  font-size: 1.5rem; font-weight: 800; line-height: 1;
+  white-space: nowrap;
 }
 .savings-val-solo { color: #e85d04; }
-.savings-val-bundle { color: var(--green); font-size: 1.85rem; }
+.savings-val-bundle { color: var(--green); font-size: 1.55rem; }
 [data-theme="dark"] .savings-val-bundle { color: var(--green-bright); }
 .savings-track {
-  grid-column: 2; height: 12px; background: var(--flow-track);
+  grid-column: 2; grid-row: 1; height: 14px; background: var(--flow-track);
   border-radius: 99px; overflow: hidden;
 }
-.savings-fill { display: block; height: 100%; border-radius: 99px; transition: width 1.2s var(--ease); }
+.savings-fill { display: block; height: 100%; border-radius: 99px; }
 .savings-fill-solo { width: 100%; background: linear-gradient(90deg, #ff8a65, #e85d04); }
-.savings-fill-bundle { width: 80%; background: linear-gradient(90deg, var(--green), var(--green-bright)); }
-.savings-label { grid-column: 2; font-size: 0.82rem; color: var(--text-muted); }
+.savings-fill-bundle {
+  width: 80%; background: linear-gradient(90deg, var(--green), var(--green-bright));
+  animation: savings-bar-fill 2.8s var(--ease) infinite;
+}
+@keyframes savings-bar-fill {
+  0%, 100% { width: 72%; }
+  45% { width: 100%; }
+}
+.savings-label { grid-column: 2; grid-row: 2; font-size: 0.82rem; color: var(--text-muted); }
 .savings-row-accent .savings-label { color: var(--text); font-weight: 600; }
 .savings-note { margin: 0.5rem 0 0; font-size: 0.88rem; color: var(--text-muted); }
 .btn {
@@ -411,19 +421,28 @@ body {
 .office-card strong { display: block; margin-bottom: 0.25rem; }
 .office-card small { display: block; color: rgba(255,255,255,0.65); font-size: 0.78rem; line-height: 1.4; }
 
-.globe-stage { min-height: 420px; display: flex; align-items: center; justify-content: center; }
-.globe-img { width: 100%; max-width: 480px; height: auto; position: relative; z-index: 0; }
+.globe-stage { min-height: 440px; display: flex; align-items: center; justify-content: center; position: relative; }
+.globe-img { width: 100%; max-width: 520px; height: auto; position: relative; z-index: 0; }
 .globe-fx {
-  position: absolute; inset: 8% 12%; z-index: 2; pointer-events: none;
+  position: absolute; inset: 4% 6%; z-index: 2; pointer-events: none;
 }
 .globe-pin {
   position: absolute; transform: translate(-50%, -50%) scale(0);
-  width: 36px; height: 36px; border-radius: 50%;
-  background: rgba(255,255,255,0.95); display: grid; place-items: center;
-  font-size: 1.1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-  transition: transform 0.45s var(--ease);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.96); display: grid; place-items: center;
+  font-size: 1.25rem; box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+  transition: transform 0.4s var(--ease);
+}
+.globe-pin::after {
+  content: ""; position: absolute; inset: -8px; border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  animation: pin-ring 1.6s ease-out infinite;
 }
 .globe-pin.pop { transform: translate(-50%, -50%) scale(1); }
+@keyframes pin-ring {
+  0% { transform: scale(0.85); opacity: 0.9; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
 .globe-pin-solar { border: 2px solid #ffd43b; }
 .globe-pin-power { border: 2px solid #74c0fc; animation: pin-zap 1s ease infinite; }
 .globe-pin-heat { border: 2px solid #ff922b; }
@@ -439,11 +458,13 @@ body {
 .globe-brand {
   position: absolute; inset: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center; z-index: 4;
-  background: rgba(232, 93, 4, 0.55); backdrop-filter: blur(4px);
-  opacity: 0; pointer-events: none; transition: opacity 0.8s var(--ease);
+  background: radial-gradient(ellipse 90% 80% at 50% 50%, rgba(232, 93, 4, 0.92), rgba(180, 60, 0, 0.88));
+  backdrop-filter: blur(6px);
+  opacity: 0; pointer-events: none; transition: opacity 0.65s var(--ease);
   border-radius: inherit;
 }
 .globe-brand.show { opacity: 1; }
+.globe-brand.hiding { opacity: 0; }
 .globe-brand-name {
   font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2.25rem);
   font-weight: 800; color: #fff; letter-spacing: -0.03em;
@@ -671,7 +692,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--g
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="hero-kicker" data-i18n="hero_kicker">Kostenlose Beratung · Unverbindlich</p>
-          <h1><span data-i18n="hero_title">Energie clever vergleichen.</span><em data-i18n="hero_title_em">Bis zu 20&nbsp;% günstiger durch Bündelkraft.</em></h1>
+          <h1><span data-i18n="hero_title">Energie clever vergleichen.</span><em data-i18n="hero_title_em">Bis zu 20&nbsp;% sparen – wir bündeln für Sie.</em></h1>
           <p class="hero-desc" data-i18n="hero_desc">Als Einzelanfragender zahlen Sie oft den vollen Preis. Wir bündeln Anfragen in Ihrer Region – dieselbe Leistung, im Schnitt bis zu 20&nbsp;% Ersparnis. Unser Service ist für Sie komplett kostenfrei.</p>
           <div class="hero-stats">
             <div><div class="stat-num">−20%</div><div class="stat-label" data-i18n="hero_stat1">Ersparnis möglich</div></div>
@@ -684,7 +705,7 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--g
           </div>
         </div>
         <aside class="savings-card" aria-label="Ersparnis">
-          <span class="savings-chip" data-i18n="save_highlight">Bündelkraft</span>
+          <span class="savings-chip" data-i18n="save_highlight">Für Sie verhandelt</span>
           <p class="savings-card-title" data-i18n="savings_card_title">Typische Ersparnis</p>
           <div class="savings-row">
             <span class="savings-val savings-val-solo">0%</span>
@@ -996,12 +1017,12 @@ const T = {
     nav_cta: "Kostenlos anfragen", theme_light: "Hell", theme_dark: "Dunkel",
     hero_kicker: "Kostenlose Beratung · Unverbindlich",
     hero_title: "Energie clever vergleichen.",
-    hero_title_em: "Bis zu 20 % günstiger durch Bündelkraft.",
+    hero_title_em: "Bis zu 20 % sparen – wir bündeln für Sie.",
     hero_desc: "Als Einzelanfragender zahlen Sie oft den vollen Preis. Wir bündeln Anfragen in Ihrer Region – dieselbe Leistung, im Schnitt bis zu 20 % Ersparnis. Unser Service ist für Sie komplett kostenfrei.",
     hero_stat1: "Ersparnis möglich", hero_stat2: "Vergleiche/Jahr", hero_stat3: "Erste Antwort",
     hero_cta: "Angebot starten", hero_cta2: "Unsere Geschichte",
     savings_card_title: "Typische Ersparnis", save_solo: "Einzelanfrage", save_bundle: "Mit EuGreen (Bündel)",
-    save_note: "eugreen.energy · Bis zu 20 % · Service kostenfrei", save_highlight: "Bündelkraft",
+    save_note: "eugreen.energy · Bis zu 20 % · Service kostenfrei", save_highlight: "Für Sie verhandelt",
     how_title: "So funktioniert EuGreen", how_sub: "Drei einfache Schritte",
     how1_t: "Daten eingeben", how1_d: "Land, Bedarf & Kontakt – in wenigen Minuten.",
     how2_t: "Wir verhandeln", how2_d: "Experten holen Angebote bei zertifizierten Partnern ein.",
@@ -1046,7 +1067,7 @@ const T = {
     contact_email: "E-Mail", contact_phone: "Telefon", contact_both: "Beides",
     message_ph: "Optional: Vertrag, Solar, Wärmepumpe…",
     faq_title: "Häufige Fragen", faq1_q: "Kostet EuGreen etwas?", faq1_a: "Nein. Beratung ist kostenfrei – wir werden von Partnern provisioniert, ohne Aufschlag für Sie.",
-    faq2_q: "Warum günstiger?", faq2_a: "Bündelkraft: viele Kunden in Ihrer Region = bessere Konditionen – oft bis zu 20 % Ersparnis bei gleicher Leistung.",
+    faq2_q: "Warum günstiger?", faq2_a: "Sie müssen nichts selbst bündeln: Wir sammeln Anfragen in Ihrer Region und verhandeln bessere Konditionen – oft bis zu 20 % Ersparnis bei gleicher Leistung.",
     faq3_q: "Welche Länder?", faq3_a: "18 EU-Märkte. Deutschland: Berlin, München, Hamburg, Köln, Frankfurt.",
     footer_legal: "Rechtliches", footer_contact: "Kontakt", footer_privacy: "Datenschutz",
     success_title: "Vielen Dank!", success_body: "Ihre Anfrage ist bei uns eingegangen. Wir melden uns innerhalb von 24 Stunden.",
@@ -1059,12 +1080,12 @@ const T = {
     nav_cta: "Free quote", theme_light: "Light", theme_dark: "Dark",
     hero_kicker: "Free advice · No obligation",
     hero_title: "Compare energy the smart way.",
-    hero_title_em: "Up to 20% cheaper through collective buying.",
+    hero_title_em: "Save up to 20% – we bundle for you.",
     hero_desc: "On your own you often pay full price. We bundle requests in your area – same service, typically up to 20% savings. Our service is completely free.",
     hero_stat1: "Possible savings", hero_stat2: "Quotes/year", hero_stat3: "First response",
     hero_cta: "Start quote", hero_cta2: "Our story",
     savings_card_title: "Typical savings", save_solo: "Solo enquiry", save_bundle: "Via EuGreen (bundle)",
-    save_note: "eugreen.energy · Up to 20% · Free service", save_highlight: "Bundle power",
+    save_note: "eugreen.energy · Up to 20% · Free service", save_highlight: "We negotiate",
     how_title: "How EuGreen works", how_sub: "Three simple steps",
     how1_t: "Enter details", how1_d: "Country, needs & contact in minutes.",
     how2_t: "We negotiate", how2_d: "Experts collect offers from certified partners.",
@@ -1121,12 +1142,12 @@ const T = {
     nav_services: "Servicios", nav_europe: "Europa", nav_about: "Sobre nosotros", nav_how: "Proceso", nav_form: "Solicitud", nav_faq: "FAQ",
     nav_cta: "Presupuesto gratis", theme_light: "Claro", theme_dark: "Oscuro",
     hero_kicker: "Asesoramiento gratuito · Sin compromiso",
-    hero_title: "Compare energía con inteligencia.", hero_title_em: "Hasta un 20% más barato en grupo.",
+    hero_title: "Compare energía con inteligencia.", hero_title_em: "Ahorre hasta un 20% – nosotros agrupamos por usted.",
     hero_desc: "Por su cuenta suele pagar el precio completo. Agrupamos solicitudes en su zona: mismo servicio, hasta un 20% de ahorro. Servicio totalmente gratuito.",
     hero_stat1: "Ahorro posible", hero_stat2: "Comparaciones/año", hero_stat3: "Primera respuesta",
     hero_cta: "Empezar", hero_cta2: "Nuestra historia",
     savings_card_title: "Ahorro típico", save_solo: "Solicitud individual", save_bundle: "Con EuGreen (grupo)",
-    save_note: "eugreen.energy · Hasta 20% · Servicio gratuito", save_highlight: "Volumen",
+    save_note: "eugreen.energy · Hasta 20% · Servicio gratuito", save_highlight: "Negociamos por usted",
     how_title: "Cómo funciona EuGreen", how_sub: "Tres pasos simples",
     how1_t: "Introduzca datos", how1_d: "País, necesidad y contacto.", how2_t: "Negociamos", how2_d: "Ofertas de partners certificados.", how3_t: "Ahorra", how3_d: "Mejor precio por email o llamada.",
     partners_title: "Socios y proveedores",
@@ -1168,12 +1189,12 @@ const T = {
     nav_services: "Services", nav_europe: "Europe", nav_about: "À propos", nav_how: "Processus", nav_form: "Demande", nav_faq: "FAQ",
     nav_cta: "Devis gratuit", theme_light: "Clair", theme_dark: "Sombre",
     hero_kicker: "Conseil gratuit · Sans engagement",
-    hero_title: "Comparez l'énergie intelligemment.", hero_title_em: "Jusqu'à 20 % moins cher en groupe.",
+    hero_title: "Comparez l'énergie intelligemment.", hero_title_em: "Jusqu'à 20 % d'économies – nous regroupons pour vous.",
     hero_desc: "Seul, vous payez souvent le plein tarif. Nous regroupons les demandes dans votre région – même prestation, jusqu'à 20 % d'économies. Service entièrement gratuit.",
     hero_stat1: "Économie possible", hero_stat2: "Comparaisons/an", hero_stat3: "Réponse 24h",
     hero_cta: "Commencer", hero_cta2: "Notre histoire",
     savings_card_title: "Économie typique", save_solo: "Demande individuelle", save_bundle: "Via EuGreen (groupe)",
-    save_note: "eugreen.energy · Jusqu'à 20 % · Service gratuit", save_highlight: "Volume",
+    save_note: "eugreen.energy · Jusqu'à 20 % · Service gratuit", save_highlight: "Négocié pour vous",
     how_title: "Comment fonctionne EuGreen", how_sub: "Trois étapes",
     how1_t: "Vos données", how1_d: "Pays et contact.", how2_t: "Nous négocions", how2_d: "Offres partenaires.", how3_t: "Vous économisez", how3_d: "Meilleur prix.",
     partners_title: "Partenaires",
@@ -1215,12 +1236,12 @@ const T = {
     nav_services: "Hizmetler", nav_europe: "Avrupa", nav_about: "Hakkımızda", nav_how: "Süreç", nav_form: "Talep", nav_faq: "SSS",
     nav_cta: "Ücretsiz teklif", theme_light: "Açık", theme_dark: "Koyu",
     hero_kicker: "Ücretsiz danışmanlık · Taahhütsüz",
-    hero_title: "Enerjiyi akıllıca karşılaştırın.", hero_title_em: "Toplu alımla %20'ye varan tasarruf.",
+    hero_title: "Enerjiyi akıllıca karşılaştırın.", hero_title_em: "%20'ye varan tasarruf – biz sizin için topluyoruz.",
     hero_desc: "Tek başınıza genelde tam fiyat ödersiniz. Bölgenizdeki talepleri topluyoruz – aynı hizmet, ortalama %20'ye varan tasarruf. Hizmetimiz tamamen ücretsiz.",
     hero_stat1: "Olası tasarruf", hero_stat2: "Karşılaştırma/yıl", hero_stat3: "İlk yanıt",
     hero_cta: "Teklif al", hero_cta2: "Hikayemiz",
     savings_card_title: "Tipik tasarruf", save_solo: "Tek başına talep", save_bundle: "EuGreen ile (toplu)",
-    save_note: "eugreen.energy · %20'ye varan · Ücretsiz hizmet", save_highlight: "Toplu güç",
+    save_note: "eugreen.energy · %20'ye varan · Ücretsiz hizmet", save_highlight: "Sizin için pazarlık",
     how_title: "EuGreen nasıl çalışır", how_sub: "Üç basit adım",
     how1_t: "Bilgileriniz", how1_d: "Ülke ve iletişim.", how2_t: "Biz pazarlık yaparız", how2_d: "Sertifikalı partner teklifleri.", how3_t: "Siz kazanırsınız", how3_d: "En iyi fiyat.",
     partners_title: "Partnerler",
@@ -1747,19 +1768,37 @@ window.eugreenDetectLang = function () {
   }
   renderMap();
 
-  /* ── Globe animation ── */
+  /* ── Globe animation (loop) ── */
   const GLOBE_SPOTS = [
-    { x: 48, y: 42, type: "solar" }, { x: 52, y: 38, type: "power" }, { x: 46, y: 45, type: "heat" },
-    { x: 55, y: 40, type: "solar" }, { x: 44, y: 48, type: "power" }, { x: 58, y: 44, type: "heat" }
+    { x: 38, y: 34, type: "solar" }, { x: 44, y: 30, type: "solar" }, { x: 50, y: 32, type: "solar" },
+    { x: 56, y: 36, type: "solar" }, { x: 62, y: 40, type: "solar" },
+    { x: 36, y: 40, type: "power" }, { x: 42, y: 38, type: "power" }, { x: 48, y: 42, type: "power" },
+    { x: 54, y: 44, type: "power" }, { x: 60, y: 42, type: "power" }, { x: 65, y: 46, type: "power" },
+    { x: 40, y: 48, type: "heat" }, { x: 46, y: 50, type: "heat" }, { x: 52, y: 48, type: "heat" },
+    { x: 58, y: 50, type: "heat" }, { x: 64, y: 52, type: "heat" }
   ];
+
+  let globeLoopTimer = null;
+
+  function resetGlobeStage() {
+    const fx = $("#globe-fx");
+    const brand = $("#globe-brand");
+    const label = $("#globe-phase-label");
+    if (globeLoopTimer) {
+      clearTimeout(globeLoopTimer);
+      globeLoopTimer = null;
+    }
+    if (fx) fx.innerHTML = "";
+    brand?.classList.remove("show", "hiding");
+    if (label) label.textContent = "";
+  }
 
   function runGlobeAnimation() {
     const fx = $("#globe-fx");
     const brand = $("#globe-brand");
     const label = $("#globe-phase-label");
     if (!fx) return;
-    fx.innerHTML = "";
-    brand?.classList.remove("show");
+    resetGlobeStage();
 
     const phases = [
       { key: "globe_solar", icon: "☀️", type: "solar" },
@@ -1768,15 +1807,24 @@ window.eugreenDetectLang = function () {
     ];
     let idx = 0;
 
+    function finishCycle() {
+      if (label) label.textContent = "";
+      brand?.classList.add("show");
+      globeLoopTimer = setTimeout(() => {
+        brand?.classList.add("hiding");
+        globeLoopTimer = setTimeout(() => runGlobeAnimation(), 700);
+      }, 3800);
+    }
+
     function nextPhase() {
       if (idx >= phases.length) {
-        if (label) label.textContent = "";
-        brand?.classList.add("show");
+        finishCycle();
         return;
       }
       const p = phases[idx++];
       if (label) label.textContent = t(p.key);
-      GLOBE_SPOTS.filter((s) => s.type === p.type).forEach((s, i) => {
+      const spots = GLOBE_SPOTS.filter((s) => s.type === p.type);
+      spots.forEach((s, i) => {
         setTimeout(() => {
           const el = document.createElement("div");
           el.className = `globe-pin globe-pin-${s.type}`;
@@ -1785,9 +1833,9 @@ window.eugreenDetectLang = function () {
           el.innerHTML = `<span>${p.icon}</span>`;
           fx.appendChild(el);
           requestAnimationFrame(() => el.classList.add("pop"));
-        }, i * 220);
+        }, i * 140);
       });
-      setTimeout(nextPhase, 2100);
+      setTimeout(nextPhase, 1600 + spots.length * 80);
     }
     nextPhase();
   }
@@ -1801,7 +1849,7 @@ window.eugreenDetectLang = function () {
         }
       });
     },
-    { threshold: 0.35 }
+    { threshold: 0.25 }
   );
   const globeStage = $("#globe-stage");
   if (globeStage) globeIo.observe(globeStage);

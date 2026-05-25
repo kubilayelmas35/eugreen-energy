@@ -292,19 +292,37 @@
   }
   renderMap();
 
-  /* ── Globe animation ── */
+  /* ── Globe animation (loop) ── */
   const GLOBE_SPOTS = [
-    { x: 48, y: 42, type: "solar" }, { x: 52, y: 38, type: "power" }, { x: 46, y: 45, type: "heat" },
-    { x: 55, y: 40, type: "solar" }, { x: 44, y: 48, type: "power" }, { x: 58, y: 44, type: "heat" }
+    { x: 38, y: 34, type: "solar" }, { x: 44, y: 30, type: "solar" }, { x: 50, y: 32, type: "solar" },
+    { x: 56, y: 36, type: "solar" }, { x: 62, y: 40, type: "solar" },
+    { x: 36, y: 40, type: "power" }, { x: 42, y: 38, type: "power" }, { x: 48, y: 42, type: "power" },
+    { x: 54, y: 44, type: "power" }, { x: 60, y: 42, type: "power" }, { x: 65, y: 46, type: "power" },
+    { x: 40, y: 48, type: "heat" }, { x: 46, y: 50, type: "heat" }, { x: 52, y: 48, type: "heat" },
+    { x: 58, y: 50, type: "heat" }, { x: 64, y: 52, type: "heat" }
   ];
+
+  let globeLoopTimer = null;
+
+  function resetGlobeStage() {
+    const fx = $("#globe-fx");
+    const brand = $("#globe-brand");
+    const label = $("#globe-phase-label");
+    if (globeLoopTimer) {
+      clearTimeout(globeLoopTimer);
+      globeLoopTimer = null;
+    }
+    if (fx) fx.innerHTML = "";
+    brand?.classList.remove("show", "hiding");
+    if (label) label.textContent = "";
+  }
 
   function runGlobeAnimation() {
     const fx = $("#globe-fx");
     const brand = $("#globe-brand");
     const label = $("#globe-phase-label");
     if (!fx) return;
-    fx.innerHTML = "";
-    brand?.classList.remove("show");
+    resetGlobeStage();
 
     const phases = [
       { key: "globe_solar", icon: "☀️", type: "solar" },
@@ -313,15 +331,24 @@
     ];
     let idx = 0;
 
+    function finishCycle() {
+      if (label) label.textContent = "";
+      brand?.classList.add("show");
+      globeLoopTimer = setTimeout(() => {
+        brand?.classList.add("hiding");
+        globeLoopTimer = setTimeout(() => runGlobeAnimation(), 700);
+      }, 3800);
+    }
+
     function nextPhase() {
       if (idx >= phases.length) {
-        if (label) label.textContent = "";
-        brand?.classList.add("show");
+        finishCycle();
         return;
       }
       const p = phases[idx++];
       if (label) label.textContent = t(p.key);
-      GLOBE_SPOTS.filter((s) => s.type === p.type).forEach((s, i) => {
+      const spots = GLOBE_SPOTS.filter((s) => s.type === p.type);
+      spots.forEach((s, i) => {
         setTimeout(() => {
           const el = document.createElement("div");
           el.className = `globe-pin globe-pin-${s.type}`;
@@ -330,9 +357,9 @@
           el.innerHTML = `<span>${p.icon}</span>`;
           fx.appendChild(el);
           requestAnimationFrame(() => el.classList.add("pop"));
-        }, i * 220);
+        }, i * 140);
       });
-      setTimeout(nextPhase, 2100);
+      setTimeout(nextPhase, 1600 + spots.length * 80);
     }
     nextPhase();
   }
@@ -346,7 +373,7 @@
         }
       });
     },
-    { threshold: 0.35 }
+    { threshold: 0.25 }
   );
   const globeStage = $("#globe-stage");
   if (globeStage) globeIo.observe(globeStage);
