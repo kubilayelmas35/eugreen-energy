@@ -252,7 +252,7 @@ const T = {
       { y: "2026", t: "EuGreen Energy", d: "eugreen.energy – 18 ülke." }
     ],
     green_label: "EuGreen portföy", green_title: "Sürdürülebilir enerji, ölçülebilir tasarruf", green_lead: "Gizli ücret yok.",
-    savings_upto: "", savings_less: "daha az enerji maliyeti", savings_time: "Zaman içinde tasarruf", green_cta: "Başla",
+    savings_upto: "kadar", savings_less: "daha az enerji maliyeti", savings_time: "Zaman içinde tasarruf", green_cta: "Başla",
     map_hint: "Noktaya tıklayın – ✕ veya dışarı ile kapatın", panel_close: "Kapat",
     orange_label: "Avrupa'yı bağlıyoruz", orange_title: "AB'de EuGreen ofisleri",
     orange_stat1: "18 ülkede 24 ofis", orange_stat2: "Yerel uzmanlar",

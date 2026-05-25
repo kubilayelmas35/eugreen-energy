@@ -145,12 +145,19 @@
   $(".nav-toggle")?.addEventListener("click", () => topbar?.classList.toggle("open"));
   $$("[data-scroll]").forEach((el) => {
     el.addEventListener("click", (e) => {
-      const href = el.getAttribute("href") || el.dataset.scroll;
-      if (href?.startsWith("#")) {
+      const target = el.dataset.scroll;
+      if (target?.startsWith("#")) {
         e.preventDefault();
-        $(href)?.scrollIntoView({ behavior: "smooth" });
+        $(target)?.scrollIntoView({ behavior: "smooth" });
         topbar?.classList.remove("open");
       }
+    });
+  });
+  $$(".scroll-top").forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      topbar?.classList.remove("open");
     });
   });
 
