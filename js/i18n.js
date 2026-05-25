@@ -32,7 +32,7 @@ const T = {
     about_lead: "EuGreen Energy (eugreen.energy) verbindet Verbraucher und Gewerbe mit den besten Tarifen und Installateuren – unabhängig, transparent und ohne Aufschlag.",
     timeline: [
       { y: "2010", t: "Gründung in Deutschland", d: "Start als unabhängige Energieberatung mit Fokus Strom & Gas." },
-      { y: "2014", t: "5 Standorte DE", d: "Berlin, München, Hamburg, Köln, Frankfurt – persönliche Beratung vor Ort." },
+      { y: "2014", t: "Regionale Online-Büros", d: "Digitale Beratung in DE – Berlin, München, Hamburg, Köln, Frankfurt und weitere Regionen." },
       { y: "2018", t: "EU-Expansion", d: "Erste Märkte in Benelux, Frankreich, Italien und Iberien." },
       { y: "2022", t: "Solar & Wärmepumpe", d: "Komplettangebote für PV, Speicher und Wärmepumpen aus einer Hand." },
       { y: "2026", t: "EuGreen Energy", d: "Rebrand zu eugreen.energy – 2.400+ Vergleiche, 18 Länder, 24 Partner-Hubs." }

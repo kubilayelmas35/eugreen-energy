@@ -35,7 +35,11 @@
       <div class="topbar-controls">
         <select id="lang-select" class="topbar-select" aria-label="Language"></select>
         <button type="button" class="theme-switch" id="theme-toggle" aria-pressed="false" title="Theme">
-          <span class="theme-switch-track"><span class="theme-switch-thumb"></span></span>
+          <span class="theme-switch-track">
+            <span class="theme-icon theme-icon-sun" aria-hidden="true">☀</span>
+            <span class="theme-icon theme-icon-moon" aria-hidden="true">☽</span>
+            <span class="theme-switch-thumb"></span>
+          </span>
         </button>
         <button class="nav-cta" type="button" data-scroll="#anfrage" data-i18n="nav_cta">Kostenlos anfragen</button>
       </div>
@@ -83,15 +87,6 @@
           <div class="how-card"><div class="num">2</div><h3 data-i18n="how2_t">Wir verhandeln</h3><p data-i18n="how2_d">Angebote von Partnern.</p></div>
           <div class="how-card"><div class="num">3</div><h3 data-i18n="how3_t">Sie sparen</h3><p data-i18n="how3_d">Bestes Angebot per Mail/Telefon.</p></div>
         </div>
-        <p class="section-label" style="margin-top:3rem;text-align:center" data-i18n="partners_title">Partner & Anbieter</p>
-        <div class="partners-row">
-          <span class="partner-pill">Vattenfall</span>
-          <span class="partner-pill">E.ON</span>
-          <span class="partner-pill">Enphase</span>
-          <span class="partner-pill">Viessmann</span>
-          <span class="partner-pill">SMA</span>
-          <span class="partner-pill">Daikin</span>
-        </div>
       </div>
     </section>
 
@@ -99,7 +94,11 @@
       <div class="container">
         <p class="section-label" data-i18n="about_label">Über uns</p>
         <h2 class="section-title" data-i18n="about_title">Seit über 15 Jahren Energie europäisch denken</h2>
-        <p class="section-lead" data-i18n="about_lead">EuGreen Energy (eugreen.energy) verbindet Verbraucher mit den besten Tarifen – ohne Aufschlag.</p>
+        <p class="section-lead" data-i18n="about_lead">EuGreen Energy verbindet Verbraucher mit den besten Tarifen – ohne Aufschlag.</p>
+        <div class="about-copy">
+          <p data-i18n="about_online"></p>
+          <p data-i18n="about_bundle"></p>
+        </div>
         <div class="timeline" id="timeline"></div>
       </div>
     </section>
@@ -277,21 +276,24 @@
     <section class="section" id="faq">
       <div class="container">
         <h2 class="section-title" data-i18n="faq_title">FAQ</h2>
-        <div class="faq-list">
-          <div class="faq-item"><button type="button" class="faq-q"><span data-i18n="faq1_q">Kostet es etwas?</span> <span>▼</span></button><div class="faq-a" data-i18n="faq1_a"></div></div>
-          <div class="faq-item"><button type="button" class="faq-q"><span data-i18n="faq2_q">Warum günstiger?</span> <span>▼</span></button><div class="faq-a" data-i18n="faq2_a"></div></div>
-          <div class="faq-item"><button type="button" class="faq-q"><span data-i18n="faq3_q">Welche Länder?</span> <span>▼</span></button><div class="faq-a" data-i18n="faq3_a"></div></div>
-        </div>
+        <p class="section-lead" data-i18n="faq_sub">Antworten auf die wichtigsten Fragen</p>
+        <div class="faq-list" id="faq-list"></div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem">
-      <div><strong>EuGreen Energy</strong><br />eugreen.energy · info@eugreen.energy</div>
-      <div><a href="#" data-i18n="footer_legal">Impressum</a> · <a href="#">Datenschutz</a></div>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <strong>EuGreen Energy</strong>
+        <p>info@eugreen.energy</p>
+        <p class="footer-phone">
+          <a href="tel:+4930123456789">+49 30 1234 567 89</a>
+          <span class="footer-callcenter" data-i18n="footer_callcenter">Callcenter-Hotline</span>
+        </p>
+      </div>
     </div>
-    <div class="container" style="margin-top:1rem;font-size:0.8rem">© 2026 EuGreen Energy</div>
+    <div class="container footer-copy">© 2026 EuGreen Energy</div>
   </footer>
 
   <div id="success-modal" class="modal-overlay">
@@ -305,6 +307,7 @@
 
   <script src="data/locations.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/content-extended.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

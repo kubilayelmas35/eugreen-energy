@@ -34,6 +34,7 @@
       if (v) el.textContent = v;
     });
     renderTimeline(pack.timeline || []);
+    renderFaq(pack.faqItems || []);
     updateWizardLabels();
     $("#panel-close")?.setAttribute("aria-label", t("panel_close"));
     applyTheme();
@@ -53,6 +54,46 @@
       )
       .join("");
     initTimelineObserver();
+  }
+
+  function renderFaq(items) {
+    const box = $("#faq-list");
+    if (!box) return;
+    box.innerHTML = items
+      .map(
+        (it, i) => `
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false"><span>${escapeHtml(it.q)}</span><span class="faq-chevron">▼</span></button>
+        <div class="faq-a"><p>${escapeHtml(it.a)}</p></div>
+      </div>`
+      )
+      .join("");
+    bindFaqHandlers();
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function bindFaqHandlers() {
+    $$(".faq-q").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".faq-item");
+        const open = item.classList.contains("open");
+        $$(".faq-item").forEach((i) => {
+          i.classList.remove("open");
+          i.querySelector(".faq-q")?.setAttribute("aria-expanded", "false");
+        });
+        if (!open) {
+          item.classList.add("open");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
   }
 
   function initTimelineObserver() {
@@ -394,15 +435,6 @@
   }
 
   $("#modal-close")?.addEventListener("click", () => $("#success-modal")?.classList.remove("visible"));
-
-  $$(".faq-q").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const item = btn.closest(".faq-item");
-      const open = item.classList.contains("open");
-      $$(".faq-item").forEach((i) => i.classList.remove("open"));
-      if (!open) item.classList.add("open");
-    });
-  });
 
   initLangSelect();
   applyTheme();
