@@ -100,13 +100,17 @@ body {
   50% { opacity: 1; transform: scale(1.12); }
 }
 .logo-wordmark {
-  font-family: var(--font-display); font-weight: 800; font-size: 1.05rem;
-  letter-spacing: -0.04em; line-height: 1.1;
+  display: flex; flex-direction: column; gap: 0.05rem;
+  font-family: var(--font-display); font-weight: 800; font-size: 0.98rem;
+  letter-spacing: -0.04em; line-height: 1.05;
 }
-.logo-eu { color: var(--text); }
-.logo-green { color: var(--green); }
-[data-theme="dark"] .logo-green { color: var(--green-bright); }
-.logo-energy { color: var(--text-muted); font-weight: 600; font-size: 0.92rem; }
+.logo-primary { color: var(--text); }
+.logo-accent { color: var(--green); }
+[data-theme="dark"] .logo-accent { color: var(--green-bright); }
+.logo-sub {
+  color: var(--text-muted); font-weight: 600; font-size: 0.68rem;
+  letter-spacing: 0.04em; text-transform: uppercase;
+}
 
 .topbar-controls { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
 .topbar-select {
@@ -622,6 +626,8 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--g
 @media (max-width: 900px) {
   .hero-grid, .band-grid { grid-template-columns: 1fr; }
   .how-grid { grid-template-columns: 1fr; }
+  .logo-wordmark { font-size: 0.88rem; }
+  .logo-sub { font-size: 0.62rem; }
   .nav-links { display: none; }
   .nav-toggle { display: block; }
   .topbar.open .nav-links {
