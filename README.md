@@ -1,6 +1,6 @@
-# EuGreen Energy
+# WaermeTechknik Deutschland
 
-European energy consulting landing page for [eugreen.energy](https://eugreen.energy).
+European energy consulting landing page for [waermetechknik.com](https://waermetechknik.com).
 
 **Live site (GitHub Pages):** https://kubilayelmas35.github.io/eugreen-energy/
 
@@ -15,7 +15,7 @@ European energy consulting landing page for [eugreen.energy](https://eugreen.ene
 
 - iframe element: `#html1`
 - Page code: see `WIX-VELO-PAGE.js`
-- CMS collection: `EuGreenLeads`
+- CMS collection: `WaermeTechknikLeads`
 
 ## Local
 

@@ -1,4 +1,4 @@
-/* EuGreen Energy – eugreen.energy | Light default + dark + multi-step form */
+/* WaermeTechknik Deutschland – waermetechknik.com | Light default + dark + multi-step form */
 :root,
 [data-theme="light"] {
   --bg: #f4f7fb;
@@ -596,8 +596,8 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--g
 .footer-brand strong { font-family: var(--font-display); font-size: 1.1rem; }
 .footer-brand p { margin: 0.35rem 0 0; color: var(--text-muted); }
 .footer-phone { margin-top: 0.75rem !important; }
-.footer-phone a { color: var(--green); font-weight: 700; font-size: 1.05rem; text-decoration: none; }
-[data-theme="dark"] .footer-phone a { color: var(--green-bright); }
+.footer-phone-num { color: var(--green); font-weight: 700; font-size: 1.05rem; }
+[data-theme="dark"] .footer-phone-num { color: var(--green-bright); }
 .footer-callcenter {
   display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem;
 }
