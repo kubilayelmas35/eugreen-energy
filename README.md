@@ -1,6 +1,6 @@
-# WaermeTechknik Deutschland
+# WärmeTechnik Deutschland
 
-European energy consulting landing page for [waermetechknik.com](https://waermetechknik.com).
+European energy consulting landing page for [waermetechnikdeutschland.com](https://waermetechnikdeutschland.com).
 
 **Live site (GitHub Pages):** https://kubilayelmas35.github.io/eugreen-energy/
 
@@ -15,7 +15,7 @@ European energy consulting landing page for [waermetechknik.com](https://waermet
 
 - iframe element: `#html1`
 - Page code: see `WIX-VELO-PAGE.js`
-- CMS collection: `WaermeTechknikLeads`
+- CMS collection: `WärmeTechnikLeads`
 
 ## Local
 

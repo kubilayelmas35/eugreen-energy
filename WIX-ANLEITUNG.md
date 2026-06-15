@@ -1,8 +1,8 @@
-# WaermeTechknik Deutschland – waermetechknik.com · Wix Einbindung
+# WärmeTechnik Deutschland – waermetechnikdeutschland.com · Wix Einbindung
 
 ## Neu in v2
 
-- Marke: **WaermeTechknik Deutschland** · Domain: **waermetechknik.com**
+- Marke: **WärmeTechnik Deutschland** · Domain: **waermetechnikdeutschland.com**
 - **Hell-Theme Standard**, Dunkel per Top-Bar
 - **30+ Sprachen** (Browser-Auto + Dropdown)
 - **6-Schritt Formular** mit Energie-Flow & leuchtender Ampel am Ende
@@ -26,7 +26,7 @@
 2. Wix: HTML iframe → `https://ihre-domain.de/index.html` oder `wix-embed.html`
 3. Höhe: **min. 5500px** oder Scroll im Frame.
 
-## CMS Collection: `WaermeTechknikLeads`
+## CMS Collection: `WärmeTechnikLeads`
 
 Felder wie zuvor `EurEnergyLeads`, plus `lang`, `propertyType`, `monthlyBill`, `usageUnknown`.
 
